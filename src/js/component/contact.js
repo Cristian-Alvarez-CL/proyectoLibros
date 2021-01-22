@@ -4,8 +4,8 @@ function Contact() {
         <section className="page-section" id="contact">
             <div className="container">
                 <div className="text-center">
-                    <h2 className="section-heading text-uppercase">Contact Us</h2>
-                    <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 className="section-heading text-uppercase">Contactanos</h2>
+                    <h3 className="section-subheading text-muted">Si tienes alguna duda, aquí estamos para ayudarte.</h3>
                 </div>
                 <form id="contactForm" name="sentMessage" novalidate="novalidate">
                     <div className="row align-items-stretch mb-5">

@@ -10,8 +10,8 @@ function PortfolioGrid() {
         <section className="page-section bg-light" id="portfolio">
             <div className="container">
                 <div className="text-center">
-                    <h2 className="section-heading text-uppercase">Portfolio</h2>
-                    <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 className="section-heading text-uppercase">Publicados</h2>
+                    <h3 className="section-subheading text-muted">Aqui encontraras los libros que están siendo publicados ya sea para realizar una venta o permuta.</h3>
                 </div>
                 <div className="row">
                     <div className="col-lg-4 col-sm-6 mb-4">
@@ -23,8 +23,8 @@ function PortfolioGrid() {
                                 <img className="img-fluid" src={fotoPortfolioGrid1} alt="" />
                             </a>
                             <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">Threads</div>
-                                <div className="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div className="portfolio-caption-heading">Papelucho y El Marciano</div>
+                                <div className="portfolio-caption-subheading text-muted">Autor: Marcela Paz</div>
                             </div>
                         </div>
                     </div>
@@ -37,8 +37,8 @@ function PortfolioGrid() {
                                 <img className="img-fluid" src={fotoPortfolioGrid2} alt="" />
                             </a>
                             <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">Explore</div>
-                                <div className="portfolio-caption-subheading text-muted">Graphic Design</div>
+                                <div className="portfolio-caption-heading">Papelucho y El Marciano</div>
+                                <div className="portfolio-caption-subheading text-muted">Autor: Marcela Paz</div>
                             </div>
                         </div>
                     </div>
@@ -51,8 +51,8 @@ function PortfolioGrid() {
                                 <img className="img-fluid" src={fotoPortfolioGrid3} alt="" />
                             </a>
                             <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">Finish</div>
-                                <div className="portfolio-caption-subheading text-muted">Identity</div>
+                                <div className="portfolio-caption-heading">Papelucho y El Marciano</div>
+                                <div className="portfolio-caption-subheading text-muted">Autor: Marcela Paz</div>
                             </div>
                         </div>
                     </div>
@@ -65,8 +65,8 @@ function PortfolioGrid() {
                                 <img className="img-fluid" src={fotoPortfolioGrid4} alt="" />
                             </a>
                             <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">Lines</div>
-                                <div className="portfolio-caption-subheading text-muted">Branding</div>
+                                <div className="portfolio-caption-heading">Papelucho y El Marciano</div>
+                                <div className="portfolio-caption-subheading text-muted">Autor: Marcela Paz</div>
                             </div>
                         </div>
                     </div>
@@ -79,8 +79,8 @@ function PortfolioGrid() {
                                 <img className="img-fluid" src={fotoPortfolioGrid5} alt="" />
                             </a>
                             <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">Southwest</div>
-                                <div className="portfolio-caption-subheading text-muted">Website Design</div>
+                                <div className="portfolio-caption-heading">Papelucho y El Marciano</div>
+                                <div className="portfolio-caption-subheading text-muted">Autor: Marcela Paz</div>
                             </div>
                         </div>
                     </div>
@@ -93,8 +93,8 @@ function PortfolioGrid() {
                                 <img className="img-fluid" src={fotoPortfolioGrid6} alt="" />
                             </a>
                             <div className="portfolio-caption">
-                                <div className="portfolio-caption-heading">Window</div>
-                                <div className="portfolio-caption-subheading text-muted">Photography</div>
+                                <div className="portfolio-caption-heading">Papelucho y El Marciano</div>
+                                <div className="portfolio-caption-subheading text-muted">Autor: Marcela Paz</div>
                             </div>
                         </div>
                     </div>

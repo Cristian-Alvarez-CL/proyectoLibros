@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home  from "./views/home";
+import HomePrivate from "./views/homePrivate";
 import injectStore from "./store/appContext";
 import "../styles/index.css";
 
@@ -12,6 +13,7 @@ export class Layout extends React.Component {
 				<BrowserRouter>
 						<Switch>
 							<Route exact path="/" component={Home} />
+							<Route exact path="/personaPage" component={HomePrivate} />
 							<Route exact path="/detail/:id" name="detail" component={Home} />
 							<Route exact path="/planet_detail/:id" name="detail" component={Home} />
 							<Route render={() => <h1>Not found!</h1>} />
