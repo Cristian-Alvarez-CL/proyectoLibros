@@ -14,16 +14,16 @@ import PortfolioModal from '../component/portfolioModals';
 function Home() {
   return (
     <div>
-      <Navbar/>
-      <Masthead/>
-      <Services/>
-      <PortfolioGrid/>
-      <About/>
-      <Teams/>
-      <Clients/>
-      <Contact/>
-      <Footer/>
-      <PortfolioModal/>
+      <Navbar />
+      <Masthead />
+      <Services />
+      <PortfolioGrid />
+      <About />
+      <Teams />
+      <Clients /> 
+      <Contact />
+      <Footer />
+      <PortfolioModal />
     </div>
   );
 }

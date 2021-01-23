@@ -7,7 +7,7 @@ function Contact() {
                     <h2 className="section-heading text-uppercase">Contactanos</h2>
                     <h3 className="section-subheading text-muted">Si tienes alguna duda, aquí estamos para ayudarte.</h3>
                 </div>
-                <form id="contactForm" name="sentMessage" noValidate="noValidate">
+                <form id="contactForm" name="sentMessage" noValidate="novalidate">
                     <div className="row align-items-stretch mb-5">
                         <div className="col-md-6">
                             <div className="form-group">
