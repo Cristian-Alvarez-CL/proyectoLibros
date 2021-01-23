@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/login.css";
 
 const Login = () => {
@@ -43,13 +44,19 @@ const Login = () => {
                       </label>
                       <span className="ml-auto">
                         <a href="..." className="forgot-pass">
-                          Forgot Password
+                        <Link to="/passwordrecover">Recupera tu clave</Link>
+                        </a>
+                      </span>
+                      <span className="ml-auto">
+                        <a href="..." className="forgot-pass">
+                        <Link to="/create">Crear Cuenta</Link>
                         </a>
                       </span>
                     </div>
                     <input
                       type="submit"
                       value="Log In"
+                      href= "#homePrivate"
                       className="btn btn-pill text-white btn-block btn-primary"
                     />
                   </form>

@@ -12,14 +12,14 @@ import TablaInformacion from '../component/tablaInfo';
 function HomePrivate() {
   return (
     <div>
-      <Navbar/>
-      <Masthead/>
-      <Busqueda/>
-      <PortfolioGrid/>
-      <TablaInformacion/>
-      <Contact/>
-      <Footer/>
-      <PortfolioModal/>
+      <Navbar></Navbar>
+      <Masthead></Masthead>
+      <Busqueda></Busqueda>
+      <PortfolioGrid></PortfolioGrid>
+      <TablaInformacion></TablaInformacion>
+      <Contact></Contact>
+      <Footer></Footer>
+      <PortfolioModal></PortfolioModal>
     </div>
   );
 }
