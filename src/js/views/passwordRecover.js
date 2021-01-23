@@ -1,5 +1,6 @@
 import React from "react";
-import "./login.css";
+import "../../styles/login.css";
+
 const passwordRecover = () => {
   return (
     <div className="container">

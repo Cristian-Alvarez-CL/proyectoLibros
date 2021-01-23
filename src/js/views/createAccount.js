@@ -112,7 +112,7 @@ const createAccount = () => {
               </div>
               {/* <!-- Submit Button --> */}
               <div className="form-group col-lg-12 mx-auto mb-0">
-                <a href="#" className="btn btn-primary btn-block py-2">
+                <a href="..." className="btn btn-primary btn-block py-2">
                   <span className="font-weight-bold">Crear Cuenta</span>
                 </a>
               </div>
@@ -128,7 +128,7 @@ const createAccount = () => {
               <div className="text-center w-100">
                 <p className="text-muted font-weight-bold">
                   Ya estas registrado?
-                  <a href="#" className="text-primary ml-2">
+                  <a href="..." className="text-primary ml-2">
                     Accede
                   </a>
                 </p>

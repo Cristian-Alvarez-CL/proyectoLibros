@@ -7,8 +7,6 @@ import login from "./views/login";
 import createAccount from "./views/createAccount";
 import passwordRecover from "./views/passwordRecover";
 import userEdit from "./views/userEdit";
-import prueba from "./views/prueba";
-
 
 export class Layout extends React.Component {
 	render() {

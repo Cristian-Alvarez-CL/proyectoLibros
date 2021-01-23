@@ -1,5 +1,6 @@
 import React from "react";
-import './login.css'
+import "../../styles/login.css";
+
 const Login = () => {
   return (
       <div className="content">
@@ -41,7 +42,7 @@ const Login = () => {
                         <div className="control__indicator"></div>
                       </label>
                       <span className="ml-auto">
-                        <a href="#" className="forgot-pass">
+                        <a href="..." className="forgot-pass">
                           Forgot Password
                         </a>
                       </span>
