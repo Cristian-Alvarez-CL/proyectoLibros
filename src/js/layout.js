@@ -20,7 +20,6 @@ export class Layout extends React.Component {
 							<Route exact path="/login" component={login} />
 							<Route exact path="/create" component={createAccount} />
 							<Route exact path="/useredit" component={userEdit} />
-							<Route exact path="/prueba" component={prueba} />
 							<Route exact path="/passwordrecover" component={passwordRecover} />
 							<Route exact path="/detail/:id" name="detail" component={Home} />
 							<Route exact path="/planet_detail/:id" name="detail" component={Home} />
