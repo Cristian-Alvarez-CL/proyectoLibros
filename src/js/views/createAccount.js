@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const createAccount = () => {
   return (
@@ -129,7 +130,7 @@ const createAccount = () => {
                 <p className="text-muted font-weight-bold">
                   Ya estas registrado?
                   <a href="..." className="text-primary ml-2">
-                    Accede
+                  <Link to="/login">Accede</Link>
                   </a>
                 </p>
               </div>

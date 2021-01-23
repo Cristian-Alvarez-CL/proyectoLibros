@@ -81,7 +81,7 @@ const userEdit = () => {
                 />
               </div>
                {/* <!-- Direction --> */}
-               <div className="input-group col-lg-12 mb-4">
+                <div className="input-group col-lg-12 mb-4">
                 <div className="input-group-prepend">
                   <span className="input-group-text bg-white px-4 border-md border-right-0">
                     <i className="fas fa-map-marked-alt text-muted"></i>

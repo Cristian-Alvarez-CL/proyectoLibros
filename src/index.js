@@ -6,7 +6,7 @@ import Layout from './js/layout';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout/>
+    <Layout></Layout>
   </React.StrictMode>,
   document.getElementById('root')
 );

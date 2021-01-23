@@ -2,25 +2,21 @@
 import '../../styles/styles.css';
 import Navbar from '../component/navbar';
 import Masthead from '../component/masthead';
-import Services from '../component/services';
 import PortfolioGrid from '../component/portfolioGrid';
-import About from '../component/about';
-import Teams from '../component/team';
-import Clients from '../component/clients';
 import Contact from '../component/contact';
 import Footer from '../component/footer';
 import PortfolioModal from '../component/portfolioModals';
+import Busqueda from '../component/busqueda';
+import TablaInformacion from '../component/tablaInfo';
 
-function Home() {
+function HomePrivate() {
   return (
     <div>
       <Navbar></Navbar>
       <Masthead></Masthead>
-      <Services></Services>
+      <Busqueda></Busqueda>
       <PortfolioGrid></PortfolioGrid>
-      <About></About>
-      <Teams></Teams>
-      <Clients></Clients>
+      <TablaInformacion></TablaInformacion>
       <Contact></Contact>
       <Footer></Footer>
       <PortfolioModal></PortfolioModal>
@@ -28,4 +24,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePrivate;

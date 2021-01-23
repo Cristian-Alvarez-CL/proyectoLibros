@@ -7,7 +7,7 @@ function Teams() {
         <section className="page-section bg-light" id="team">
         <div className="container">
             <div className="text-center">
-                <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
+                <h2 className="section-heading text-uppercase">Nuestro increible equipo</h2>
                 <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div className="row">
@@ -15,7 +15,7 @@ function Teams() {
                     <div className="team-member">
                         <img className="mx-auto rounded-circle" src={fotoTeam1} alt="" />
                         <h4>Kay Garland</h4>
-                        <p className="text-muted">Lead Designer</p>
+                        <p className="text-muted">Lead Developer</p>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in"></i></a>
@@ -25,7 +25,7 @@ function Teams() {
                     <div className="team-member">
                         <img className="mx-auto rounded-circle" src={fotoTeam2} alt="" />
                         <h4>Larry Parker</h4>
-                        <p className="text-muted">Lead Marketer</p>
+                        <p className="text-muted">Lead Developer</p>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in"></i></a>
@@ -35,6 +35,16 @@ function Teams() {
                     <div className="team-member">
                         <img className="mx-auto rounded-circle" src={fotoTeam3} alt="" />
                         <h4>Diana Petersen</h4>
+                        <p className="text-muted">Lead Developer</p>
+                        <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div className="col-lg-4">
+                    <div className="team-member">
+                        <img className="mx-auto rounded-circle" src={fotoTeam2} alt="" />
+                        <h4>Larry Parker</h4>
                         <p className="text-muted">Lead Developer</p>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
