@@ -14,7 +14,7 @@ function AgregarLibro() {
                     {/* <!-- For Demo Purpose -->  */}
                     <div className="col-md-12 pr-lg-5 mb-5 mb-md-0">
                         {/* <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" className="img-fluid mb-3 d-none d-md-block" /> */}
-                        <h1>Agregar un Libro</h1>
+                        <h1>Editar Publicación</h1>
                         <br />
                         <h3> Información de tu libro </h3>
                         <br />
@@ -243,7 +243,7 @@ function AgregarLibro() {
                             {/* <!--  Button Publicar--> */}
                             <div className="form-group col-lg-5 mx-auto mb-0">
                                 <a href="#" className="btn btn-primary btn-block py-2">
-                                    <span className="font-weight-bold">Publicar Ahora</span>
+                                    <span className="font-weight-bold">Modificar</span>
                                 </a>
                             </div>
 
