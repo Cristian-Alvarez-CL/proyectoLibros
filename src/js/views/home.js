@@ -14,7 +14,7 @@ import PortfolioModal from '../component/portfolioModals';
 function Home() {
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar contacto='Contacto'/>
       <Masthead></Masthead>
       <Services></Services>
       <PortfolioGrid></PortfolioGrid>
