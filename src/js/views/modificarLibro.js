@@ -215,23 +215,8 @@ function ModificarLibro() {
                                         <textarea className="form-control" aria-label="With textarea"></textarea>
                                         {/* <!-- <input id="precio" type="text" name="precio" placeholder="Título del Libro" className="form-control bg-white border-left-0 border-md"> --> */}
                                     </div>
-
-                                    {/* <!-- Aceptación--> */}
-                                    <div className="input-group col-lg-12 mb-4">
-                                        <div className="input-group-prepend">
-                                            {/* <div className="form-check"> */}
-                                            <input className="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
-                                        </div>
-                                        <label className="form-check-label" for="invalidCheck2">
-                                            Acepto los Términos y Condiciones y autorizo el uso de mis
-                                            datos de acuerdo a la Declaración de Privacidad
-                                        </label>
-                                    </div>
+                                
                                 </div>
-
-
-
-
 
                                 {/* <!--  Button Publicar--> */}
                                 <div className="form-group col-lg-5 mx-auto mb-0">
