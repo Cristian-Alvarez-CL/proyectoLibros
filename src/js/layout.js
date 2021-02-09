@@ -22,8 +22,6 @@ export class Layout extends React.Component {
 						<Route exact path="/planet_detail/:id" name="detail" component={Home} />
 						<Route exact path="/agregarLibro" component={AgregarLibro} />
 						<Route exact path="/modificarLibro" component={ModificarLibro} />
-						<Route render={() => <h1>Not found!</h1>} />
-						<Route exact path="/" component={Home}></Route>
 						<Route exact path="/login" component={login} ></Route>
 						<Route exact path="/homePrivate" component={HomePrivate} ></Route>
 						<Route exact path="/create" component={createAccount} ></Route>

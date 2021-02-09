@@ -2,7 +2,7 @@
 import '../../styles/styles.css';
 import Navbar from '../component/navbar';
 import Masthead from '../component/masthead';
-import PortfolioGrid from '../component/portfoliogrid';
+import PortfolioGrid from '../component/portfolioGrid';
 import Contact from '../component/contact';
 import Footer from '../component/footer';
 import PortfolioModal from '../component/portfolioModals';
