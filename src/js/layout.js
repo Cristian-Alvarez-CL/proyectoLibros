@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./views/home";
 import AgregarLibro from "./views/agregarLibro";
+import EliminarPublicacion from "./views/eliminarPublicacion";
 import ModificarLibro from "./views/modificarLibro";
 import HomePrivate from "./views/homePrivate";
 import injectStore from "./store/appContext";
@@ -21,6 +22,7 @@ export class Layout extends React.Component {
 						<Route exact path="/detail/:id" name="detail" component={Home} />
 						<Route exact path="/planet_detail/:id" name="detail" component={Home} />
 						<Route exact path="/agregarLibro" component={AgregarLibro} />
+						<Route exact path="/eliminarPublicacion" component={EliminarPublicacion} />
 						<Route exact path="/modificarLibro" component={ModificarLibro} />
 						<Route exact path="/login" component={login} ></Route>
 						<Route exact path="/homePrivate" component={HomePrivate} ></Route>
