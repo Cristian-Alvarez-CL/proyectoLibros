@@ -119,13 +119,13 @@ function ModificarLibro() {
                                         <fieldset className="form-group">
                                             <div className="row">
                                                 <div className="col-sm-10">
-                                                    <div className="custom-control custom-radio mx-2">
+                                                    <div className="custom-control custom-radio mx-4">
                                                         <input className="custom-control-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1" checked />
                                                         <label className="custom-control-label" htmlFor="gridRadios1">
                                                             Nuevo
                                                         </label>
                                                     </div>
-                                                    <div className="custom-control custom-radio mx-2">
+                                                    <div className="custom-control custom-radio mx-4">
                                                         <input className="custom-control-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2" />
                                                         <label className="custom-control-label" htmlFor="gridRadios2">
                                                             Usado
