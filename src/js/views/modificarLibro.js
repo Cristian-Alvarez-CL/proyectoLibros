@@ -114,53 +114,46 @@ function ModificarLibro() {
                                     </div>
 
                                     {/* <!-- Estado del Libro --> */}
-                                    {/* <hr class="mb-4" />
-                                <div className="custom-control custom-checkbox ">
-                                    <input type="checkbox" className="custom-control-input" id="same-address" />
-                                    <label className="custom-control-label" for="same-address">Nuevo</label>
-                                </div>
-                                <div className="custom-control custom-checkbox">
-                                    <input type="checkbox" className="custom-control-input" id="save-info" />
-                                    <label className="custom-control-label" for="save-info">Usado</label>
-                                </div>
-                                <hr className="mb-4" />
-                                <hr className="mb-4" />
-                                <div className="custom-control custom-checkbox">
-                                    <input type="checkbox" className="custom-control-input" id="same-address" />
-                                    <label className="custom-control-label" for="same-address">Original</label>
-                                </div>
-                                <div className="custom-control custom-checkbox">
-                                    <input type="checkbox" className="custom-control-input" id="save-info" />
-                                    <label className="custom-control-label" for="save-info">Alternativo (Fotocopia)</label>
-                                </div>
-                                <hr className="mb-4" /> */}
                                     <label for="staticEmail" class="col-sm-2 col-form-label">Estado del Libro</label>
+                                    <div className="input-group col-lg-9 mb-4">
+                                        <fieldset className="form-group">
+                                            <div className="row">
+                                                <div className="col-sm-10">
+                                                    <div className="custom-control custom-radio mx-2">
+                                                        <input className="custom-control-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1" checked />
+                                                        <label className="custom-control-label" htmlFor="gridRadios1">
+                                                            Nuevo
+                                                        </label>
+                                                    </div>
+                                                    <div className="custom-control custom-radio mx-2">
+                                                        <input className="custom-control-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2" />
+                                                        <label className="custom-control-label" htmlFor="gridRadios2">
+                                                            Usado
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
 
-                                    <div className="input-group col-lg-10 mb-4">
-                                        <div className="d-block my-10">
-                                            <div className="custom-control custom-radio custom-control-inline">
-                                                <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" />
-                                                <label className="custom-control-label" for="credit">Nuevo</label>
+                                        <fieldset className="form-group">
+                                            <div className="row">
+                                                <div className="col-sm-10">
+                                                    <div className="custom-control custom-radio">
+                                                        <input className="custom-control-input" type="radio" name="gridRadios2" id="gridRadios3" value="option1" checked />
+                                                        <label className="custom-control-label" htmlFor="gridRadios3">
+                                                            Original
+                                                        </label>
+                                                    </div>
+                                                    <div className="custom-control custom-radio">
+                                                        <input className="custom-control-input" type="radio" name="gridRadios2" id="gridRadios4" value="option2" />
+                                                        <label className="custom-control-label" htmlFor="gridRadios4">
+                                                            Copia
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="custom-control custom-radio custom-control-inline">
-                                                <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" />
-                                                <label className="custom-control-label" for="debit">Usado</label>
-                                            </div>
-
-                                            {/* <div className="input-group col-lg-9 mb-4">
-                                            <div className="d-block my-10"> */}
-                                            <div className="custom-control custom-radio custom-control-inline">
-                                                <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" />
-                                                <label className="custom-control-label" for="credit">Original</label>
-                                            </div>
-                                            <div className="custom-control custom-radio custom-control-inline">
-                                                <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" />
-                                                <label className="custom-control-label" for="debit">Alternativo (Fotocopia)</label>
-                                            </div>
-                                        </div>
+                                        </fieldset>
                                     </div>
-                                    {/* </div>
-                                </div> */}
 
 
                                     {/* <!-- Fotos / Imágenes --> */}

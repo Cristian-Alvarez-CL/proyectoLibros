@@ -113,16 +113,16 @@ function AgregarLibro() {
                                         <fieldset className="form-group">
                                             <div className="row">
                                                 <div className="col-sm-10">
-                                                    <div className="custom-control custom-radio">
-                                                        <input className="custom-control-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
-                                                        <label className="custom-control-label" for="gridRadios1">
-                                                            First radio
+                                                    <div className="custom-control custom-radio mx-2">
+                                                        <input className="custom-control-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1" checked />
+                                                        <label className="custom-control-label" htmlFor="gridRadios1">
+                                                            Nuevo
                                                         </label>
                                                     </div>
-                                                    <div className="custom-control custom-radio">
-                                                        <input className="custom-control-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
-                                                        <label className="custom-control-label" for="gridRadios2">
-                                                            Second radio
+                                                    <div className="custom-control custom-radio mx-2">
+                                                        <input className="custom-control-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2" />
+                                                        <label className="custom-control-label" htmlFor="gridRadios2">
+                                                            Usado
                                                         </label>
                                                     </div>
                                                 </div>
@@ -133,15 +133,15 @@ function AgregarLibro() {
                                             <div className="row">
                                                 <div className="col-sm-10">
                                                     <div className="custom-control custom-radio">
-                                                        <input className="custom-control-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
-                                                        <label className="custom-control-label" for="gridRadios1">
-                                                            First radio 
+                                                        <input className="custom-control-input" type="radio" name="gridRadios2" id="gridRadios3" value="option1" checked />
+                                                        <label className="custom-control-label" htmlFor="gridRadios3">
+                                                            Original
                                                         </label>
                                                     </div>
                                                     <div className="custom-control custom-radio">
-                                                        <input className="custom-control-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
-                                                        <label className="custom-control-label" for="gridRadios2">
-                                                            Second radio
+                                                        <input className="custom-control-input" type="radio" name="gridRadios2" id="gridRadios4" value="option2" />
+                                                        <label className="custom-control-label" htmlFor="gridRadios4">
+                                                            Copia
                                                         </label>
                                                     </div>
                                                 </div>
