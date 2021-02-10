@@ -205,7 +205,7 @@ function AgregarLibro() {
 
                                 {/* <!--  Button Publicar--> */}
                                 <div className="form-group col-lg-5 mx-auto mb-0">
-                                    <a href="#" className="btn btn-primary btn-block py-2">
+                                    <a href="..." className="btn btn-primary btn-block py-2">
                                         <span className="font-weight-bold">Publicar Ahora</span>
                                     </a>
                                 </div>

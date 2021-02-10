@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../styles/login.css";
 import TablaInformacion from "../component/tablaInfo";
 import Navbar from "../component/navbar";
@@ -45,7 +44,6 @@ const eliminarPublicacion = () => {
                         id="password"
                       />
                     </div>
-              
                     <input
                       type="submit"
                       value="Eliminar Definitivamente"
