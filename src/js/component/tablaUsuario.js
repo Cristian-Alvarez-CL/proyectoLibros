@@ -1,9 +1,15 @@
-import React from "react";
-import { MDBDataTable } from "mdbreact";
+import React from 'react';
+import { MDBInput, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
-const DatatablePage = () => {
-    const data = {
+const TablePage = (props) => {
+    const data_checkboxes = {
         columns: [
+            {
+                'label': '',
+                'field': 'check',
+                'sort': 'asc',
+                'width': 50,
+            },
             {
                 label: "Nombres",
                 field: "nombres",
@@ -40,53 +46,38 @@ const DatatablePage = () => {
                 sort: "asc",
                 width: 100,
             },
-            {
-                label: "Seleccion",
-                field: "selección",
-                sort: "asc",
-                width: 100,
-            },
-        ],
+            ],
         rows: [
             {
-                nombres: "Tiger Nixon",
-                email: "system.architect@gmail.com",
-                teléfono: "562 22 22 22",
-                dirección: "El Peral 61",
-                contraseña: "2011/04/25",
-                perfil: "user",
-                selección: "",
+                'check': <MDBInput type="checkbox" id="checkbox1" />,
+                'nombres': "Tiger Nixon",
+                'email': "system.architect@gmail.com",
+                'teléfono': "562 22 22 22",
+                'dirección': "El Peral 61",
+                'contraseña': "2011/04/25",
+                'perfil': "user",
+                
             },
             {
-                nombre: "Tiger Nixon",
-                email: "system.architect@gmail.com",
-                teléfono: "562 22 22 22",
-                dirección: "El Peral 61",
-                contraseña: "2011/04/25",
-                perfil: "user",
-                selección: "",
+                'check': <MDBInput type="checkbox" id="checkbox2" />,
+                'nombres': "Tiger Nixon",
+                'email': "system.architect@gmail.com",
+                'teléfono': "562 22 22 22",
+                'dirección': "El Peral 61",
+                'contraseña': "2011/04/25",
+                'perfil': "user",
+                
             },
             
-        ],
+        ]
     };
 
     return (
-        <section className="page-section" id="tabla">
-            <div className="container">
-                {/* <div className="text-center">
-                    <h2 className="section-heading text-uppercase">ELIMINAR USUARIO</h2>
-                    <h3 className="section-subheading text-muted">Estas a punto de eliminar el siguiente usuario</h3>
-                </div> */}
-                <MDBDataTable
-                    scrollY
-                    maxHeight="500px"
-                    striped
-                    bordered
-                    small
-                    data={data} />
-            </div>
-        </section>
+        <MDBTable btn fixed responsive autoWidth striped>
+            <MDBTableHead columns={data_checkboxes.columns} />
+            <MDBTableBody rows={data_checkboxes.rows} />
+        </MDBTable>
     );
 };
 
-export default DatatablePage;
+export default TablePage;
