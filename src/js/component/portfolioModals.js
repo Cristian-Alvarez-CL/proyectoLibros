@@ -10,173 +10,221 @@ function PortfolioModal() {
     return(
         <section>
             <div className="portfolio-modal modal fade" id="portfolioModal1" tabIndex="-1" role="dialog" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="close-modal" data-dismiss="modal"><img src={iconClose} alt="Close modal" /></div>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="modal-body">
-                                    <h2 className="text-uppercase">Project Name</h2>
-                                    <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img className="img-fluid d-block mx-auto" src={fotoPortfolioModals1} alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul className="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Threads</li>
-                                        <li>Category: Illustration</li>
-                                    </ul>
-                                    <button className="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i className="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="close-modal" data-dismiss="modal">
+                            <img src={iconClose} alt="Close modal" />
+                        </div>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-8">
+                                    <div className="modal-body">
+                                        <h2 className="text-uppercase">Project Name</h2>
+                                        <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <div className="col-8 d-flex mw-100">
+                                            <img className="col-4 ml-5 img-fluid d-flex justify-content-start" src={fotoPortfolioModals1} alt="" />
+                                            <div className="col-6 d-flex justify-content-center">
+                                                <ul className="list-inline text-center mt-3 ml-3">
+                                                    <li>Autor: Un autor</li>
+                                                    <li className="mt-3">Editorial: Una Editorial</li>
+                                                    <li className="mt-3">Categoria: Una Categoria</li>
+                                                    <li className="mt-3">Nivel: Un nivel</li>
+                                                    <li className="mt-3">Estado: Un estado</li>
+                                                    <li className="mt-3">Precio / Permuta: Un Precio y Permuta</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button className="btn btn-primary" data-dismiss="modal" type="button">
+                                            <i className="fas fa-times mr-1"></i>
+                                                Close Project
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="portfolio-modal modal fade" id="portfolioModal2" tabIndex="-1" role="dialog" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="close-modal" data-dismiss="modal"><img src={iconClose}alt="Close modal" /></div>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="modal-body">
-                                    <h2 className="text-uppercase">Project Name</h2>
-                                    <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img className="img-fluid d-block mx-auto" src={fotoPortfolioModals2} alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul className="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Explore</li>
-                                        <li>Category: Graphic Design</li>
-                                    </ul>
-                                    <button className="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i className="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
+            <div className="portfolio-modal modal fade" id="portfolioModal2" tabIndex="-1" role="dialog" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="close-modal" data-dismiss="modal">
+                            <img src={iconClose} alt="Close modal" />
+                        </div>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-8">
+                                    <div className="modal-body">
+                                        <h2 className="text-uppercase">Project Name</h2>
+                                        <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <div className="col-8 d-flex mw-100">
+                                            <img className="col-4 ml-5 img-fluid d-flex justify-content-start" src={fotoPortfolioModals2} alt="" />
+                                            <div className="col-6 d-flex justify-content-center">
+                                                <ul className="list-inline text-center mt-3 ml-3">
+                                                    <li>Autor: Un autor</li>
+                                                    <li className="mt-3">Editorial: Una Editorial</li>
+                                                    <li className="mt-3">Categoria: Una Categoria</li>
+                                                    <li className="mt-3">Nivel: Un nivel</li>
+                                                    <li className="mt-3">Estado: Un estado</li>
+                                                    <li className="mt-3">Precio / Permuta: Un Precio y Permuta</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button className="btn btn-primary" data-dismiss="modal" type="button">
+                                            <i className="fas fa-times mr-1"></i>
+                                                Close Project
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="portfolio-modal modal fade" id="portfolioModal3" tabIndex="-1" role="dialog" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="close-modal" data-dismiss="modal"><img src={iconClose}alt="Close modal" /></div>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="modal-body">
-                                    <h2 className="text-uppercase">Project Name</h2>
-                                    <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img className="img-fluid d-block mx-auto" src={fotoPortfolioModals3} alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul className="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Finish</li>
-                                        <li>Category: Identity</li>
-                                    </ul>
-                                    <button className="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i className="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
+            <div className="portfolio-modal modal fade" id="portfolioModal3" tabIndex="-1" role="dialog" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="close-modal" data-dismiss="modal">
+                            <img src={iconClose} alt="Close modal" />
+                        </div>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-8">
+                                    <div className="modal-body">
+                                        <h2 className="text-uppercase">Project Name</h2>
+                                        <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <div className="col-8 d-flex mw-100">
+                                            <img className="col-4 ml-5 img-fluid d-flex justify-content-start" src={fotoPortfolioModals3} alt="" />
+                                            <div className="col-6 d-flex justify-content-center">
+                                                <ul className="list-inline text-center mt-3 ml-3">
+                                                    <li>Autor: Un autor</li>
+                                                    <li className="mt-3">Editorial: Una Editorial</li>
+                                                    <li className="mt-3">Categoria: Una Categoria</li>
+                                                    <li className="mt-3">Nivel: Un nivel</li>
+                                                    <li className="mt-3">Estado: Un estado</li>
+                                                    <li className="mt-3">Precio / Permuta: Un Precio y Permuta</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button className="btn btn-primary" data-dismiss="modal" type="button">
+                                            <i className="fas fa-times mr-1"></i>
+                                                Close Project
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="portfolio-modal modal fade" id="portfolioModal4" tabIndex="-1" role="dialog" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="close-modal" data-dismiss="modal"><img src={iconClose}alt="Close modal" /></div>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="modal-body">
-                                    <h2 className="text-uppercase">Project Name</h2>
-                                    <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img className="img-fluid d-block mx-auto" src={fotoPortfolioModals4} alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul className="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Lines</li>
-                                        <li>Category: Branding</li>
-                                    </ul>
-                                    <button className="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i className="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
+            <div className="portfolio-modal modal fade" id="portfolioModal4" tabIndex="-1" role="dialog" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="close-modal" data-dismiss="modal">
+                            <img src={iconClose} alt="Close modal" />
+                        </div>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-8">
+                                    <div className="modal-body">
+                                        <h2 className="text-uppercase">Project Name</h2>
+                                        <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <div className="col-8 d-flex mw-100">
+                                            <img className="col-4 ml-5 img-fluid d-flex justify-content-start" src={fotoPortfolioModals4} alt="" />
+                                            <div className="col-6 d-flex justify-content-center">
+                                                <ul className="list-inline text-center mt-3 ml-3">
+                                                    <li>Autor: Un autor</li>
+                                                    <li className="mt-3">Editorial: Una Editorial</li>
+                                                    <li className="mt-3">Categoria: Una Categoria</li>
+                                                    <li className="mt-3">Nivel: Un nivel</li>
+                                                    <li className="mt-3">Estado: Un estado</li>
+                                                    <li className="mt-3">Precio / Permuta: Un Precio y Permuta</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button className="btn btn-primary" data-dismiss="modal" type="button">
+                                            <i className="fas fa-times mr-1"></i>
+                                                Close Project
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="portfolio-modal modal fade" id="portfolioModal5" tabIndex="-1" role="dialog" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="close-modal" data-dismiss="modal"><img src={iconClose}alt="Close modal" /></div>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="modal-body">
-                                    <h2 className="text-uppercase">Project Name</h2>
-                                    <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img className="img-fluid d-block mx-auto" src={fotoPortfolioModals5} alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul className="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Southwest</li>
-                                        <li>Category: Website Design</li>
-                                    </ul>
-                                    <button className="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i className="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
+            <div className="portfolio-modal modal fade" id="portfolioModal5" tabIndex="-1" role="dialog" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="close-modal" data-dismiss="modal">
+                            <img src={iconClose} alt="Close modal" />
+                        </div>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-8">
+                                    <div className="modal-body">
+                                        <h2 className="text-uppercase">Project Name</h2>
+                                        <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <div className="col-8 d-flex mw-100">
+                                            <img className="col-4 ml-5 img-fluid d-flex justify-content-start" src={fotoPortfolioModals5} alt="" />
+                                            <div className="col-6 d-flex justify-content-center">
+                                                <ul className="list-inline text-center mt-3 ml-3">
+                                                    <li>Autor: Un autor</li>
+                                                    <li className="mt-3">Editorial: Una Editorial</li>
+                                                    <li className="mt-3">Categoria: Una Categoria</li>
+                                                    <li className="mt-3">Nivel: Un nivel</li>
+                                                    <li className="mt-3">Estado: Un estado</li>
+                                                    <li className="mt-3">Precio / Permuta: Un Precio y Permuta</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button className="btn btn-primary" data-dismiss="modal" type="button">
+                                            <i className="fas fa-times mr-1"></i>
+                                                Close Project
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="portfolio-modal modal fade" id="portfolioModal6" tabIndex="-1" role="dialog" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                    <div className="close-modal" data-dismiss="modal"><img src={iconClose}alt="Close modal" /></div>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="modal-body">
-                                    <h2 className="text-uppercase">Project Name</h2>
-                                    <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img className="img-fluid d-block mx-auto" src={fotoPortfolioModals6} alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul className="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Window</li>
-                                        <li>Category: Photography</li>
-                                    </ul>
-                                    <button className="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i className="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
+            <div className="portfolio-modal modal fade" id="portfolioModal6" tabIndex="-1" role="dialog" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="close-modal" data-dismiss="modal">
+                            <img src={iconClose} alt="Close modal" />
+                        </div>
+                        <div className="container">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-8">
+                                    <div className="modal-body">
+                                        <h2 className="text-uppercase">Project Name</h2>
+                                        <p className="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <div className="col-8 d-flex mw-100">
+                                            <img className="col-4 ml-5 img-fluid d-flex justify-content-start" src={fotoPortfolioModals6} alt="" />
+                                            <div className="col-6 d-flex justify-content-center">
+                                                <ul className="list-inline text-center mt-3 ml-3">
+                                                    <li>Autor: Un autor</li>
+                                                    <li className="mt-3">Editorial: Una Editorial</li>
+                                                    <li className="mt-3">Categoria: Una Categoria</li>
+                                                    <li className="mt-3">Nivel: Un nivel</li>
+                                                    <li className="mt-3">Estado: Un estado</li>
+                                                    <li className="mt-3">Precio / Permuta: Un Precio y Permuta</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button className="btn btn-primary" data-dismiss="modal" type="button">
+                                            <i className="fas fa-times mr-1"></i>
+                                                Close Project
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
     );
 }

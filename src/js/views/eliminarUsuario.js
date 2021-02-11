@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../styles/login.css";
 import TablaUsuario from "../component/tablaUsuario";
 import Navbar from "../component/navbar";

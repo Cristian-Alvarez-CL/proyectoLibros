@@ -26,6 +26,9 @@ function Busqueda() {
                             <input type="text" className="form-control" placeholder="Nivel"/>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-around mt-4">
+                        <button type="button" class="btn btn-secondary">Buscar</button>
+                    </div>
                 </form>
             </div>
         </section>
