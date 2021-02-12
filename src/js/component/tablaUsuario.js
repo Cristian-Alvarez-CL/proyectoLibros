@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDBInput, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
+
 const TablePage = (props) => {
     const data_checkboxes = {
         columns: [
