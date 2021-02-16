@@ -1,9 +1,7 @@
 import React from "react";
-import '../../styles/agregarLibro.css';
+import "../../styles/agregarLibro.css";
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
-
-
 
 function ModificarLibro() {
     return (
@@ -207,22 +205,14 @@ function ModificarLibro() {
                                         <span className="font-weight-bold">Modificar</span>
                                     </button>
                                 </div>
-
-
-
-
-
-
-
-
                             </form>
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
             <Footer></Footer>
         </>
-    )
+    );
 }
 
 export default ModificarLibro;
