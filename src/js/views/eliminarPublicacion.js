@@ -1,10 +1,10 @@
 import React from "react";
 import "../../styles/login.css";
-import TablaInformacion from "../component/tablaInfo";
-import Navbar from "../component/navbar";
-import Footer from "../component/footer";
+import TablaInformacion from "../components/TablaInfo";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-const eliminarPublicacion = () => {
+const EliminarPublicacion = () => {
   return (
     <>
     <Navbar/>
@@ -63,4 +63,4 @@ const eliminarPublicacion = () => {
   );
 };
 
-export default eliminarPublicacion;
+export default EliminarPublicacion;
