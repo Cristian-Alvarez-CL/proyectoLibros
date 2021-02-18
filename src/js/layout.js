@@ -1,18 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./views/Home";
-import AgregarLibro from "./views/AgregarLibro";
-import EliminarPublicacion from "./views/EliminarPublicacion";
-import ModificarLibro from "./views/ModificarLibro";
-import EliminarUsuario from "./views/EliminarUsuario";
-import HomePrivate from "./views/HomePrivate";
+import Home from "./views/home";
+import AgregarLibro from "./views/agregarLibro";
+import EliminarPublicacion from "./views/eliminarPublicacion";
+import ModificarLibro from "./views/modificarLibro";
+import EliminarUsuario from "./views/eliminarUsuario";
+import HomePrivate from "./views/homePrivate";
 import injectStore from "./store/appContext";
-import login from "./views/Login";
-import createAccount from "./views/CreateAccount";
-import passwordRecover from "./views/PasswordRecover";
-import userEdit from "./views/UserEdit";
-import publicacion from "./views/Publicacion";
-import homeAdmin from "./views/HomeAdmin";
+import login from "./views/login";
+import createAccount from "./views/createAccount";
+import passwordRecover from "./views/passwordRecover";
+import userEdit from "./views/userEdit";
+import publicacion from "./views/publicacion";
+import homeAdmin from "./views/homeAdmin";
 import "../styles/index.css";
 
 export class Layout extends React.Component {
