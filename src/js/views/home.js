@@ -1,30 +1,30 @@
 
 import '../../styles/styles.css';
-import Navbar from '../component/navbar';
-import Masthead from '../component/masthead';
-import Services from '../component/services';
-import PortfolioGrid from '../component/portfoliogrid';
-import About from '../component/about';
-import Teams from '../component/team';
-import Clients from '../component/clients';
-import Contact from '../component/contact';
-import Footer from '../component/footer';
-import PortfolioModals from '../component/portfolioModals';
+import Navbar from '../components/Navbar';
+import Masthead from '../components/Masthead';
+import Services from '../components/Services';
+import PortfolioGrid from '../components/Portfoliogrid';
+import About from '../components/About';
+import Teams from '../components/Team';
+import Clients from '../components/Clients';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import PortfolioModals from '../components/PortfolioModals';
 
 
 function Home() {
   return (
     <div>
       <Navbar contacto='Contacto'/>
-      <Masthead></Masthead>
-      <Services></Services>
-      <PortfolioGrid></PortfolioGrid>
-      <About></About>
-      <Teams></Teams>
-      <Clients></Clients>
-      <Contact></Contact>
-      <Footer></Footer>
-      <PortfolioModals></PortfolioModals>
+      <Masthead />
+      <Services />
+      <PortfolioGrid />
+      <About />
+      <Teams />
+      <Clients />
+      <Contact />
+      <Footer />
+      <PortfolioModals />
     </div>
   );
 }
