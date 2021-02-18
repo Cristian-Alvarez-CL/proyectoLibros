@@ -1,8 +1,8 @@
 import React from "react";
 import "../../styles/login.css";
-import TablaInformacion from "../components/TablaInfo";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import TablaInformacion from "../components/tablaInfo";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const EliminarPublicacion = () => {
   return (

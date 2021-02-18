@@ -1,15 +1,15 @@
 
 import '../../styles/styles.css';
-import Navbar from '../components/Navbar';
-import Masthead from '../components/Masthead';
-import Services from '../components/Services';
-import PortfolioGrid from '../components/Portfoliogrid';
-import About from '../components/About';
-import Teams from '../components/Team';
-import Clients from '../components/Clients';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-import PortfolioModals from '../components/PortfolioModals';
+import Navbar from '../components/navbar';
+import Masthead from '../components/masthead';
+import Services from '../components/services';
+import PortfolioGrid from '../components/portfoliogrid';
+import About from '../components/about';
+import Teams from '../components/team';
+import Clients from '../components/clients';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
+import PortfolioModals from '../components/portfolioModals';
 
 
 function Home() {

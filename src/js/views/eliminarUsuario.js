@@ -1,8 +1,8 @@
 import React from "react";
 import "../../styles/login.css";
-import TablaUsuario from "../components/TablaUsuario";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import TablaUsuario from "../components/tablaUsuario";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const EliminarUsuario = () => {
   return (

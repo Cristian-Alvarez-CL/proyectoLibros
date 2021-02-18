@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "../../styles/agregarLibro.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 import { Context } from "../store/appContext";
 
 function AgregarLibro() {
@@ -22,12 +22,14 @@ function AgregarLibro() {
     precio: "",
     comentario: "",
   });
+
   const handleChange = (e) => {
     setState({
       ...state, //clona la info del state
       [e.target.name]: e.target.value, //agrega el nuevo valor al state
     });
   };
+  
   const handleSubmit = (e) => {
     //obtener la info del botón
     e.preventDefault();
@@ -62,6 +64,7 @@ function AgregarLibro() {
                       placeholder="Título del Libro"
                       className="form-control bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+
                     />
                   </div>
                   <label for="staticEmail" class="col-sm-2 col-form-label">
