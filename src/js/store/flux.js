@@ -1,7 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
-            libros: [] 
+            libros: [],
+            clientes: [], 
         },
         actions: {
             getLibro: (libro) => {        //estoy a la espera del https para el fetch

@@ -4,14 +4,43 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 
 const CreateAccount = () => {
+  const [cliente, setCliente] = useState([])
   const [usuario, setUsuario] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    password: "",
-    passwordConfirmation: "",
-    direction: "",
+    nombreCompleto: "",
+    correo: "",
+    telefono: "",
+    contrasenia: "",
+    confirmContrasenia: "",
+    comuna: "",
+    direccion: "",
+    direccionNumero: ""
   });
+
+  const handleChange = (e) => {
+    setUsuario({
+      ...usuario, 
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const { nombreCompleto, correo, telefono, contrasenia, confirmContrasenia, comuna, direccion, direccionNumero } = usuario;
+
+  const submitUsuario = (e) => {
+    e.preventDefault();
+  
+    setCliente([...cliente, usuario])
+
+    setUsuario({
+      nombreCompleto: "",
+      correo: "",
+      telefono: "",
+      contrasenia: "",
+      confirmContrasenia: "",
+      comuna: "",
+      direccion: "",
+      direccionNumero: ""
+    });
+  };
 
   return (
     <>
@@ -31,7 +60,7 @@ const CreateAccount = () => {
             </p>
           </div>
           <div className="col-md-7 col-lg-6 mt-5 ml-auto">
-            <form action="#">
+            <form onSubmit={submitUsuario}>
               <div className="row">
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
@@ -40,11 +69,13 @@ const CreateAccount = () => {
                     </span>
                   </div>
                   <input
-                    id="fullName"
+                    id="nombreCompleto"
                     type="text"
-                    name="fullName"
+                    name="nombreCompleto"
                     placeholder="Nombre Completo"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={nombreCompleto}
                   />
                 </div>
                 <div className="input-group col-lg-12 mb-4">
@@ -54,11 +85,13 @@ const CreateAccount = () => {
                     </span>
                   </div>
                   <input
-                    id="email"
+                    id="correo"
                     type="email"
-                    name="email"
+                    name="correo"
                     placeholder="Correo Electronico"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={correo}
                   />
                 </div>
                 <div className="input-group col-lg-12 mb-4">
@@ -68,11 +101,13 @@ const CreateAccount = () => {
                     </span>
                   </div>
                   <input
-                    id="phone"
+                    id="telefono"
                     type="tel"
-                    name="phone"
-                    placeholder="Numero de Teléfono "
+                    name="telefono"
+                    placeholder="Numero de Teléfono +56900000000"
                     className="form-control bg-white border-md border-left-0 pl-3"
+                    onChange={handleChange}
+                    value={telefono}
                   />
                 </div>
                 <div className="input-group col-lg-6 mb-4">
@@ -82,11 +117,13 @@ const CreateAccount = () => {
                     </span>
                   </div>
                   <input
-                    id="password"
+                    id="contrasenia"
                     type="password"
-                    name="password"
+                    name="contrasenia"
                     placeholder="Contraseña"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={contrasenia}
                   />
                 </div>
                 <div className="input-group col-lg-6 mb-4">
@@ -96,21 +133,21 @@ const CreateAccount = () => {
                     </span>
                   </div>
                   <input
-                    id="passwordConfirmation"
+                    id="confirmContrasenia"
                     type="password"
-                    name="passwordConfirmation"
+                    name="confirmContrasenia"
                     placeholder="Confirmar Contraseña"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
                   />
                 </div>
-
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i className="fas fa-map-marked-alt text-muted"></i>
                     </span>
                   </div>
-                  <select class="custom-select form-control bg-white border-left-0 border-md" id="comuna">
+                  <select class="custom-select form-control bg-white border-left-0 border-md" id="comuna" name="comuna" value={comuna} onChange={handleChange}>
                     <option selected>Dirección: Comuna</option>
                     <option value="Cerrillos">Cerrillos</option>
                     <option value="Cerro Navia">Cerro Navia</option>
@@ -159,6 +196,8 @@ const CreateAccount = () => {
                     name="direccion"
                     placeholder="Calle Arturo Prat 1234"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={direccion}
                   />
                 </div>
                 <div className="input-group col-lg-12 mb-4">
@@ -170,15 +209,15 @@ const CreateAccount = () => {
                   <input
                     id="direccionNumero"
                     type="text"
-                    name="directionNumero"
+                    name="direccionNumero"
                     placeholder="Casa 1234 / Depto 1507"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={direccionNumero}
                   />
                 </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
-                  <a href="#" className="btn btn-primary btn-block py-2">
-                    <span className="font-weight-bold">Crear Cuenta</span>
-                  </a>
+                  <input type="submit" className="btn btn-primary btn-block" value="Crear Cuenta" onSubmit={submitUsuario}/>
                 </div>
                 <div className="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
                   <div className="border-bottom w-100 ml-5"></div>
