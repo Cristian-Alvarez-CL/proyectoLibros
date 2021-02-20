@@ -217,7 +217,7 @@ const CreateAccount = () => {
                   />
                 </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
-                  <input type="submit" className="btn btn-primary btn-block" value="Crear Cuenta" onSubmit={submitUsuario}/>
+                  <input type="button" className="btn btn-primary btn-block font-weight-bold" value="Crear Cuenta" onSubmit={submitUsuario}/>
                 </div>
                 <div className="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
                   <div className="border-bottom w-100 ml-5"></div>

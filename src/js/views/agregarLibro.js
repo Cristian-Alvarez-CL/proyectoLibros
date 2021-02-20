@@ -286,7 +286,7 @@ function AgregarLibro() {
                   </div>
                 </div>
                 <div className="form-group col-lg-5 mx-auto">
-                  <input type="submit" className="btn btn-primary btn-block" value="Publicar Libro" />
+                  <input type="button" className="btn btn-primary btn-block font-weight-bold" value="Publicar Libro" />
                 </div>
               </form>
             </div>

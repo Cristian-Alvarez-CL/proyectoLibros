@@ -7,7 +7,7 @@ function ModificarLibro() {
   return (
     <>
       <Navbar />
-      <div className="container ">
+      <div className="container mt-5">
         <div className="py-5 text-center ">
           <div className="col-md-12 pr-lg-5 mb-5 mb-md-0">
             <h1>Editar Publicación</h1>

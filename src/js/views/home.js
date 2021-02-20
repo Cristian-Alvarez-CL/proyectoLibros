@@ -19,10 +19,7 @@ function Home() {
       <Masthead />
       <Services />
       <PortfolioGrid />
-      <About />
       <Teams />
-      <Clients />
-      <Contact />
       <Footer />
       <PortfolioModals />
     </div>

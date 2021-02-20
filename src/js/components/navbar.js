@@ -38,18 +38,8 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#about">
-                Acerca de
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="#team">
                 Equipo
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#contact">
-                Contacto
               </a>
             </li>
             <li className="nav-item">
