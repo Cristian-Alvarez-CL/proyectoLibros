@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import "../../styles/agregarLibro.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { Context } from "../store/appContext";
 
-function AgregarLibro() {
+function AgregarLibro( props ) {
 
-  const [publicacion, setPublicacion] = useState([])
+  const { store, actions } = useContext(Context)
 
-  const [libro, setLibro] = useState({
+  const [ libro, setLibro ] = useState({
     titulo: "",
     autor: "",
     editorial: "",
@@ -29,11 +31,10 @@ function AgregarLibro() {
 
   const { titulo, autor, editorial, nivel, asignatura, estado, condicion, tipo, precio, comentario } = libro;
   
-  
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setPublicacion([...publicacion, libro])
+    actions.setPublicacion( libro, props.history )
 
     setLibro({
       titulo: "",
@@ -286,7 +287,7 @@ function AgregarLibro() {
                   </div>
                 </div>
                 <div className="form-group col-lg-5 mx-auto">
-                  <input type="button" className="btn btn-primary btn-block font-weight-bold" value="Publicar Libro" />
+                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Publicar Libro" />
                 </div>
               </form>
             </div>

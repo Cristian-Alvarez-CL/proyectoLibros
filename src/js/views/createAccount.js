@@ -1,10 +1,13 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { Context } from "../store/appContext";
 
-const CreateAccount = () => {
-  const [cliente, setCliente] = useState([])
+const CreateAccount = ( props ) => {
+  const { store, actions } = useContext(Context)
+
   const [usuario, setUsuario] = useState({
     nombreCompleto: "",
     correo: "",
@@ -27,8 +30,8 @@ const CreateAccount = () => {
 
   const submitUsuario = (e) => {
     e.preventDefault();
-  
-    setCliente([...cliente, usuario])
+
+    actions.setCliente( usuario, props.history )
 
     setUsuario({
       nombreCompleto: "",
@@ -55,8 +58,7 @@ const CreateAccount = () => {
             />
             <h1>Crea tu cuenta</h1>
             <p className="font-italic text-muted mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              non.
+              Crea tu cuenta para que asi puedas vender o permutar esos libros que no necesitas y deseas cambiar 
             </p>
           </div>
           <div className="col-md-7 col-lg-6 mt-5 ml-auto">
@@ -217,7 +219,7 @@ const CreateAccount = () => {
                   />
                 </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
-                  <input type="button" className="btn btn-primary btn-block font-weight-bold" value="Crear Cuenta" onSubmit={submitUsuario}/>
+                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Crear Cuenta" onSubmit={submitUsuario}/>
                 </div>
                 <div className="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
                   <div className="border-bottom w-100 ml-5"></div>
