@@ -22,6 +22,8 @@ function AgregarLibro( props ) {
     comentario: "",
   });
 
+  const [error, setError] = useState(false)
+
   const handleChange = (e) => {
     setLibro({
       ...libro, //clona la info del state
@@ -33,6 +35,24 @@ function AgregarLibro( props ) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // validar 
+    if (
+      titulo.trim() === "" ||
+      autor.trim() === "" ||
+      editorial.trim() === "" ||
+      nivel.trim() === "" ||
+      asignatura.trim() === "" ||
+      estado.trim() === "" ||
+      condicion.trim() === "" ||
+      tipo.trim() === "" ||
+      precio.trim() === "" ||
+      comentario.trim() === ""
+    ) {
+      setError(true);
+      return;
+    }
+    setError(false);
 
     actions.setPublicacion( libro, props.history )
 
@@ -210,7 +230,7 @@ function AgregarLibro( props ) {
                       <option value="copia">Copia</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  {/* <label for="staticEmail" class="col-sm-2 col-form-label">
                     Fotos / Imágenes
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -227,7 +247,7 @@ function AgregarLibro( props ) {
                     <label className="custom-file-label" for="customFile">
                       Seleccionar Imagen
                     </label>
-                  </div>
+                  </div> */}
                   <label htmlFor="tipo" class="col-sm-2 col-form-label">
                     Tipo de Publicación
                   </label>
@@ -289,6 +309,11 @@ function AgregarLibro( props ) {
                 <div className="form-group col-lg-5 mx-auto">
                   <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Publicar Libro" />
                 </div>
+                { error ? ( <div className="alert alert-danger align-center text-center" role="alert">
+                      Todos los campos son obligatorios
+                      </div> 
+                      ) : null
+                }
               </form>
             </div>
           </div>

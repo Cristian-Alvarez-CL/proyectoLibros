@@ -19,6 +19,8 @@ const CreateAccount = ( props ) => {
     direccionNumero: ""
   });
 
+  const [error, setError] = useState(false);
+
   const handleChange = (e) => {
     setUsuario({
       ...usuario, 
@@ -30,6 +32,21 @@ const CreateAccount = ( props ) => {
 
   const submitUsuario = (e) => {
     e.preventDefault();
+
+    if (
+      nombreCompleto.trim() === "" ||
+      correo.trim() === "" ||
+      telefono.trim() === "" ||
+      contrasenia.trim() === "" ||
+      confirmContrasenia.trim() === "" ||
+      comuna.trim() === "" ||
+      direccion.trim() === "" ||
+      direccionNumero.trim() === ""
+      ) {
+      setError(true);
+      return;
+    }
+    setError(false);
 
     actions.setCliente( usuario, props.history )
 
@@ -48,9 +65,14 @@ const CreateAccount = ( props ) => {
   return (
     <>
       <Navbar />
-      <div className="container mt-5">
-        <div className="row mt-4 align-items-center">
+      <div className="container pt-5">
+        <div className="row align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            { error ? ( <div className="alert alert-danger m-5 p-5 align-center text-center" role="alert">
+                    Todos los campos son obligatorios
+                    </div> 
+                    ) : null
+            }
             <img
               src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
               alt="hola"
