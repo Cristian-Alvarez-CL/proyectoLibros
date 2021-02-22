@@ -14,6 +14,7 @@ import userEdit from "./views/userEdit";
 import publicacion from "./views/publicacion";
 import homeAdmin from "./views/homeAdmin";
 import "../styles/index.css";
+import Perfil from "./views/perfil";
 
 export class Layout extends React.Component {
 	render() {
@@ -23,7 +24,7 @@ export class Layout extends React.Component {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/detail/:id" name="detail" component={Home} />
-						<Route exact path="/planet_detail/:id" name="detail" component={Home} />
+						<Route exact path="/perfil" component={Perfil} />
 						<Route exact path="/agregarLibro" component={AgregarLibro} />
 						<Route exact path="/eliminarUsuario" component={EliminarUsuario} />
 						<Route exact path="/eliminarPublicacion" component={EliminarPublicacion} />

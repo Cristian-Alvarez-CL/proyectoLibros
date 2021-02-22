@@ -7,8 +7,8 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="content box-sizing">
-        <div className="container margentop">
+      <div className="content box-sizing mt-5">
+        <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 contents">
               <div className="row justify-content-center">
@@ -24,19 +24,21 @@ const Login = () => {
                     </div>
                     <form action="#" method="post" onChange={() => {}}>
                       <div className="form-group last mb-4">
-                        <label for="email">Email</label>
                         <input
                           type="email"
                           className="form-control"
-                          id="email"
+                          placeholder="Correo Electroníco"
+                          id="correo"
+                          name="correo"
                         />
                       </div>
                       <div className="form-group last mb-4">
-                        <label for="password">Password</label>
                         <input
                           type="password"
                           className="form-control"
-                          id="password"
+                          name="contrasenia"
+                          placeholder="Contraseña"
+                          id="contrasenia"
                         />
                       </div>
                       <div className="d-flex mb-5 align-items-center">
@@ -51,13 +53,13 @@ const Login = () => {
                         </label>
                         <span className="ml-auto">
                           <a href="#" className="forgot-pass">
-                            Forgot Password
+                            Olvidaste tu contraseña?
                           </a>
                         </span>
                       </div>
                       <input
                         type="submit"
-                        value="Log In"
+                        value="Ingresar"
                         className="btn btn-pill text-white btn-block btn-primary"
                       />
                     </form>

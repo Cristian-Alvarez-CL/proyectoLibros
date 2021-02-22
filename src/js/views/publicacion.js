@@ -1,104 +1,111 @@
 import React from "react";
+import { useState } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 
 function Publicacion() {
+
+  const [mensaje, setMensaje] = useState({
+
+    
+  })
+
   return (
     <>
       <Navbar />
       <div className="container mt-5">
-        <h2 className="margentop">Nombre de la publicacion</h2>
+        <h2 className="margentop mt-5">Nombre de la publicacion</h2>
         <hr />
         <div className="row align-items-center">
           <div className="col-md-4 pr-lg-4 mb-5 mb-md-0">
             <div
               id="carouselExampleControls"
-              class="carousel slide"
+              className="carousel slide"
               data-ride="carousel"
             >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
                   <img
                     src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
-                    class="d-block w-100"
+                    className="d-block w-100"
                     alt="..."
                   />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                   <img
                     src="https://image.freepik.com/free-photo/front-view-composition-with-different-books_23-2148851051.jpg"
-                    class="d-block w-100"
+                    className="d-block w-100"
                     alt="..."
                   />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                   <img
                     src="https://image.freepik.com/free-photo/creative-assortment-with-different-books_23-2148851023.jpg"
-                    class="d-block w-100"
+                    className="d-block w-100"
                     alt="..."
                   />
                 </div>
               </div>
               <a
-                class="carousel-control-prev"
+                className="carousel-control-prev"
                 href="#carouselExampleControls"
                 role="button"
                 data-slide="prev"
               >
                 <span
-                  class="carousel-control-prev-icon"
+                  className="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="sr-only">Previous</span>
+                <span className="sr-only">Previous</span>
               </a>
               <a
-                class="carousel-control-next"
+                className="carousel-control-next"
                 href="#carouselExampleControls"
                 role="button"
                 data-slide="next"
               >
                 <span
-                  class="carousel-control-next-icon"
+                  className="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="sr-only">Next</span>
+                <span className="sr-only">Next</span>
               </a>
             </div>
           </div>
           <div className="col-md-8 col-lg-8 mt-5 ml-auto">
             <div className="pubboder">
-              <h2>
-                Titulo: <p>Tic en la Educación</p>
-              </h2>
-              <h2>
-                Autor: <p>Chirinos armas</p>
-              </h2>
-              <h2>
-                Editorial: <p>Marcombo</p>
-              </h2>
-              <h2>
-                Categoria: <p>Informatica</p>
-              </h2>
-              <h2>
-                Nivel: <p>2do basico</p>
-              </h2>
-              <h2>
-                Colegio: <p>Arturo Prat</p>
-              </h2>
-              <h2>
-                Estado: <p>Nuevo</p>
-              </h2>
-              <h2>
-                Precio / Permuta:<p>25.000$</p>
-              </h2>
-              <h2>
+              <h5 className="m-0 p-0">
+                Titulo: <p className="m-0 p-0">Tic en la Educación</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Autor: <p className="m-0 p-0">Chirinos armas</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Editorial: <p className="m-0 p-0">Marcombo</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Categoria: <p className="m-0 p-0">Informatica</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Nivel: <p className="m-0 p-0">2do basico</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Colegio: <p className="m-0 p-0">Arturo Prat</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Estado: <p className="m-0 p-0">Nuevo</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Precio / Permuta:<p className="m-0 p-0">25.000$</p>
+              </h5>
+              <h5 className="m-0 p-0">
                 Comentarios:
-                <p>
+                <p className="m-0 p-0">
                   Esto es una prueba para ver como se ve el comentario del libro
                   no hacer caso literal a lo que dice el mismo
                 </p>
-              </h2>
-              <div className="form-group col-lg-12 mb-0">
+              </h5>
+              <div className="form-group col-lg-12 mt-2">
                 <a href="#" className="btn btn-primary btn-block py-2">
                   <span className="font-weight-bold">Comprar / Permuta</span>
                 </a>
@@ -106,28 +113,47 @@ function Publicacion() {
             </div>
           </div>
         </div>
-        <div className="mt-4">
-          <label>Preguntas:</label>
-          <p>Hola muy buenas tardes aun tiene el libro disponible?</p>
-          <div class="input-group mb-3">
+        <form className="mt-5 border">
+          <div className="form-group container-fluid">
+            <h3 className="mt-2 text-center">Comunicate conmigo</h3>
+            <label for="nombreCompleto">Nombre completo</label>
             <input
               type="text"
-              class="form-control"
-              placeholder="Realice su pregunta"
-              aria-label="Recipient's username"
-              aria-describedby="button-addon2"
+              className="form-control"
+              id="nombreCompleto"
+              placeholder="Ana Diaz"
             />
-            <div class="input-group-append">
-              <button
-                class="btn btn-primary"
-                type="button"
-                id="button-addon2"
-              >
-                Preguntar
-              </button>
-            </div>
+            <label className="mt-1" for="correo">
+              Direccion de Correo Electroníco
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="correo"
+              placeholder="name@example.com"
+            />
+            <label className="mt-1" for="telefono">
+              Teléfono
+            </label>
+            <input
+              type="tel"
+              className="form-control"
+              id="telefono"
+              placeholder="+56900000000"
+            />
+            <label for="comentario">Comentarios</label>
+            <textarea
+              className="form-control"
+              id="comentario"
+              rows="3"
+            ></textarea>
+            <input
+              className="btn btn-primary btn-block"
+              type="button"
+              value="Enviar"
+            />
           </div>
-        </div>
+        </form>
       </div>
       <Footer />
     </>

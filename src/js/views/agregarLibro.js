@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import { useContext } from "react";
 import "../../styles/agregarLibro.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Context } from "../store/appContext";
 
-function AgregarLibro() {
-    
-  const { actions } = useContext(Context);
+function AgregarLibro( props ) {
 
-  const [state, setState] = useState({
-    //almacenar información del input
+  const { store, actions } = useContext(Context)
+
+  const [ libro, setLibro ] = useState({
     titulo: "",
     autor: "",
     editorial: "",
@@ -17,38 +17,71 @@ function AgregarLibro() {
     asignatura: "",
     estado: "",
     condicion: "",
-    fotos: "",
     tipo: "",
     precio: "",
     comentario: "",
   });
 
+  const [error, setError] = useState(false)
+
   const handleChange = (e) => {
-    setState({
-      ...state, //clona la info del state
+    setLibro({
+      ...libro, //clona la info del state
       [e.target.name]: e.target.value, //agrega el nuevo valor al state
     });
   };
+
+  const { titulo, autor, editorial, nivel, asignatura, estado, condicion, tipo, precio, comentario } = libro;
   
   const handleSubmit = (e) => {
-    //obtener la info del botón
     e.preventDefault();
-    actions.getLibro(state);
+    
+    // validar 
+    if (
+      titulo.trim() === "" ||
+      autor.trim() === "" ||
+      editorial.trim() === "" ||
+      nivel.trim() === "" ||
+      asignatura.trim() === "" ||
+      estado.trim() === "" ||
+      condicion.trim() === "" ||
+      tipo.trim() === "" ||
+      precio.trim() === "" ||
+      comentario.trim() === ""
+    ) {
+      setError(true);
+      return;
+    }
+    setError(false);
+
+    actions.setPublicacion( libro, props.history )
+
+    setLibro({
+      titulo: "",
+      autor: "",
+      editorial: "",
+      nivel: "",
+      asignatura: "",
+      estado: "",
+      condicion: "",
+      tipo: "",
+      precio: "",
+      comentario: "",
+    })
   };
 
   return (
     <>
       <Navbar />
-      <div className="container mg-100">
+      <div className="container mg-100 mt-5">
         <div className="py-5 text-center ">
-          {/* <!-- For Demo Purpose -->  */}
           <div className="col-md-12 pr-lg-5 mb-5 mb-md-0">
             <h1>AGREGAR UN LIBRO</h1>
           </div>
           <div className="jumbotron">
             <h3> Información de tu libro </h3>
             <div className="col-md-12 col-lg-10 mx-auto d-flex align-items-center my-4">
-              <form onSubmit={(e) => handleSubmit(e)} action="# ">
+              <form onSubmit={(e) => handleSubmit(e)}>
                 <div className="row ">
                   <label for="staticEmail" class="col-sm-2 col-form-label">
                     Título del Libro
@@ -64,7 +97,7 @@ function AgregarLibro() {
                       placeholder="Título del Libro"
                       className="form-control bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
-
+                      value={titulo}
                     />
                   </div>
                   <label for="staticEmail" class="col-sm-2 col-form-label">
@@ -73,19 +106,19 @@ function AgregarLibro() {
                   <div className="input-group col-lg-9 mb-4">
                     <div className="input-group-prepend">
                       <span className="input-group-text bg-white px-4 border-md border-right-0">
-                        {/* <i className="fa fa-user text-muted"></i> */}
                       </span>
                     </div>
                     <input
-                      id="lastName"
+                      id="autor"
                       type="text"
                       name="autor"
                       placeholder="Autor"
                       className="form-control bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={autor}
                     />
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  <label htmlFor="editorial" class="col-sm-2 col-form-label">
                     Editorial
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -93,15 +126,16 @@ function AgregarLibro() {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <input
-                      id="lastName"
+                      id="editorial"
                       type="text"
                       name="editorial"
                       placeholder="Editorial"
                       className="form-control bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={editorial}
                     />
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  <label htmlFor="nivel" class="col-sm-2 col-form-label">
                     Nivel
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -109,12 +143,13 @@ function AgregarLibro() {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <select
-                      id="job"
+                      id="nivel"
                       name="nivel"
                       className="form-control custom-select bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={nivel}
                     >
-                      <option value="Nivel">Nivel</option>
+                      <option selected>Selecciona el Nivel</option>
                       <option value="1° Basico">1° Básico</option>
                       <option value="2° Basico">2° Básico</option>
                       <option value="3° Basico">3° Básico</option>
@@ -129,7 +164,7 @@ function AgregarLibro() {
                       <option value="4° Medio">4° Medio</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  <label htmlFor="asignatura" class="col-sm-2 col-form-label">
                     Asignatura
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -137,31 +172,27 @@ function AgregarLibro() {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <select
-                      id="job"
+                      id="asignatura"
                       name="asignatura"
                       className="form-control custom-select bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={asignatura}
                     >
-                      <option value="Asignatura">Asignatura</option>
-                      <option value="Lectura Complementaria">
-                        Lectura Complementaria
-                      </option>
+                      <option selected>Asignatura</option>
+                      <option value="Lectura Complementaria">Lectura Complementaria</option>
                       <option value="Lenguaje">Lenguaje</option>
                       <option value="Ciencias">Ciencias</option>
                       <option value="Matematicas">Matemáticas</option>
                       <option value="Historia">Historia</option>
                       <option value="Religion">Religión</option>
                       <option value="Ingles">Inglés</option>
-                      <option value="Arte y Tecnologia">
-                        Arte y Tecnología
-                      </option>
+                      <option value="Arte y Tecnologia">Arte y Tecnología</option>
                       <option value="Musica">Música</option>
-                      <option value="Pack Completo de Asignaturas">
-                        Pack Completo de Asignaturas
-                      </option>
+                      <option value="Pack Completo de Asignaturas">Pack Completo de Asignaturas</option>
+                      <option value="Otra">Otra</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  <label htmlFor="estado" class="col-sm-2 col-form-label">
                     Estado del Libro
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -169,16 +200,18 @@ function AgregarLibro() {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <select
-                      id="job"
+                      id="estado"
                       name="estado"
                       className="form-control custom-select bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={estado}
                     >
+                      <option selected>Estado del Libro</option>
                       <option value="nuevo">Nuevo</option>
                       <option value="usado">Usado</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  <label htmlmFor="condicion" class="col-sm-2 col-form-label">
                     Condición del Libro
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -186,16 +219,18 @@ function AgregarLibro() {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <select
-                      id="job"
+                      id="condicion"
                       name="condicion"
                       className="form-control custom-select bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={condicion}
                     >
+                      <option selected>Condicion del Libro</option>
                       <option value="original">Original</option>
                       <option value="copia">Copia</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  {/* <label for="staticEmail" class="col-sm-2 col-form-label">
                     Fotos / Imágenes
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -203,18 +238,17 @@ function AgregarLibro() {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <input
-                      name="fotos"
+                      name="foto"
                       type="file"
                       className="custom-file-input"
-                      id="customFile"
-                      lang="es"
+                      id="foto"
                       onChange={(e) => handleChange(e)}
                     />
                     <label className="custom-file-label" for="customFile">
-                      Seleccionar Imágenes
+                      Seleccionar Imagen
                     </label>
-                  </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  </div> */}
+                  <label htmlFor="tipo" class="col-sm-2 col-form-label">
                     Tipo de Publicación
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -222,10 +256,11 @@ function AgregarLibro() {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <select
-                      id="publi"
+                      id="tipo"
                       name="tipo"
                       className="form-control custom-select bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={tipo}
                     >
                       <option value="tipo de publicacion">
                         Tipo de Publicación
@@ -235,7 +270,7 @@ function AgregarLibro() {
                       <option value="venta y permuta">Venta y Permuta</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  <label htmlFor="precio" class="col-sm-2 col-form-label">
                     Precio
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -249,9 +284,10 @@ function AgregarLibro() {
                       placeholder="Precio"
                       className="form-control bg-white border-left-0 border-md"
                       onChange={(e) => handleChange(e)}
+                      value={precio}
                     />
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                  <label htmlFor="comentario" class="col-sm-2 col-form-label">
                     Comentarios
                   </label>
                   <div className="input-group col-lg-9 mb-4">
@@ -261,21 +297,23 @@ function AgregarLibro() {
                       </span>
                     </div>
                     <textarea
+                      id="comentario"
                       name="comentario"
                       className="form-control"
                       aria-label="With textarea"
                       onChange={(e) => handleChange(e)}
+                      value={comentario}
                     ></textarea>
                   </div>
                 </div>
-                <div className="form-group col-lg-5 mx-auto mb-0">
-                  <button
-                    type="submit"
-                    className="btn btn-primary btn-block py-2"
-                  >
-                    <span className="font-weight-bold">Publicar Ahora</span>
-                  </button>
+                <div className="form-group col-lg-5 mx-auto">
+                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Publicar Libro" />
                 </div>
+                { error ? ( <div className="alert alert-danger align-center text-center" role="alert">
+                      Todos los campos son obligatorios
+                      </div> 
+                      ) : null
+                }
               </form>
             </div>
           </div>
