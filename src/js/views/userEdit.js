@@ -1,8 +1,68 @@
 import React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { useState } from "react";
+import { useContext } from "react";
+import { Context } from "../store/appContext"
 
-const UserEdit = () => {
+
+const UserEdit = (props) => {
+  const { store, actions } = useContext(Context)
+
+  const [usuario, setUsuario] = useState({
+    nombreCompleto: "",
+    correo: "",
+    telefono: "",
+    contrasenia: "",
+    confirmContrasenia: "",
+    comuna: "",
+    direccion: "",
+    direccionNumero: ""
+  });
+
+  const [error, setError] = useState(false);
+
+  const handleChange = (e) => {
+    setUsuario({
+      ...usuario, 
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const { nombreCompleto, correo, telefono, contrasenia, confirmContrasenia, comuna, direccion, direccionNumero } = usuario;
+
+  const submitUsuario = (e) => {
+    e.preventDefault();
+
+    if (
+      nombreCompleto.trim() === "" ||
+      correo.trim() === "" ||
+      telefono.trim() === "" ||
+      contrasenia.trim() === "" ||
+      confirmContrasenia.trim() === "" ||
+      comuna.trim() === "" ||
+      direccion.trim() === "" ||
+      direccionNumero.trim() === ""
+      ) {
+      setError(true);
+      return;
+    }
+    setError(false);
+
+    actions.setCliente( usuario, props.history )
+
+    setUsuario({
+      nombreCompleto: "",
+      correo: "",
+      telefono: "",
+      contrasenia: "",
+      confirmContrasenia: "",
+      comuna: "",
+      direccion: "",
+      direccionNumero: ""
+    });
+  };
+
   return (
     <>
       <Navbar />
@@ -21,7 +81,7 @@ const UserEdit = () => {
             </p>
           </div>
           <div className="col-md-7 col-lg-6 ml-auto">
-            <form action="#">
+          <form onSubmit={(e) => submitUsuario(e)} action="# ">
               <div className="row">
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
@@ -30,11 +90,29 @@ const UserEdit = () => {
                     </span>
                   </div>
                   <input
-                    id="fullName"
+                    id="nombreCompleto"
                     type="text"
-                    name="fullName"
+                    name="nombreCompleto"
                     placeholder="Nombre Completo"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={nombreCompleto}
+                  />
+                </div>
+                <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fa fa-envelope text-muted"></i>
+                    </span>
+                  </div>
+                  <input
+                    id="correo"
+                    type="email"
+                    name="correo"
+                    placeholder="Correo Electronico"
+                    className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={correo}
                   />
                 </div>
                 <div className="input-group col-lg-12 mb-4">
@@ -44,11 +122,13 @@ const UserEdit = () => {
                     </span>
                   </div>
                   <input
-                    id="phoneNumber"
+                     id="telefono"
                     type="tel"
-                    name="phone"
-                    placeholder="Numero de Teléfono "
+                    name="telefono"
+                    placeholder="Numero de Teléfono +56900000000"
                     className="form-control bg-white border-md border-left-0 pl-3"
+                    onChange={handleChange}
+                    value={telefono}
                   />
                 </div>
                 <div className="input-group col-lg-6 mb-4">
@@ -58,11 +138,13 @@ const UserEdit = () => {
                     </span>
                   </div>
                   <input
-                    id="password"
+                    id="contrasenia"
                     type="password"
-                    name="password"
+                    name="contrasenia"
                     placeholder="Contraseña"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={contrasenia}
                   />
                 </div>
                 <div className="input-group col-lg-6 mb-4">
@@ -72,11 +154,12 @@ const UserEdit = () => {
                     </span>
                   </div>
                   <input
-                    id="passwordConfirmation"
-                    type="text"
-                    name="passwordConfirmation"
+                    id="confirmContrasenia"
+                    type="password"
+                    name="confirmContrasenia"
                     placeholder="Confirmar Contraseña"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="input-group col-lg-12 mb-4">
@@ -86,17 +169,33 @@ const UserEdit = () => {
                     </span>
                   </div>
                   <input
-                    id="direction"
+                    id="direccion"
                     type="text"
-                    name="direction"
-                    placeholder="Dirección"
+                    name="direccion"
+                    placeholder="Calle Arturo Prat 1234"
                     className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={direccion}
+                  />
+                </div>
+                <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fas fa-map-marked-alt text-muted"></i>
+                    </span>
+                  </div>
+                  <input
+                    id="direccionNumero"
+                    type="text"
+                    name="direccionNumero"
+                    placeholder="Casa 1234 / Depto 1507"
+                    className="form-control bg-white border-left-0 border-md"
+                    onChange={handleChange}
+                    value={direccionNumero}
                   />
                 </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
-                  <a href="#" className="btn btn-primary btn-block py-2">
-                    <span className="font-weight-bold">Guardar Cambios</span>
-                  </a>
+                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Confirmar datos" onSubmit={submitUsuario}/>
                 </div>
               </div>
             </form>
