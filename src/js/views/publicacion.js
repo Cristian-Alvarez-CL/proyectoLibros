@@ -1,20 +1,21 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { Context } from "../store/appContext"
 
 function Publicacion() {
 
   const [mensaje, setMensaje] = useState({
-
-    
+       
   })
+  const { store, actions } = useContext(Context);
 
   return (
     <>
       <Navbar />
       <div className="container mt-5">
-        <h2 className="margentop mt-5">Nombre de la publicacion</h2>
+        <h2 className="margentop mt-5">PERMUTA / VENTA</h2>
         <hr />
         <div className="row align-items-center">
           <div className="col-md-4 pr-lg-4 mb-5 mb-md-0">
@@ -72,37 +73,45 @@ function Publicacion() {
               </a>
             </div>
           </div>
-          <div className="col-md-8 col-lg-8 mt-5 ml-auto">
+          
+          {store.libros.map((libro, index) => (
+            <div className="col-md-8 col-lg-8 mt-5 ml-auto" key={index}>
             <div className="pubboder">
               <h5 className="m-0 p-0">
-                Titulo: <p className="m-0 p-0">Tic en la Educación</p>
+                Titulo: <p className="m-0 p-0">{libro.titulo}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Autor: <p className="m-0 p-0">Chirinos armas</p>
+                Autor: <p className="m-0 p-0">{libro.autor}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Editorial: <p className="m-0 p-0">Marcombo</p>
+                Editorial: <p className="m-0 p-0">{libro.editorial}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Categoria: <p className="m-0 p-0">Informatica</p>
+                Nivel: <p className="m-0 p-0">{libro.nivel}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Nivel: <p className="m-0 p-0">2do basico</p>
+                Asignatura: <p className="m-0 p-0">{libro.asignatura}</p>
+              </h5>
+              
+              {/* <h5 className="m-0 p-0">
+                Colegio: <p className="m-0 p-0">{libro.colegio}</p>
+              </h5> */}
+              <h5 className="m-0 p-0">
+                Estado: <p className="m-0 p-0">{libro.estado}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Colegio: <p className="m-0 p-0">Arturo Prat</p>
+                Condición: <p className="m-0 p-0">{libro.condicion}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Estado: <p className="m-0 p-0">Nuevo</p>
+                Tipo: <p className="m-0 p-0">{libro.tipo}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Precio / Permuta:<p className="m-0 p-0">25.000$</p>
+                Precio / Permuta:<p className="m-0 p-0">{libro.precio}</p>
               </h5>
               <h5 className="m-0 p-0">
                 Comentarios:
                 <p className="m-0 p-0">
-                  Esto es una prueba para ver como se ve el comentario del libro
-                  no hacer caso literal a lo que dice el mismo
+                {libro.comentario}
                 </p>
               </h5>
               <div className="form-group col-lg-12 mt-2">
@@ -112,7 +121,9 @@ function Publicacion() {
               </div>
             </div>
           </div>
-        </div>
+      
+              ))}
+      </div>
         <form className="mt-5 border">
           <div className="form-group container-fluid">
             <h3 className="mt-2 text-center">Comunicate conmigo</h3>
