@@ -75,6 +75,20 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .catch(error => console.error('Error:', error));
 
             },
+
+            modificarUsuario: (cliente) => {
+                const store = getStore();
+                fetch('https:example.com/users', {
+                    method: 'PUT',
+                    body: JSON.stringify(cliente),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => res.json())
+                    .then(response => console.log('Success:', JSON.stringify(cliente)))
+                    .catch(error => console.error('Error:', error));
+
+            },
         },
     };
 };
