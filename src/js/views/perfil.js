@@ -1,22 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { Context } from "../store/appContext"
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { useContext, useState } from "react";
 
 const Perfil = () => {
+
+  const [mensaje, setMensaje] = useState({
+       
+  })
+  const { store, actions } = useContext(Context);
+
   return (
     <>
       <Navbar />
       <div className="container mt-5">
-        <div className="row py-5 mt-4 align-items-center">
+      {store.clientes.map((cliente, index) => (
+        <div className="row py-5 mt-4 align-items-center" key={index}>
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img
               src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
               alt="hola"
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h1>Bienvenido nombreCompleto</h1>
+            <h1>Bienvenido {cliente.nombreCompleto}</h1>
             <p className="font-italic text-muted mb-0">
               Aca tienes todo lo relacionado a tus datos los cuales son muy
               importantes a la hora de contactarte con otros usuarios
@@ -94,6 +102,7 @@ const Perfil = () => {
             </form>
           </div>
         </div>
+        ))}
       </div>
       <Footer />
     </>

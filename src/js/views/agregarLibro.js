@@ -307,7 +307,7 @@ function AgregarLibro( props ) {
                   </div>
                 </div>
                 <div className="form-group col-lg-5 mx-auto">
-                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Publicar Libro" />
+                  <button onSubmit={(e) => handleSubmit (e)} type="submit" className="btn btn-primary btn-block font-weight-bold" value="Publicar Libro" ></button>
                 </div>
                 { error ? ( <div className="alert alert-danger align-center text-center" role="alert">
                       Todos los campos son obligatorios
