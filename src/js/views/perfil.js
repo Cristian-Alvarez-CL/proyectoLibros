@@ -43,7 +43,7 @@ const Perfil = () => {
                     id="fullName"
                     type="text"
                     name="fullName"
-                    placeholder="Nombre Completo"
+                    placeholder={cliente.nombreCompleto}
                     className="form-control bg-white border-left-0 border-md cursor"
                     readOnly
                   />
@@ -58,7 +58,7 @@ const Perfil = () => {
                     id="phoneNumber"
                     type="tel"
                     name="phone"
-                    placeholder="Numero de Teléfono "
+                    placeholder={cliente.telefono}
                     className="form-control bg-white border-md border-left-0 pl-3 cursor"
                     readOnly
                   />
@@ -73,7 +73,7 @@ const Perfil = () => {
                     id="password"
                     type="password"
                     name="password"
-                    placeholder="Contraseña"
+                    placeholder={cliente.contrasenia}
                     className="form-control bg-white border-left-0 border-md cursor"
                     readOnly
                   />
@@ -88,7 +88,7 @@ const Perfil = () => {
                     id="direction"
                     type="text"
                     name="direction"
-                    placeholder="Dirección"
+                    placeholder={cliente.direccion}
                     className="form-control bg-white border-left-0 border-md cursor"
                     readOnly
                   />

@@ -2,6 +2,7 @@
 import '../../styles/styles.css';
 import Navbar from '../components/navbar';
 import Masthead from '../components/masthead';
+import Busqueda from "../components/busqueda";
 import Services from '../components/services';
 import PortfolioGrid from '../components/portfoliogrid';
 import About from '../components/about';
@@ -17,6 +18,7 @@ function Home() {
     <div>
       <Navbar contacto='Contacto'/>
       <Masthead />
+      <Busqueda />
       <Services />
       <PortfolioGrid />
       <Teams />
