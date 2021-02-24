@@ -303,6 +303,7 @@ function AgregarLibro( props ) {
                       aria-label="With textarea"
                       onChange={(e) => handleChange(e)}
                       value={comentario}
+                      placeholder="Escribe un comentario"
                     ></textarea>
                   </div>
                 

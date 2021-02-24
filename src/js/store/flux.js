@@ -25,6 +25,24 @@ const getState = ({ getStore, getActions, setStore }) => {
                     store.libros.push(libro)
                 )
             },
+            getLibro: (cliente) => {        //estoy a la espera del https para el fetch
+                const store = getStore()
+                // fetch('https:....', {
+                //     method: 'POST',
+                //     body: JSON.stringify(cliente), // data can be `string` or {object}!
+                //     headers: {
+                //     'Content-Type': 'application/json'
+                //     },
+                // }).then(res => res.json())
+                //     .then(response => {console.log('Success:', JSON.stringify(cliente))
+                //     setStore({
+                //         clientes: cliente
+                //     })})
+                //     .catch(error => console.error('Error:', error));
+                setStore(
+                    store.clientes.push(cliente)
+                )
+            },
 
             setCliente: (cliente, history) => {
                 const { clientes } = getStore()
