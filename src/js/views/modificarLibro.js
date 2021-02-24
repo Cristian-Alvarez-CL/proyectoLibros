@@ -74,22 +74,34 @@ function ModificarLibro(props) {
   return (
     <>
       <Navbar />
-      <div className="container mt-5">
-        <div className="py-5 text-center ">
-          <div className="col-md-12 pr-lg-5 mb-5 mb-md-0">
+      <div className="container pt-5">
+        <div className="row align-items-center">
+          <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            { error ? ( <div className="alert alert-danger m-5 p-5 align-center text-center" role="alert">
+                    Todos los campos son obligatorios
+                    </div> 
+                    ) : null
+            }
+            <img
+              src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
+              alt="hola"
+              className="img-fluid mb-3 d-none d-md-block"
+            />
             <h1>Editar Publicación</h1>
+            <h4 className="font-italic text-muted mb-0">
+              Información de tu libro:
+            </h4>
           </div>
-          <div className="jumbotron">
-            <h3> Información de tu libro </h3>
-            <div className="col-md-12 col-lg-10 mx-auto d-flex align-items-center my-4">
-              <form onSubmit={(e) => handleSubmit(e)} action="# ">
+       
+        
+          <div className="col-md-7 col-lg-6 mt-5 ml-auto">
+              <form onSubmit={(e) => handleSubmit(e)}>
                 <div className="row ">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Título del Libro
-                  </label>
-                  <div className="input-group col-lg-9 mb-4 ">
+                       <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fa fa-book text-muted"></i>
+                      </span>
                     </div>
                     <input
                       id="titulo"
@@ -101,12 +113,11 @@ function ModificarLibro(props) {
                       value={titulo}
                     />
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Autor
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fa fa-user text-muted"></i>
+                      </span>
                     </div>
                     <input
                       id="autor"
@@ -118,12 +129,11 @@ function ModificarLibro(props) {
                       value={autor}
                     />
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Editorial
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fa fa-newspaper text-muted"></i>
+                      </span>
                     </div>
                     <input
                       id="editorial"
@@ -135,12 +145,11 @@ function ModificarLibro(props) {
                       value={editorial}
                     />
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Nivel
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fa fa-school text-muted"></i>
+                      </span>
                     </div>
                     <select
                       id="nivel"
@@ -164,12 +173,11 @@ function ModificarLibro(props) {
                       <option value="4° Medio">4° Medio</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Asignatura
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fab fa-discourse text-muted"></i>
+                      </span>
                     </div>
                     <select
                       id="asignatura"
@@ -192,12 +200,11 @@ function ModificarLibro(props) {
                       <option value="Otra">Otra</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Estado del Libro
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i class="fas fa-star-half-alt"></i>
+                      </span>
                     </div>
                     <select
                       id="estado"
@@ -206,16 +213,16 @@ function ModificarLibro(props) {
                       onChange={(e) => handleChange(e)}
                       value={estado}
                     >
+                      <option selected>Estado del Libro</option>
                       <option value="nuevo">Nuevo</option>
                       <option value="usado">Usado</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Condición del Libro
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i class="far fa-question-circle"></i>
+                      </span>
                     </div>
                     <select
                       id="condicion"
@@ -224,6 +231,7 @@ function ModificarLibro(props) {
                       onChange={(e) => handleChange(e)}
                       value={condicion}
                     >
+                      <option selected>Condicion del Libro</option>
                       <option value="original">Original</option>
                       <option value="copia">Copia</option>
                     </select>
@@ -236,21 +244,21 @@ function ModificarLibro(props) {
                       <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
                     </div>
                     <input
+                      name="foto"
                       type="file"
                       className="custom-file-input"
-                      id="customFile"
-                      lang="es"
+                      id="foto"
+                      onChange={(e) => handleChange(e)}
                     />
                     <label className="custom-file-label" for="customFile">
-                      Seleccionar Imágenes
+                      Seleccionar Imagen
                     </label>
                   </div> */}
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Tipo de Publicación
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i class="far fa-keyboard"></i>
+                      </span>
                     </div>
                     <select
                       id="tipo"
@@ -267,12 +275,11 @@ function ModificarLibro(props) {
                       <option value="venta y permuta">Venta y Permuta</option>
                     </select>
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Precio
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i class="fas fa-hand-holding-usd"></i>
+                      </span>
                     </div>
                     <input
                       id="precio"
@@ -284,13 +291,10 @@ function ModificarLibro(props) {
                       value={precio}
                     />
                   </div>
-                  <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Comentarios
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
+                  <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
                       <span className="input-group-text bg-white px-4 border-md border-right-0">
-                        Comentarios
+                      <i class="far fa-comments"></i>
                       </span>
                     </div>
                     <textarea
@@ -301,30 +305,22 @@ function ModificarLibro(props) {
                       onChange={(e) => handleChange(e)}
                       value={comentario}
                     ></textarea>
-                    {/* <!-- <input id="precio" type="text" name="precio" placeholder="Título del Libro" className="form-control bg-white border-left-0 border-md"> --> */}
                   </div>
+                
+                  <div className="form-group col-lg-12 mx-auto mb-0">
+                  <input onSubmit={(e) => handleSubmit (e)} type="submit" className="btn btn-primary btn-block font-weight-bold" value="Modificar Libro"/>
                 </div>
-                <div className="form-group col-lg-5 mx-auto mb-0">
-                  <button onSubmit={(e) => handleSubmit(e)}
-                    type="submit"
-                    className="btn btn-primary btn-block py-2"
-                  >
-                    <span className="font-weight-bold">Modificar</span>
-                  </button>
-                  {error ? (<div className="alert alert-danger align-center text-center" role="alert">
-                    Todos los campos son obligatorios
-                  </div>
-                  ) : null
-                  }
+                
                 </div>
               </form>
             </div>
-          </div>
-        </div>
-      </div>
+          
+       </div>
+       </div>
+    
       <Footer />
     </>
   );
-}
+};
 
 export default ModificarLibro;

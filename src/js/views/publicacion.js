@@ -116,7 +116,7 @@ function Publicacion() {
               </h5>
               <div className="form-group col-lg-12 mt-2">
                 <a href="#" className="btn btn-primary btn-block py-2">
-                  <span className="font-weight-bold">Comprar / Permuta</span>
+                  <span className="font-weight-bold">Permuta / Venta</span>
                 </a>
               </div>
             </div>
