@@ -1,15 +1,14 @@
 import React from "react";
-import { useState, useContext } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { Context } from "../store/appContext"
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
-function Publicacion() {
+const Publicacion = ({ match }, props) => {
 
-  const [mensaje, setMensaje] = useState({
-       
-  })
   const { store, actions } = useContext(Context);
+  
+  const id = match.params.id;
 
   return (
     <>
@@ -73,46 +72,39 @@ function Publicacion() {
               </a>
             </div>
           </div>
-          
-          {store.libros.map((libro, index) => (
-            <div className="col-md-8 col-lg-8 mt-5 ml-auto" key={index}>
+
+          <div className="col-md-8 col-lg-8 mt-5 ml-auto">
             <div className="pubboder">
               <h5 className="m-0 p-0">
-                Titulo: <p className="m-0 p-0">{libro.titulo}</p>
+                Titulo: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].titulo}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Autor: <p className="m-0 p-0">{libro.autor}</p>
+                Autor: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].nombreAutor}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Editorial: <p className="m-0 p-0">{libro.editorial}</p>
+                Editorial: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].editorial}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Nivel: <p className="m-0 p-0">{libro.nivel}</p>
+                Nivel: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].nivel}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Asignatura: <p className="m-0 p-0">{libro.asignatura}</p>
-              </h5>
-              
-              {/* <h5 className="m-0 p-0">
-                Colegio: <p className="m-0 p-0">{libro.colegio}</p>
-              </h5> */}
-              <h5 className="m-0 p-0">
-                Estado: <p className="m-0 p-0">{libro.estado}</p>
+                Asignatura: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].asignatura}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Condición: <p className="m-0 p-0">{libro.condicion}</p>
+                Estado: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].estadoNuevoUsado}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Tipo: <p className="m-0 p-0">{libro.tipo}</p>
+                Condición: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].condicionOriginalCopia}</p>
               </h5>
               <h5 className="m-0 p-0">
-                Precio / Permuta:<p className="m-0 p-0">{libro.precio}</p>
+                Tipo: <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].tipoIntercambio}</p>
+              </h5>
+              <h5 className="m-0 p-0">
+                Precio / Permuta:<p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].precio}</p>
               </h5>
               <h5 className="m-0 p-0">
                 Comentarios:
-                <p className="m-0 p-0">
-                {libro.comentario}
-                </p>
+                <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].comentarios}</p>
               </h5>
               <div className="form-group col-lg-12 mt-2">
                 <a href="#" className="btn btn-primary btn-block py-2">
@@ -121,54 +113,11 @@ function Publicacion() {
               </div>
             </div>
           </div>
-      
-              ))}
-      </div>
-        <form className="mt-5 border">
-          <div className="form-group container-fluid">
-            <h3 className="mt-2 text-center">Comunicate conmigo</h3>
-            <label for="nombreCompleto">Nombre completo</label>
-            <input
-              type="text"
-              className="form-control"
-              id="nombreCompleto"
-              placeholder="Ana Diaz"
-            />
-            <label className="mt-1" for="correo">
-              Direccion de Correo Electroníco
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="correo"
-              placeholder="name@example.com"
-            />
-            <label className="mt-1" for="telefono">
-              Teléfono
-            </label>
-            <input
-              type="tel"
-              className="form-control"
-              id="telefono"
-              placeholder="+56900000000"
-            />
-            <label for="comentario">Comentarios</label>
-            <textarea
-              className="form-control"
-              id="comentario"
-              rows="3"
-            ></textarea>
-            <input
-              className="btn btn-primary btn-block"
-              type="button"
-              value="Enviar"
-            />
-          </div>
-        </form>
+        </div>
       </div>
       <Footer />
     </>
   );
-}
+};
 
 export default Publicacion;

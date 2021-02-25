@@ -3,8 +3,13 @@ import "../../styles/login.css";
 import TablaInformacion from "../components/tablaInfo";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
-const EliminarPublicacion = () => {
+const EliminarPublicacion = (props) => {
+
+  const { store, actions } = useContext(Context);
+
   return (
     <>
     <Navbar/>

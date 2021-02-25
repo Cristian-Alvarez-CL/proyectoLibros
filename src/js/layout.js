@@ -15,6 +15,7 @@ import publicacion from "./views/publicacion";
 import homeAdmin from "./views/homeAdmin";
 import "../styles/index.css";
 import Perfil from "./views/perfil";
+import ListadoPublicaciones from "./views/listadoPublicaciones";
 
 export class Layout extends React.Component {
 	render() {
@@ -23,7 +24,6 @@ export class Layout extends React.Component {
 				<BrowserRouter>
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/detail/:id" name="detail" component={Home} />
 						<Route exact path="/perfil" component={Perfil} />
 						<Route exact path="/agregarLibro" component={AgregarLibro} />
 						<Route exact path="/eliminarUsuario" component={EliminarUsuario} />
@@ -32,9 +32,10 @@ export class Layout extends React.Component {
 						<Route exact path="/login" component={login} ></Route>
 						<Route exact path="/homePrivate" component={HomePrivate} ></Route>
 						<Route exact path="/create" component={createAccount} ></Route>
-						<Route exact path="/useredit" component={userEdit} ></Route>
+						<Route exact path="/publicaciones" component={ListadoPublicaciones} ></Route>
+						<Route exact path="/useredit/:id" component={userEdit} ></Route>
 						<Route exact path="/passwordrecover" component={passwordRecover} ></Route>
-						<Route exact path="/publicacion" component={publicacion} ></Route>
+						<Route exact path="/publicacion/:id" component={publicacion} ></Route>
 						<Route exact path="/homeadmin" component={homeAdmin} ></Route>
 						<Route render={() => <h1>Not found!</h1>} ></Route>
 					</Switch>

@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import Table from "../components/table";
+import Table from "../components/Table";
 
 const HomeAdmin = () => {
   return (

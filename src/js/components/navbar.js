@@ -9,10 +9,7 @@ function Navbar() {
     >
       <div className="container">
         <Link className="navbar-brand js-scroll-trigger" to="/">
-        PASA TU LIBRO <i class="fas fa-swatchbook"></i>
-          {/* <Link to="/">
-            <img src={logo} alt="" />
-          </Link> */}
+          PASA TU LIBRO <i class="fas fa-swatchbook"></i>
         </Link>
         <button
           className="navbar-toggler navbar-toggler-right"
@@ -34,9 +31,9 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="#portfolio">
-                Publicaciones
-              </a>
+                <Link className="nav-link js-scroll-trigger" to="/publicaciones">
+                  PUBLICACIONES 
+                </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="#team">
@@ -63,12 +60,18 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                 Mi cuenta
+                Mi cuenta
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="/login"> Ingresa a tu cuenta </Link>
-                
-                <Link className="dropdown-item" to="/create"> Registrarse </Link>
+                <Link className="dropdown-item" to="/login">
+                  {" "}
+                  Ingresa a tu cuenta{" "}
+                </Link>
+
+                <Link className="dropdown-item" to="/create">
+                  {" "}
+                  Registrarse{" "}
+                </Link>
                 {/* <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="#">
                   Cerrar Sesión

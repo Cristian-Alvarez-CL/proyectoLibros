@@ -1,67 +1,15 @@
 import React from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { useState } from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext"
 
 
-const UserEdit = (props) => {
+const UserEdit = ({ match }, props) => {
+
   const { store, actions } = useContext(Context)
-
-  const [usuario, setUsuario] = useState({
-    nombreCompleto: "",
-    correo: "",
-    telefono: "",
-    contrasenia: "",
-    confirmContrasenia: "",
-    comuna: "",
-    direccion: "",
-    direccionNumero: ""
-  });
-
-  const [error, setError] = useState(false);
-
-  const handleChange = (e) => {
-    setUsuario({
-      ...usuario, 
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const { nombreCompleto, correo, telefono, contrasenia, confirmContrasenia, comuna, direccion, direccionNumero } = usuario;
-
-  const submitUsuario = (e) => {
-    e.preventDefault();
-
-    if (
-      nombreCompleto.trim() === "" ||
-      correo.trim() === "" ||
-      telefono.trim() === "" ||
-      contrasenia.trim() === "" ||
-      confirmContrasenia.trim() === "" ||
-      comuna.trim() === "" ||
-      direccion.trim() === "" ||
-      direccionNumero.trim() === ""
-      ) {
-      setError(true);
-      return;
-    }
-    setError(false);
-
-    actions.setCliente( usuario, props.history )
-
-    setUsuario({
-      nombreCompleto: "",
-      correo: "",
-      telefono: "",
-      contrasenia: "",
-      confirmContrasenia: "",
-      comuna: "",
-      direccion: "",
-      direccionNumero: ""
-    });
-  };
+  
+  const id = match.params.id;
 
   return (
     <>
@@ -81,7 +29,7 @@ const UserEdit = (props) => {
             </p>
           </div>
           <div className="col-md-7 col-lg-6 ml-auto">
-          <form onSubmit={(e) => submitUsuario(e)} action="# ">
+          <form onSubmit={actions.handleusuarios}>
               <div className="row">
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
@@ -95,8 +43,8 @@ const UserEdit = (props) => {
                     name="nombreCompleto"
                     placeholder="Nombre Completo"
                     className="form-control bg-white border-left-0 border-md"
-                    onChange={handleChange}
-                    value={nombreCompleto}
+                    onChange={actions.handleChange}
+                    value={store.usuarios[id].nombreCompleto}
                   />
                 </div>
                 <div className="input-group col-lg-12 mb-4">
@@ -111,8 +59,8 @@ const UserEdit = (props) => {
                     name="correo"
                     placeholder="Correo Electronico"
                     className="form-control bg-white border-left-0 border-md"
-                    onChange={handleChange}
-                    value={correo}
+                    value={store.usuarios[id].correo}
+                    readOnly
                   />
                 </div>
                 <div className="input-group col-lg-12 mb-4">
@@ -127,8 +75,8 @@ const UserEdit = (props) => {
                     name="telefono"
                     placeholder="Numero de Teléfono +56900000000"
                     className="form-control bg-white border-md border-left-0 pl-3"
-                    onChange={handleChange}
-                    value={telefono}
+                    onChange={actions.handleChange}
+                    value={store.usuarios[id].telefono}
                   />
                 </div>
                 <div className="input-group col-lg-6 mb-4">
@@ -143,8 +91,8 @@ const UserEdit = (props) => {
                     name="contrasenia"
                     placeholder="Contraseña"
                     className="form-control bg-white border-left-0 border-md"
-                    onChange={handleChange}
-                    value={contrasenia}
+                    onChange={actions.handleChange}
+                    value={store.contrasenia}
                   />
                 </div>
                 <div className="input-group col-lg-6 mb-4">
@@ -159,8 +107,62 @@ const UserEdit = (props) => {
                     name="confirmContrasenia"
                     placeholder="Confirmar Contraseña"
                     className="form-control bg-white border-left-0 border-md"
-                    onChange={handleChange}
+                    onChange={actions.handleChange}
+                    value={store.confirmContrasenia}
                   />
+                </div>
+                <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fas fa-map-marked-alt text-muted"></i>
+                    </span>
+                  </div>
+                  <select
+                    class="custom-select form-control bg-white border-left-0 border-md"
+                    id="comuna"
+                    name="comuna"
+                    value={store.usuarios[id].comuna}
+                    onChange={actions.handleChange}
+                  >
+                    <option selected>Dirección: Comuna</option>
+                    <option value="Cerrillos">Cerrillos</option>
+                    <option value="Cerro Navia">Cerro Navia</option>
+                    <option value="Conchalí">Conchalí</option>
+                    <option value="El Bosque">El Bosque</option>
+                    <option value="Estación Central">
+                      Estación Central
+                    </option>
+                    <option value="Huechuraba">Huechuraba</option>
+                    <option value="Independencia">Independencia</option>
+                    <option value="La Cisterna">La Cisterna</option>
+                    <option value="La Florida">La Florida</option>
+                    <option value="La Granja">La Granja</option>
+                    <option value="La Pintana">La Pintana</option>
+                    <option value="La Reina">La Reina</option>
+                    <option value="Las Condes">Las Condes</option>
+                    <option value="Lo Barnechea">Lo Barnechea</option>
+                    <option value="Lo Espejo">Lo Espejo</option>
+                    <option value="Lo Prado">Lo Prado</option>
+                    <option value="Macul">Macul</option>
+                    <option value="Maipú">Maipú</option>
+                    <option value="Ñuñoa">Ñuñoa</option>
+                    <option value="Pedro Aguirre Cerda">
+                      Pedro Aguirre Cerda
+                    </option>
+                    <option value="Peñalolén">Peñalolén</option>
+                    <option value="Providencia">Providencia</option>
+                    <option value="Pudahuel">Pudahuel</option>
+                    <option value="Quilicura">Quilicura</option>
+                    <option value="Quinta Normal">Quinta Normal</option>
+                    <option value="Recoleta">Recoleta</option>
+                    <option value="Renca">Renca</option>
+                    <option value="San Joaquín">San Joaquín</option>
+                    <option value="San Miguel">San Miguel</option>
+                    <option value="San Ramón">San Ramón</option>
+                    <option value="Santiago">Santiago</option>
+                    <option value="Vitacura">Vitacura</option>
+                    <option value="Otra">Otra</option>
+                  </select>
                 </div>
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
@@ -174,9 +176,27 @@ const UserEdit = (props) => {
                     name="direccion"
                     placeholder="Calle Arturo Prat 1234"
                     className="form-control bg-white border-left-0 border-md"
-                    onChange={handleChange}
-                    value={direccion}
+                    onChange={actions.handleChange}
+                    value={store.usuarios[id].direccion}
                   />
+                </div>
+                <div className="input-group col-lg-12 mb-4">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white px-4 border-md border-right-0">
+                      <i className="fas fa-map-marked-alt text-muted"></i>
+                    </span>
+                  </div>
+                  <select
+                    class="custom-select form-control bg-white border-left-0 border-md"
+                    id="tipoVivienda"
+                    name="tipoVivienda"
+                    value={store.usuarios[id].tipoVivienda}
+                    onChange={actions.handleChange}
+                  >
+                    <option selected>Tipo de Vivienda</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Departamento">Departamento</option>
+                  </select>
                 </div>
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
@@ -190,12 +210,12 @@ const UserEdit = (props) => {
                     name="direccionNumero"
                     placeholder="Casa 1234 / Depto 1507"
                     className="form-control bg-white border-left-0 border-md"
-                    onChange={handleChange}
-                    value={direccionNumero}
+                    onChange={actions.handleChange}
+                    value={store.usuarios[id].direccionNumero}
                   />
                 </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
-                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Confirmar datos" onSubmit={submitUsuario}/>
+                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Confirmar datos" onSubmit={actions.handleusuarios}/>
                 </div>
               </div>
             </form>

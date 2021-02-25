@@ -5,11 +5,8 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { useContext, useState } from "react";
 
-const Perfil = () => {
+const Perfil = (props) => {
 
-  const [mensaje, setMensaje] = useState({
-       
-  })
   const { store, actions } = useContext(Context);
 
   return (

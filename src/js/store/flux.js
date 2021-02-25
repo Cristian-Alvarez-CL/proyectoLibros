@@ -1,114 +1,139 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
-        store: {
-            libros: [],
-            clientes: [],
-
+      store: {
+        apiUrl: "http://localhost:5000",
+        usuarios: [],
+        nombreCompleto: null,
+        correo: null,
+        contrasenia: null,
+        confirmContrasenia: null,
+        telefono: null,
+        direccion: null,
+        numero: null,
+        comuna: null,
+        tipoVivienda: null,
+        numDepto: null,
+        publicaciones: [],
+        cliente_id: null,
+        titulo: null,
+        nombreAutor: null,
+        editorial: null,
+        nivel: null,
+        asignatura: null,
+        estadoNuevoUsado: null,
+        condicionOriginalCopia: null,
+        tipoIntercambio: null,
+        precio: null,
+        comentarios: null,
+        msj: null,
+        error: null,
+      },
+      actions: {
+        getUsuarios: (url, options = {}) => {
+          fetch(url, options)
+            .then((resp) => resp.json())
+            .then((data) => setStore({ usuarios: data }))
+            .catch((error) => console.warn(error));
         },
-        actions: {
-
-            getLibro: (libro) => {        //estoy a la espera del https para el fetch
-                const store = getStore()
-                // fetch('https:....', {
-                //     method: 'POST',
-                //     body: JSON.stringify(libro), // data can be `string` or {object}!
-                //     headers: {
-                //     'Content-Type': 'application/json'
-                //     },
-                // }).then(res => res.json())
-                //     .then(response => {console.log('Success:', JSON.stringify(libro))
-                //     setStore({
-                //         libros: libro
-                //     })})
-                //     .catch(error => console.error('Error:', error));
-                setStore(
-                    store.libros.push(libro)
-                )
-            },
-            getLibro: (cliente) => {        //estoy a la espera del https para el fetch
-                const store = getStore()
-                // fetch('https:....', {
-                //     method: 'POST',
-                //     body: JSON.stringify(cliente), // data can be `string` or {object}!
-                //     headers: {
-                //     'Content-Type': 'application/json'
-                //     },
-                // }).then(res => res.json())
-                //     .then(response => {console.log('Success:', JSON.stringify(cliente))
-                //     setStore({
-                //         clientes: cliente
-                //     })})
-                //     .catch(error => console.error('Error:', error));
-                setStore(
-                    store.clientes.push(cliente)
-                )
-            },
-
-            setCliente: (cliente, history) => {
-                const { clientes } = getStore()
-                setStore({ clientes: clientes.concat(cliente) })
-                history.push("/")
-            },
-
-            setPublicacion: (libro, history) => {
-                const { libros } = getStore()
-                setStore({ libros: libros.concat(libro) })
-                history.push("/")
-            },
-            obtenerLibro: () => {
-                const store = getStore();
-                fetch("https://assets.breatheco.de/apis/fake/contact/agenda/DoIt", {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
-                    .then(resp => resp.json())
-                    .then(data => setStore({ libros: data }))
-                    .catch(error => console.log(error));
-            },
-            obtenerCliente: () => {
-                const store = getStore();
-                fetch("https://assets.breatheco.de/apis/fake/contact/agenda/DoIt", {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
-                    .then(resp => resp.json())
-                    .then(data => setStore({ clientes: data }))
-                    .catch(error => console.log(error));
-            },
-
-            modificarLibro: (libro) => {
-                const store = getStore();
-                fetch('https:example.com/users', {
-                    method: 'PUT',
-                    body: JSON.stringify(libro),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).then(res => res.json())
-                    .then(response => console.log('Success:', JSON.stringify(libro)))
-                    .catch(error => console.error('Error:', error));
-
-            },
-
-            modificarUsuario: (cliente) => {
-                const store = getStore();
-                fetch('https:example.com/users', {
-                    method: 'PUT',
-                    body: JSON.stringify(cliente),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).then(res => res.json())
-                    .then(response => console.log('Success:', JSON.stringify(cliente)))
-                    .catch(error => console.error('Error:', error));
-
-            },
+  
+        getPublicaciones: (url, options = {}) => {
+          fetch(url, options)
+            .then((resp) => resp.json())
+            .then((data) => setStore({ publicaciones: data }))
+            .catch((error) => console.warn(error));
         },
+  
+        handleChange: (e) => {
+          const { name, value } = e.target;
+          setStore({
+            [name]: value,
+          });
+        },
+  
+        handleRegistroUsuario: async (e, history) => {
+          e.preventDefault();
+          const store = getStore();
+          const options = {
+            method: "POST",
+            body: JSON.stringify({
+              nombreCompleto: store.nombreCompleto,
+              correo: store.correo,
+              contrasenia: store.contrasenia,
+              telefono: store.telefono,
+              direccion: store.direccion,
+              numero: store.numero,
+              comuna: store.comuna,
+              tipoVivienda: store.tipoVivienda,
+              numDepto: store.numDepto,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+          const resp = await fetch(store.apiUrl + "/api/crearusuario", options);
+          const datos = await resp.json();
+          console.log(datos);
+          setStore({
+            currentUser: datos.usuario,
+            cliente_id: datos.usuario.id,
+            nombreCompleto: null,
+            correo: null,
+            contrasenia: null,
+            confirmContrasenia: null,
+            telefono: null,
+            direccion: null,
+            numero: null,
+            comuna: null,
+            tipoVivienda: null,
+            numDepto: null,
+            msj: datos.msj,
+          });
+          history.push("/");
+        },
+  
+        handleRegistroPublicacion: async (e, history) => {
+          e.preventDefault();
+          const store = getStore();
+          const options = {
+            method: "POST",
+            body: JSON.stringify({
+              cliente_id: store.cliente_id,
+              titulo: store.titulo,
+              nombreAutor: store.nombreAutor,
+              editorial: store.editorial,
+              nivel: store.nivel,
+              asignatura: store.asignatura,
+              estadoNuevoUsado: store.estadoNuevoUsado,
+              condicionOriginalCopia: store.condicionOriginalCopia,
+              tipoIntercambio: store.tipoIntercambio,
+              precio: store.precio,
+              comentarios: store.comentarios,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+          const resp = await fetch(store.apiUrl + "/api/crearlibro", options);
+          const datos = await resp.json();
+          console.log(datos);
+          setStore({
+            titulo: null,
+            nombreAutor: null,
+            editorial: null,
+            nivel: null,
+            asignatura: null,
+            estadoNuevoUsado: null,
+            condicionOriginalCopia: null,
+            tipoIntercambio: null,
+            precio: null,
+            comentarios: null,
+            msj: datos.msj,
+          });
+          history.push("/");
+        },
+      },
     };
-};
-
-export default getState;
+  };
+  
+  export default getState;
+  

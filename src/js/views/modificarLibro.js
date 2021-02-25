@@ -4,73 +4,11 @@ import Navbar from "../components/navbar";
 import { useState } from "react";
 import Footer from "../components/footer";
 import { useContext } from "react";
-import { Context } from "../store/appContext";
-import fotoLibro5  from "../../img/fotoLibro5.jpg";
+import { Context } from "../store/appContext"
 
 function ModificarLibro(props) {
 
   const { store, actions } = useContext(Context)
-
-  const [libro, setLibro] = useState({
-    titulo: "",
-    autor: "",
-    editorial: "",
-    nivel: "",
-    asignatura: "",
-    estado: "",
-    condicion: "",
-    tipo: "",
-    precio: "",
-    comentario: "",
-  });
-
-  const [error, setError] = useState(false)
-
-  const handleChange = (e) => {
-    setLibro({
-      ...libro, //clona la info del state
-      [e.target.name]: e.target.value, //agrega el nuevo valor al state
-    });
-  };
-
-  const { titulo, autor, editorial, nivel, asignatura, estado, condicion, tipo, precio, comentario } = libro;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // validar 
-    if (
-      titulo.trim() === "" ||
-      autor.trim() === "" ||
-      editorial.trim() === "" ||
-      nivel.trim() === "" ||
-      asignatura.trim() === "" ||
-      estado.trim() === "" ||
-      condicion.trim() === "" ||
-      tipo.trim() === "" ||
-      precio.trim() === "" ||
-      comentario.trim() === ""
-    ) {
-      setError(true);
-      return;
-    }
-    setError(false);
-
-    actions.setPublicacion(libro, props.history)
-
-    setLibro({
-      titulo: "",
-      autor: "",
-      editorial: "",
-      nivel: "",
-      asignatura: "",
-      estado: "",
-      condicion: "",
-      tipo: "",
-      precio: "",
-      comentario: "",
-    })
-  };
 
   return (
     <>
@@ -78,13 +16,8 @@ function ModificarLibro(props) {
       <div className="container pt-5">
         <div className="row align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
-            { error ? ( <div className="alert alert-danger m-5 p-5 align-center text-center" role="alert">
-                    Todos los campos son obligatorios
-                    </div> 
-                    ) : null
-            }
             <img
-              src={fotoLibro5}
+              src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
               alt="hola"
               className="img-fluid mb-3 d-none d-md-block"
             />
@@ -93,10 +26,8 @@ function ModificarLibro(props) {
               Información de tu libro:
             </h4>
           </div>
-       
-        
           <div className="col-md-7 col-lg-6 mt-5 ml-auto">
-              <form onSubmit={(e) => handleSubmit(e)}>
+              <form onSubmit={actions.handleRegistroPublicacion}>
                 <div className="row ">
                        <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
@@ -110,8 +41,8 @@ function ModificarLibro(props) {
                       name="titulo"
                       placeholder="Título del Libro"
                       className="form-control bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={titulo}
+                      onChange={actions.handleChange}
+                      value={store.titulo}
                     />
                   </div>
                   <div className="input-group col-lg-12 mb-4 ">
@@ -126,8 +57,8 @@ function ModificarLibro(props) {
                       name="autor"
                       placeholder="Autor"
                       className="form-control bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={autor}
+                      onChange={actions.handleChange}
+                      value={store.autor}
                     />
                   </div>
                   <div className="input-group col-lg-12 mb-4 ">
@@ -142,8 +73,8 @@ function ModificarLibro(props) {
                       name="editorial"
                       placeholder="Editorial"
                       className="form-control bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={editorial}
+                      onChange={actions.handleChange}
+                      value={store.editorial}
                     />
                   </div>
                   <div className="input-group col-lg-12 mb-4 ">
@@ -156,8 +87,8 @@ function ModificarLibro(props) {
                       id="nivel"
                       name="nivel"
                       className="form-control custom-select bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={nivel}
+                      onChange={actions.handleChange}
+                      value={store.nivel}
                     >
                       <option selected>Selecciona el Nivel</option>
                       <option value="1° Basico">1° Básico</option>
@@ -184,8 +115,8 @@ function ModificarLibro(props) {
                       id="asignatura"
                       name="asignatura"
                       className="form-control custom-select bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={asignatura}
+                      onChange={actions.handleChange}
+                      value={store.asignatura}
                     >
                       <option selected>Asignatura</option>
                       <option value="Lectura Complementaria">Lectura Complementaria</option>
@@ -211,8 +142,8 @@ function ModificarLibro(props) {
                       id="estado"
                       name="estado"
                       className="form-control custom-select bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={estado}
+                      onChange={actions.handleChange}
+                      value={store.estado}
                     >
                       <option selected>Estado del Libro</option>
                       <option value="nuevo">Nuevo</option>
@@ -229,32 +160,14 @@ function ModificarLibro(props) {
                       id="condicion"
                       name="condicion"
                       className="form-control custom-select bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={condicion}
+                      onChange={actions.handleChange}
+                      value={store.condicion}
                     >
                       <option selected>Condicion del Libro</option>
                       <option value="original">Original</option>
                       <option value="copia">Copia</option>
                     </select>
                   </div>
-                  {/* <label for="staticEmail" class="col-sm-2 col-form-label">
-                    Fotos / Imágenes
-                  </label>
-                  <div className="input-group col-lg-9 mb-4">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text bg-white px-4 border-md border-right-0"></span>
-                    </div>
-                    <input
-                      name="foto"
-                      type="file"
-                      className="custom-file-input"
-                      id="foto"
-                      onChange={(e) => handleChange(e)}
-                    />
-                    <label className="custom-file-label" for="customFile">
-                      Seleccionar Imagen
-                    </label>
-                  </div> */}
                   <div className="input-group col-lg-12 mb-4 ">
                     <div className="input-group-prepend">
                       <span className="input-group-text bg-white px-4 border-md border-right-0">
@@ -265,8 +178,8 @@ function ModificarLibro(props) {
                       id="tipo"
                       name="tipo"
                       className="form-control custom-select bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={tipo}
+                      onChange={actions.handleChange}
+                      value={store.tipo}
                     >
                       <option value="tipo de publicacion">
                         Tipo de Publicación
@@ -288,8 +201,8 @@ function ModificarLibro(props) {
                       name="precio"
                       placeholder="Precio"
                       className="form-control bg-white border-left-0 border-md"
-                      onChange={(e) => handleChange(e)}
-                      value={precio}
+                      onChange={actions.handleChange}
+                      value={store.precio}
                     />
                   </div>
                   <div className="input-group col-lg-12 mb-4 ">
@@ -303,23 +216,21 @@ function ModificarLibro(props) {
                       name="comentario"
                       className="form-control"
                       aria-label="With textarea"
-                      onChange={(e) => handleChange(e)}
-                      value={comentario}
+                      onChange={actions.handleChange}
+                      value={store.comentario}
                       placeholder="Escribe un comentario"
                     ></textarea>
                   </div>
                 
                   <div className="form-group col-lg-12 mx-auto mb-0">
-                  <input onSubmit={(e) => handleSubmit (e)} type="submit" className="btn btn-primary btn-block font-weight-bold" value="Modificar Libro"/>
+                  <input onSubmit={actions.handleRegistroPublicacion} type="submit" className="btn btn-primary btn-block font-weight-bold" value="Modificar Libro"/>
                 </div>
-                
+    
                 </div>
               </form>
             </div>
-          
        </div>
        </div>
-    
       <Footer />
     </>
   );

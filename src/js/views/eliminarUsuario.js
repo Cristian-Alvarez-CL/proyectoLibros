@@ -3,8 +3,13 @@ import "../../styles/login.css";
 import TablaUsuario from "../components/tablaUsuario";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
-const EliminarUsuario = () => {
+const EliminarUsuario = (props) => {
+
+  const { store, actions } = useContext(Context);
+
   return (
     <>
       <Navbar />
@@ -34,7 +39,6 @@ const EliminarUsuario = () => {
                           id="password"
                         />
                       </div>
-
                       <input
                         type="submit"
                         value="Eliminar Definitivamente"
