@@ -10,7 +10,7 @@ function PortfolioGrid() {
         <section className="page-section bg-light" id="portfolio">
             <div className="container">
                 <div className="text-center">
-                    <h2 className="section-heading text-uppercase">Publicados</h2>
+                    <h2 className="section-heading text-uppercase">Libros Publicados</h2>
                     <h3 className="section-subheading text-muted">Aqui encontraras los libros que están siendo publicados ya sea para realizar una venta o permuta.</h3>
                 </div>
                 <div className="row">

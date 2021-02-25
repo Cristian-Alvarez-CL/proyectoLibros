@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../components/navbar";
+import NavbarLogin from "../components/navbarLogin";
 import Footer from "../components/footer";
 import "../../styles/login.css";
 
 const Login = () => {
   return (
     <>
-      <Navbar />
+      <NavbarLogin />
       <div className="content box-sizing mt-5">
         <div className="container">
           <div className="row justify-content-center">
@@ -41,7 +41,7 @@ const Login = () => {
                           id="contrasenia"
                         />
                       </div>
-                      <div className="d-flex mb-5 align-items-center">
+                      {/* <div className="d-flex mb-5 align-items-center">
                         <label className="control control--checkbox mb-0">
                           <span className="caption">Remember me</span>
                           <input
@@ -56,7 +56,7 @@ const Login = () => {
                             Olvidaste tu contraseña?
                           </a>
                         </span>
-                      </div>
+                      </div> */}
                       <input
                         type="submit"
                         value="Ingresar"

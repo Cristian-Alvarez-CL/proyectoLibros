@@ -18,7 +18,6 @@ function Home() {
     <div>
       <Navbar contacto='Contacto'/>
       <Masthead />
-      <Busqueda />
       <Services />
       <PortfolioGrid />
       <Teams />
