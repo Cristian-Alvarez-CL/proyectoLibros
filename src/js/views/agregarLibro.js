@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import "../../styles/agregarLibro.css";
-import Navbar from "../components/navbar";
+import NavbarLogin from "../components/navbarLogin";
 import Footer from "../components/footer";
 import { Context } from "../store/appContext";
+import fotoLibro2  from "../../img/fotoLibro2.jpg";
 
 function AgregarLibro( props ) {
 
@@ -72,7 +73,7 @@ function AgregarLibro( props ) {
 
   return (
     <>
-      <Navbar />
+      <NavbarLogin />
       <div className="container pt-5">
         <div className="row align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -82,11 +83,11 @@ function AgregarLibro( props ) {
                     ) : null
             }
             <img
-              src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
+              src={fotoLibro2}
               alt="hola"
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h1>Agregar un libro</h1>
+            <h1>PUBLICA TU LIBRO</h1>
             <h4 className="font-italic text-muted mb-0">
               Información de tu libro:
             </h4>

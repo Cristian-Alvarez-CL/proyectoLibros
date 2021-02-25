@@ -8,11 +8,12 @@ function Navbar() {
       id="mainNav"
     >
       <div className="container">
-        <a className="navbar-brand js-scroll-trigger" href="#page-top">
-          <Link to="/">
+        <Link className="navbar-brand js-scroll-trigger" to="/">
+        PASA TU LIBRO <i class="fas fa-swatchbook"></i>
+          {/* <Link to="/">
             <img src={logo} alt="" />
-          </Link>
-        </a>
+          </Link> */}
+        </Link>
         <button
           className="navbar-toggler navbar-toggler-right"
           type="button"
@@ -42,7 +43,7 @@ function Navbar() {
                 Equipo
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="...">
                 <Link to="/login">Login</Link>
               </a>
@@ -51,7 +52,7 @@ function Navbar() {
               <a className="nav-link js-scroll-trigger" href="...">
                 <Link to="/create">Registrate</Link>
               </a>
-            </li>
+            </li> */}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -62,19 +63,16 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Perfil
+                 Mi cuenta
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link className="dropdown-item" to="/login"> Ingresa a tu cuenta </Link>
+                
+                <Link className="dropdown-item" to="/create"> Registrarse </Link>
+                {/* <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="#">
-                  Mi cuenta
-                </a>
-                <a className="dropdown-item" href="#">
-                  Mis Publicaciones
-                </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
-                  Otra cosa mas...
-                </a>
+                  Cerrar Sesión
+                </a> */}
               </div>
             </li>
           </ul>

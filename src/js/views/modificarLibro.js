@@ -4,7 +4,8 @@ import Navbar from "../components/navbar";
 import { useState } from "react";
 import Footer from "../components/footer";
 import { useContext } from "react";
-import { Context } from "../store/appContext"
+import { Context } from "../store/appContext";
+import fotoLibro5  from "../../img/fotoLibro5.jpg";
 
 function ModificarLibro(props) {
 
@@ -83,7 +84,7 @@ function ModificarLibro(props) {
                     ) : null
             }
             <img
-              src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
+              src={fotoLibro5}
               alt="hola"
               className="img-fluid mb-3 d-none d-md-block"
             />
