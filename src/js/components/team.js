@@ -2,7 +2,8 @@ import fotoTeam1  from "../../img/team/1.jpg";
 import fotoTeam2  from "../../img/team/2.jpg";
 import fotoTeam3  from "../../img/team/3.jpg";
 import fotoTeam4  from "../../img/team/Cris.jfif";
-import fotoTeam5  from "../../img/team/Dug.jfif";
+import fotoTeam5  from "../../img/team/Dug2.jfif";
+import fotoTeam6  from "../../img/team/Yessy.png";
 
 function Teams() {
     return(
@@ -25,7 +26,7 @@ function Teams() {
                 </div>
                 <div className="col-lg-4">
                     <div className="team-member">
-                        <img className="mx-auto rounded-circle" src={fotoTeam2} alt="" />
+                        <img className="mx-auto rounded-circle" src={fotoTeam6} alt="" />
                         <h4>Yessenia Díaz</h4>
                         <p className="text-muted">Estudiante 4Geeks Academy</p>
                         {/* <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
