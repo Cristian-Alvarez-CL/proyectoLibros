@@ -159,18 +159,29 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/login", options);
         const datos = await resp.json();
+        /*  */
+        const optionsPerfil = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + datos.tokenLogin,
+          },
+        };
+        const respPerfil = await fetch(store.apiUrl + "/api/perfil", optionsPerfil);
+        const datosPerfil = await respPerfil.json();
+        /*  */
         console.log(datos);
         setStore({
           currentUser: datos,
           contrasenia: null,
-          error: null,
+          error: datosPerfil,
           estaAut: true,
         });
         localStorage.setItem("currentUser", JSON.stringify(datos));
         localStorage.setItem("estaAut", true);
         history.push("/");
         alert(store.currentUser.tokenLogin);
-        actions.handleLocal();
+        //actions.handleLocal();
       },
 
       estaAutenticado: () => {
