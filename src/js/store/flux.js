@@ -170,7 +170,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         localStorage.setItem("estaAut", true);
         history.push("/");
         alert(store.currentUser.tokenLogin);
-        actions.handleLocal();
       },
 
       estaAutenticado: () => {
@@ -181,7 +180,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
         }
       },
-      
     },
   };
 };

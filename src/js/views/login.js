@@ -26,7 +26,7 @@ const Login = (props) => {
                         Complete todos los datos para ingresar a la plataforma
                       </p>
                     </div>
-                    <form /* onSubmit={e => actions.handleLogin(e, props.history)} */ >
+                    <form onSubmit={e => actions.handleLogin(e, props.history)} >
                       <div className="form-group last mb-4">
                         <input
                           type="email"
