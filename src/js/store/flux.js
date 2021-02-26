@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     return {
       store: {
         apiUrl: "http://localhost:5000",
+        usuarioId: null,
         usuarios: [],
         nombreCompleto: null,
         correo: null,
@@ -88,6 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             numDepto: null,
             msj: datos.msj,
           });
+
           history.push("/");
         },
   
@@ -131,6 +133,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           history.push("/");
         },
+        getUsuarioID: async (id) => {
+          const store = getStore();
+          const resp = await fetch(store.apiUrl + `/api/crearusuario/${id}`);
+          const datos = await resp.json();
+          console.log(datos);
+          setStore({
+            usuarioId: datos
+          });
+
+        }
       },
     };
   };
