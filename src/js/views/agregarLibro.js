@@ -208,9 +208,9 @@ const AgregarLibro = (props) => {
                   </div>
                   <input
                     id="precio"
-                    type="text"
+                    type="number"
                     name="precio"
-                    placeholder="Precio: $10.000 / Permuta"
+                    placeholder="Precio: $10.000 / 0 si es Permuta"
                     className="form-control bg-white border-left-0 border-md"
                     onChange={actions.handleChange}
                     value={store.precio}
