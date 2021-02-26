@@ -12,7 +12,7 @@ function Services() {
                             <i className="fas fa-circle fa-stack-2x text-primary"></i>
                             <i className="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 className="my-3">Realiza una venta</h4>
+                        <h4 className="my-3">Publica tu Libro</h4>
                         <p className="text-muted">Puedes vender ese libro que ya no utilices.</p>
                     </div>
                     <div className="col-md-6">

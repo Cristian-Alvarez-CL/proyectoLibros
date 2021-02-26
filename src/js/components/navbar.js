@@ -64,18 +64,14 @@ function Navbar() {
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link className="dropdown-item" to="/login">
-                  {" "}
-                  Ingresa a tu cuenta{" "}
+                  Ingresa a tu cuenta
                 </Link>
-
                 <Link className="dropdown-item" to="/create">
-                  {" "}
-                  Registrarse{" "}
+                  Registrarse
                 </Link>
-                {/* <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
-                  Cerrar Sesión
-                </a> */}
+                <Link className="dropdown-item" to="/agregarlibro">
+                  Agregar Publicación
+                </Link>
               </div>
             </li>
           </ul>

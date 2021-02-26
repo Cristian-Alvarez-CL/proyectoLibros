@@ -106,7 +106,7 @@ const Publicacion = ({ match }, props) => {
                 Comentarios:
                 <p className="text-capitalize m-0 p-0">{store.publicaciones[id - 1].comentarios}</p>
               </h5>
-              <div className="form-group col-lg-12 mt-2">
+              <div className="form-group col-lg-12 mt-5">
                 <a href="#" className="btn btn-primary btn-block py-2">
                   <span className="font-weight-bold">Permuta / Venta</span>
                 </a>

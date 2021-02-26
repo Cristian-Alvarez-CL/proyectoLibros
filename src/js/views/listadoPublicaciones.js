@@ -2,15 +2,18 @@ import React from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const ListadoPublicaciones = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
     <>
+      <Navbar/>
       <div classNameName="container">
         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-          <h1 className="display-4">Listado de Libros</h1>
+          <h1 className="display-4 mt-5">Listado de Libros</h1>
           <p className="lead">
             Aca encontrara un listado de los libros disponibles para la venta o
             permuta de los mismos...
@@ -48,6 +51,7 @@ const ListadoPublicaciones = (props) => {
           </table>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
