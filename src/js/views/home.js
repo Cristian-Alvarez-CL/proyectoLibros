@@ -5,7 +5,6 @@ import Services from '../components/services';
 import PortfolioGrid from '../components/portfoliogrid';
 import Teams from '../components/team';
 import Footer from '../components/footer';
-import PortfolioModals from '../components/portfolioModals';
 
 
 function Home() {
@@ -17,7 +16,6 @@ function Home() {
       <PortfolioGrid />
       <Teams />
       <Footer />
-      <PortfolioModals />
     </div>
   );
 }
