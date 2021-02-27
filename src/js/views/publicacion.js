@@ -77,6 +77,7 @@ const Publicacion = ({ match }, props) => {
           <div className="col-md-8 col-lg-8 ml-auto">
             <div className="pubboder">
               <h5 className="m-0 p-0">
+                Titulo: 
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].titulo}
                 </p>
@@ -126,7 +127,7 @@ const Publicacion = ({ match }, props) => {
               <h5 className="m-0 p-0">
                 Precio / Permuta:
                 <p className="text-capitalize m-0 p-0">
-                  {store.publicaciones[id - 1].precio}
+                  $ {store.publicaciones[id - 1].precio}
                 </p>
               </h5>
               <h5 className="m-0 p-0">

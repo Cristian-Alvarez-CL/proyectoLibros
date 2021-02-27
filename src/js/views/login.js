@@ -2,7 +2,6 @@ import React from "react";
 import NavbarLogin from "../components/navbarLogin";
 import Footer from "../components/footer";
 import "../../styles/login.css";
-
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 

@@ -1,7 +1,7 @@
 import iconClose from "../../img/close-icon.svg";
 import fotolibro from "../../img/portfolio/Libros-de-texto2.jpg";
 
-function PortfolioModal() {
+const PortfolioModal = () => {
   return (
     <section>
       <div
