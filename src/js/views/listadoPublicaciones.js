@@ -15,9 +15,8 @@ const ListadoPublicaciones = (props) => {
         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
           <h1 className="display-4 mt-5">Listado de Libros</h1>
           <p className="lead">
-            Aca encontrara un listado de los libros disponibles para la venta o
-            permuta de los mismos...
-          </p>
+            Acá encontrarás un listado de los libros disponibles para la venta o
+            permuta </p>
         </div>
       </div>
       <div className="container">

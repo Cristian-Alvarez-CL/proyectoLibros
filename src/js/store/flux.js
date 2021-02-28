@@ -48,6 +48,12 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ publicaciones: data }))
           .catch((error) => console.warn(error));
       },
+      getMisPublicaciones: (url, options = {}) => {
+        fetch(url, options)
+          .then((resp) => resp.json())
+          .then((data) => setStore({ publicaciones: data }))
+          .catch((error) => console.warn(error));
+      },
 
       handleChange: (e) => {
         const { name, value } = e.target;
@@ -184,10 +190,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       estaAutenticado: () => {
-        if (localStorage.getItem("estaAut")) {
+        if (sessionStorage.getItem("estaAut")) {
           setStore({
-            currentUser: JSON.parse(localStorage.getItem("currentUser")),
-            estaAut: JSON.parse(localStorage.getItem("estaAut")),
+            currentUser: JSON.parse(sessionStorage.getItem("currentUser")),
+            estaAut: JSON.parse(sessionStorage.getItem("estaAut")),
           });
         }
       },
