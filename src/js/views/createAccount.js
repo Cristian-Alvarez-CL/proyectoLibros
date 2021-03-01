@@ -3,6 +3,7 @@ import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 const CreateAccount = (props) => {
   const { store, actions } = useContext(Context);
@@ -258,9 +259,9 @@ const CreateAccount = (props) => {
                 <div className="text-center w-100">
                   <p className="text-muted font-weight-bold">
                     Ya estas registrado?
-                    <a href="#" className="text-primary ml-2">
-                      Accede
-                    </a>
+                    <Link className="text-primary ml-2" to="/login">
+                    Accede
+                    </Link>
                   </p>
                 </div>
               </div>

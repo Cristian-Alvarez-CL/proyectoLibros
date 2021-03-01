@@ -4,6 +4,7 @@ import "../../styles/login.css";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import Navbar from "../components/navbar";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const { store, actions } = useContext(Context);
@@ -60,6 +61,9 @@ const Login = (props) => {
                         className="btn btn-pill text-white btn-block btn-primary"
                       />
                     </form>
+                    <p className="mt-2">
+                    <Link to="/">Regresa al Inicio</Link>
+                    </p>
                   </div>
                 </div>
               </div>
