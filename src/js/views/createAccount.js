@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-import { useHistory, Link } from "react-router-dom";
 
 const CreateAccount = (props) => {
   const { store, actions } = useContext(Context);
+  const { history } = props;
+
+  useEffect(() => {
+    if (store.isAuth) history.push("/");
+  }, []);
 
   return (
     <>
