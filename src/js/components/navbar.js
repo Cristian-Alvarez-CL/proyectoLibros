@@ -76,10 +76,6 @@ const Navbar = (props) => {
                 <Link className="dropdown-item" to="/create">
                   Registrarse
                 </Link>
-                <Link className="dropdown-item" to="/agregarlibro">
-                  Agregar Publicación
-                </Link>
-              
               </div>
             </li>
           </ul>

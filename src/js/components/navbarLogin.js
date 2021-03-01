@@ -25,31 +25,11 @@ function NavbarLogin() {
         </button>
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav text-uppercase ml-auto">
-            {/* <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#services">
-                                Servicios
-              </a>
-                        </li> */}
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="#portfolio">
                 Publicaciones
               </a>
             </li>
-            {/* <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#team">
-                                Equipo
-              </a>
-                        </li> */}
-            {/* <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="...">
-                                <Link to="/login">Login</Link>
-                            </a>
-                        </li> */}
-            {/* <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="...">
-                                <Link to="/create">Registrate</Link>
-                            </a>
-                        </li> */}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -64,8 +44,7 @@ function NavbarLogin() {
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link className="dropdown-item" to="/agregarLibro">
-                  {" "}
-                  Publica tu libro{" "}
+                  Publica tu libro
                 </Link>
               </div>
             </li>
@@ -74,6 +53,16 @@ function NavbarLogin() {
       </div>
     </nav>
   );
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <Link className="dropdown-item" to="/agregarLibro"> Publica tu libro </Link>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
 }
 
 export default NavbarLogin;
