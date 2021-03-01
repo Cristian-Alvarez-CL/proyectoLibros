@@ -18,6 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       isAuth: null,
       estaAut: null,
       publicaciones: [],
+      mispublicaciones: [],
       cliente_id: null,
       titulo: null,
       nombreAutor: null,
@@ -48,11 +49,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ publicaciones: data }))
           .catch((error) => console.warn(error));
       },
-      getMisPublicaciones: (url, options = {}) => {
-        fetch(url, options)
-          .then((resp) => resp.json())
-          .then((data) => setStore({ publicaciones: data }))
-          .catch((error) => console.warn(error));
+      getMisPublicaciones: () => {
+        const {apiUrl, currentUser} = getStore();
+        // const {access_token} = currentUser;
+        fetch(`${apiUrl}/api/usuario`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + datos.tokenLogin,
+          },
+        })
+        .then((resp) => resp.json())
+        .then((data) => setStore({ mispublicaciones: data }))
+        .catch((error) => console.warn(error));
       },
 
       handleChange: (e) => {
@@ -190,10 +199,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       estaAutenticado: () => {
-        if (sessionStorage.getItem("estaAut")) {
+        if (localStorage.getItem("estaAut")) {
           setStore({
-            currentUser: JSON.parse(sessionStorage.getItem("currentUser")),
-            estaAut: JSON.parse(sessionStorage.getItem("estaAut")),
+            currentUser: JSON.parse(localStorage.getItem("currentUser")),
+            estaAut: JSON.parse(localStorage.getItem("estaAut")),
           });
         }
       },
