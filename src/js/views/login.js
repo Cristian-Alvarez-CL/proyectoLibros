@@ -1,5 +1,5 @@
-import React from "react";
-import NavbarLogin from "../components/navbarLogin";
+import React, { useEffect } from "react";
+//import NavbarLogin from "../components/navbarLogin";
 import Footer from "../components/footer";
 import "../../styles/login.css";
 import { useContext } from "react";
@@ -7,9 +7,15 @@ import { Context } from "../store/appContext";
 
 const Login = (props) => {
   const { store, actions } = useContext(Context);
+  const { history } = props;
+
+  useEffect(() => {
+    if (store.isAuth) history.push("/");
+  }, []);
+
   return (
     <>
-      <NavbarLogin />
+      
       <div className="content box-sizing mt-5">
         <div className="container">
           <div className="row justify-content-center">
@@ -25,7 +31,9 @@ const Login = (props) => {
                         Complete todos los datos para ingresar a la plataforma
                       </p>
                     </div>
-                    <form onSubmit={e => actions.handleLogin(e, props.history)} >
+                    <form
+                      onSubmit={(e) => actions.handleLogin(e, props.history)}
+                    >
                       <div className="form-group last mb-4">
                         <input
                           type="email"

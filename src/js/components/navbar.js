@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
-import logo from "../../img/logoPasatuLibro.png";
+import { Link, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
-function Navbar() {
+const Navbar = (props) => {
+  const { store, actions } = useContext(Context);
+  const { history } = props;
+
+  const location = useLocation();
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark"
       id="mainNav"
     >
       <div className="container">
-        <Link className="navbar-brand js-scroll-trigger" to="/">
+        <Link className="navbar-brand js-scroll-trigger " to="/">
           PASA TU LIBRO <i class="fas fa-swatchbook"></i>
         </Link>
         <button
@@ -40,16 +45,14 @@ function Navbar() {
                 Equipo
               </a>
             </li>
-            {/* <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="...">
-                <Link to="/login">Login</Link>
+            <li className="nav-item">
+              <a  href="...">
+                <Link className={"nav-link " + (location.pathname === '/login' ? "active" : "")} to="/login">Login</Link>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="...">
-                <Link to="/create">Registrate</Link>
-              </a>
-            </li> */}
+                <Link className={"nav-link " + (location.pathname === '/create' ? "active" : "")} to="/create">Registrate</Link>
+            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -63,14 +66,15 @@ function Navbar() {
                 Mi cuenta
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                { store.datosPerfil 
+                    ? <a className="dropdown-item font-weight-bold m-1 p-1">Bienvenido: {store.datosPerfil.nombreCompleto}</a> 
+                    : null
+                }
                 <Link className="dropdown-item" to="/login">
                   Ingresa a tu cuenta
                 </Link>
                 <Link className="dropdown-item" to="/create">
                   Registrarse
-                </Link>
-                <Link className="dropdown-item" to="/agregarlibro">
-                  Agregar Publicación
                 </Link>
               </div>
             </li>

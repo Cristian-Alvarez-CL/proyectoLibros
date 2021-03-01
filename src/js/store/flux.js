@@ -2,7 +2,6 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       apiUrl: "http://localhost:5000",
-      usuarioId: null,
       usuarios: [],
       nombreCompleto: null,
       correo: null,
@@ -15,9 +14,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       tipoVivienda: null,
       numDepto: null,
       currentUser: null,
-      isAuth: null,
-      estaAut: null,
+      isAuth: false,
       publicaciones: [],
+      mispublicaciones: [],
       cliente_id: null,
       titulo: null,
       nombreAutor: null,
@@ -29,9 +28,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       tipoIntercambio: null,
       precio: null,
       comentarios: null,
-      msgUsuario: null,
-      msgPublicacion: null,
       error: null,
+      datosPerfil: null,
       tokenLogin: null,
     },
     actions: {
@@ -48,12 +46,23 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ publicaciones: data }))
           .catch((error) => console.warn(error));
       },
-
       handleChange: (e) => {
         const { name, value } = e.target;
         setStore({
           [name]: value,
         });
+      },
+
+      isAuthenticated: () => {
+        console.log("verificando usuario");
+        if (sessionStorage.getItem("isAuth")) {
+          setStore({
+            isAuth: JSON.parse(sessionStorage.getItem("isAuth")),
+            currentUser: JSON.parse(sessionStorage.getItem("currentUser")),
+            cliente_id: JSON.parse(sessionStorage.getItem("cliente_id")),
+            datosPerfil: JSON.parse(sessionStorage.getItem("datosPerfil")),
+          });
+        }
       },
 
       handleRegistroUsuario: async (e, history) => {
@@ -159,7 +168,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/login", options);
         const datos = await resp.json();
-        /*  */
+      
         const optionsPerfil = {
           method: "GET",
           headers: {
@@ -169,27 +178,20 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const respPerfil = await fetch(store.apiUrl + "/api/perfil", optionsPerfil);
         const datosPerfil = await respPerfil.json();
-        /*  */
         console.log(datos);
         setStore({
           currentUser: datos,
           contrasenia: null,
-          error: datosPerfil,
-          estaAut: true,
+          datosPerfil: datosPerfil,
+          cliente_id: datosPerfil.id,
+          isAuth: true,
         });
-        localStorage.setItem("currentUser", JSON.stringify(datos));
-        localStorage.setItem("estaAut", true);
+        sessionStorage.setItem("currentUser", JSON.stringify(datos));
+        sessionStorage.setItem("isAuth", true);
+        sessionStorage.setItem("cliente_id", datosPerfil.id);
+        sessionStorage.setItem("datosPerfil", JSON.stringify(datosPerfil));
         history.push("/");
-        alert(store.currentUser.tokenLogin);
-      },
-
-      estaAutenticado: () => {
-        if (localStorage.getItem("estaAut")) {
-          setStore({
-            currentUser: JSON.parse(localStorage.getItem("currentUser")),
-            estaAut: JSON.parse(localStorage.getItem("estaAut")),
-          });
-        }
+        alert(store.currentUser.estado);
       },
     },
   };
