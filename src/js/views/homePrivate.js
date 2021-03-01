@@ -1,5 +1,5 @@
 import "../../styles/styles.css";
-//import NavbarLogin from "../components/navbarLogin";
+import NavbarLogin from "../components/navbarLogin";
 import Masthead from "../components/masthead";
 import PortfolioGrid from "../components/portfoliogrid";
 import Contact from "../components/contact";
@@ -11,7 +11,7 @@ import TablaInformacion from "../components/tablaInfo";
 function HomePrivate() {
   return (
     <>
-    
+      <NavbarLogin />
       <Masthead />
       <PortfolioGrid />
       <TablaInformacion />

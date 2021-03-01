@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/agregarLibro.css";
-//import Navbar from "../components/navbar";
+import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { useHistory, Link } from "react-router-dom";
-//import NavbarLogin from "../components/navbarLogin";
 
 const AgregarLibro = (props) => {
   const { store, actions } = useContext(Context);
@@ -17,7 +16,7 @@ const AgregarLibro = (props) => {
 
   return (
     <>
-      
+      <Navbar />
       <div className="container pt-5">
         <div className="row align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -26,7 +25,7 @@ const AgregarLibro = (props) => {
               alt="hola"
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h1>AGREGAR UN LIBRO</h1>
+            <h1>Agregar un libro</h1>
             <h4 className="font-italic text-muted mb-0">
               Información de tu libro:
             </h4>

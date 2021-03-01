@@ -1,11 +1,10 @@
 import React from "react";
 import "../../styles/agregarLibro.css";
-//import Navbar from "../components/navbar";
+import Navbar from "../components/navbar";
 import { useState } from "react";
 import Footer from "../components/footer";
 import { useContext } from "react";
 import { Context } from "../store/appContext"
-//import NavbarLogin from "../components/navbarLogin";
 
 function ModificarLibro(props) {
 
@@ -13,7 +12,7 @@ function ModificarLibro(props) {
 
   return (
     <>
-      
+      <Navbar />
       <div className="container pt-5">
         <div className="row align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -22,7 +21,7 @@ function ModificarLibro(props) {
               alt="hola"
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h1>EDITAR PUBLICACIÓN</h1>
+            <h1>Editar Publicación</h1>
             <h4 className="font-italic text-muted mb-0">
               Información de tu libro:
             </h4>
@@ -224,7 +223,7 @@ function ModificarLibro(props) {
                   </div>
                 
                   <div className="form-group col-lg-12 mx-auto mb-0">
-                  <input onSubmit={actions.handleRegistroPublicacion} type="submit" className="btn btn-primary btn-block font-weight-bold" value="Editar Publicación"/>
+                  <input onSubmit={actions.handleRegistroPublicacion} type="submit" className="btn btn-primary btn-block font-weight-bold" value="Modificar Libro"/>
                 </div>
     
                 </div>

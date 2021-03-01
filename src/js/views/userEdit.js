@@ -8,7 +8,7 @@ import { Context } from "../store/appContext"
 const UserEdit = ({ match }, props) => {
 
   const { store, actions } = useContext(Context)
-
+  
   const id = match.params.id;
 
   return (
@@ -29,7 +29,7 @@ const UserEdit = ({ match }, props) => {
             </p>
           </div>
           <div className="col-md-7 col-lg-6 ml-auto">
-            <form onSubmit={actions.handleusuarios}>
+          <form onSubmit={actions.handleusuarios}>
               <div className="row">
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
@@ -70,7 +70,7 @@ const UserEdit = ({ match }, props) => {
                     </span>
                   </div>
                   <input
-                    id="telefono"
+                     id="telefono"
                     type="tel"
                     name="telefono"
                     placeholder="Numero de Teléfono +56900000000"
@@ -215,7 +215,7 @@ const UserEdit = ({ match }, props) => {
                   />
                 </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
-                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Confirmar datos" onSubmit={actions.handleusuarios} />
+                  <input type="submit" className="btn btn-primary btn-block font-weight-bold" value="Confirmar datos" onSubmit={actions.handleusuarios}/>
                 </div>
               </div>
             </form>

@@ -15,7 +15,7 @@ const Usuario = ({ match }, props) => {
     <>
       <Navbar />
       <div className="container mt-5">
-        <h2 className="mt-5">CONTÁCTAME</h2>
+        <h2 className="mt-5">Contactame</h2>
         <hr />
         <div className="row align-items-center">
           <div className="col-md-8 col-lg-8">
@@ -35,7 +35,7 @@ const Usuario = ({ match }, props) => {
               </h5>
               <hr className="mt-0"/>
               <h5 className="m-0 p-0">
-                Teléfono:
+                Telefono:
                 <p className="text-capitalize m-0 p-0 font-weight-bold">
                   {store.usuarios[id - 1].telefono}
                 </p>

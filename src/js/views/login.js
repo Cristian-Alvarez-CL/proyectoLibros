@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-//import NavbarLogin from "../components/navbarLogin";
+import NavbarLogin from "../components/navbarLogin";
 import Footer from "../components/footer";
 import "../../styles/login.css";
 import { useContext } from "react";
@@ -15,7 +15,7 @@ const Login = (props) => {
 
   return (
     <>
-      
+      <NavbarLogin />
       <div className="content box-sizing mt-5">
         <div className="container">
           <div className="row justify-content-center">
