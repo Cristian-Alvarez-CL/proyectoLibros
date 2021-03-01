@@ -18,6 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       isAuth: null,
       estaAut: null,
       publicaciones: [],
+      mispublicaciones: [],
       cliente_id: null,
       titulo: null,
       nombreAutor: null,
@@ -47,6 +48,20 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((resp) => resp.json())
           .then((data) => setStore({ publicaciones: data }))
           .catch((error) => console.warn(error));
+      },
+      getMisPublicaciones: () => {
+        const {apiUrl, currentUser} = getStore();
+        // const {access_token} = currentUser;
+        fetch(`${apiUrl}/api/usuario`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + datos.tokenLogin,
+          },
+        })
+        .then((resp) => resp.json())
+        .then((data) => setStore({ mispublicaciones: data }))
+        .catch((error) => console.warn(error));
       },
 
       handleChange: (e) => {

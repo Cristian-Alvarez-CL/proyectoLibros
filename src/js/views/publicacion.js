@@ -77,59 +77,68 @@ const Publicacion = ({ match }, props) => {
           <div className="col-md-8 col-lg-8 ml-auto">
             <div className="pubboder">
               <h5 className="m-0 p-0">
-                Titulo: 
+                Título: 
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].titulo}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Autor:{" "}
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].nombreAutor}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Editorial:{" "}
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].editorial}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Nivel:{" "}
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].nivel}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Asignatura:{" "}
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].asignatura}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Estado:{" "}
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].estadoNuevoUsado}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Condición:{" "}
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].condicionOriginalCopia}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Tipo:{" "}
                 <p className="text-capitalize m-0 p-0">
                   {store.publicaciones[id - 1].tipoIntercambio}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Precio / Permuta:
                 <p className="text-capitalize m-0 p-0">
                   $ {store.publicaciones[id - 1].precio}
                 </p>
               </h5>
+              <hr className="mt-0"/>
               <h5 className="m-0 p-0">
                 Comentarios:
                 <p className="text-capitalize m-0 p-0">
@@ -149,7 +158,7 @@ const Publicacion = ({ match }, props) => {
             to={`/usuarios/${store.publicaciones[id -1].cliente_id}`}
             className="btn btn-primary btn-block font-weight-bold"
           >
-            Contactame
+            Contáctame
           </Link>
           </div>
           <div className="col-4"></div>

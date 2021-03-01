@@ -34,9 +34,9 @@ function NavbarLogin() {
               </a>
                         </li> */}
                         <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#portfolio">
-                                Publicaciones
-              </a>
+                        <Link className="nav-link js-scroll-trigger" to="/misPublicaciones">
+                  MIS PUBLICACIONES 
+                </Link>
                         </li>
                         {/* <li className="nav-item">
                             <a className="nav-link js-scroll-trigger" href="#team">
@@ -67,13 +67,14 @@ function NavbarLogin() {
               </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <Link className="dropdown-item" to="/agregarLibro"> Publica tu libro </Link>
-                                {/* <a className="dropdown-item" href="#">
+{/* 
+                                 <Link className="dropdown-item" to="modificarLibro">
                                     Modificar Publicación
-                </a>
-                                <div className="dropdown-divider"></div>
+                </Link> */}
+                                {/* <div className="dropdown-divider"></div>
                                 <a className="dropdown-item" href="#">
                                     Otra cosa mas...
-                </a> */}
+                </a>  */}
                             </div>
                         </li>
                     </ul>

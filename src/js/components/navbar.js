@@ -69,9 +69,9 @@ function Navbar() {
                 <Link className="dropdown-item" to="/create">
                   Registrarse
                 </Link>
-                <Link className="dropdown-item" to="/agregarlibro">
+                {/* <Link className="dropdown-item" to="/agregarlibro">
                   Agregar Publicación
-                </Link>
+                </Link> */}
               </div>
             </li>
           </ul>
