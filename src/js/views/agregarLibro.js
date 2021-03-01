@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/agregarLibro.css";
@@ -8,6 +8,11 @@ import { useHistory, Link } from "react-router-dom";
 
 const AgregarLibro = (props) => {
   const { store, actions } = useContext(Context);
+  const { history } = props;
+
+  useEffect(() => {
+    if (!store.isAuth) history.push("/");
+  }, []);
 
   return (
     <>

@@ -8,20 +8,41 @@ import { useContext, useState } from "react";
 const Perfil = (props) => {
 
   const { store, actions } = useContext(Context);
+  const {
+    datosPerfil
+} = store;
 
   return (
     <>
       <Navbar />
       <div className="container mt-5">
-      {store.clientes.map((cliente, index) => (
-        <div className="row py-5 mt-4 align-items-center" key={index}>
+      {
+                !!datosPerfil &&
+                    !!datosPerfil.success ?
+                    (
+                        <div className="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Sucess: </strong> {datosPerfil.comuna}.
+                            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Message: </strong> Aun Nada.
+                            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    )
+            }
+        {/* <div className="row py-5 mt-4 align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img
               src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
               alt="hola"
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h1>Bienvenido {cliente.nombreCompleto}</h1>
+            <h1>Bienvenido {store.datosPerfil.nombreCompleto}</h1>
             <p className="font-italic text-muted mb-0">
               Aca tienes todo lo relacionado a tus datos los cuales son muy
               importantes a la hora de contactarte con otros usuarios
@@ -40,7 +61,7 @@ const Perfil = (props) => {
                     id="fullName"
                     type="text"
                     name="fullName"
-                    placeholder={cliente.nombreCompleto}
+                    placeholder={store.datosPerfil.nombreCompleto.nombreCompleto}
                     className="form-control bg-white border-left-0 border-md cursor"
                     readOnly
                   />
@@ -55,23 +76,8 @@ const Perfil = (props) => {
                     id="phoneNumber"
                     type="tel"
                     name="phone"
-                    placeholder={cliente.telefono}
+                    placeholder={store.datosPerfil.nombreCompleto.telefono}
                     className="form-control bg-white border-md border-left-0 pl-3 cursor"
-                    readOnly
-                  />
-                </div>
-                <div className="input-group col-lg-12 mb-4">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text bg-white px-4 border-md border-right-0">
-                      <i className="fa fa-lock text-muted"></i>
-                    </span>
-                  </div>
-                  <input
-                    id="password"
-                    type="password"
-                    name="password"
-                    placeholder={cliente.contrasenia}
-                    className="form-control bg-white border-left-0 border-md cursor"
                     readOnly
                   />
                 </div>
@@ -85,7 +91,7 @@ const Perfil = (props) => {
                     id="direction"
                     type="text"
                     name="direction"
-                    placeholder={cliente.direccion}
+                    placeholder={store.datosPerfil.nombreCompleto.direccion}
                     className="form-control bg-white border-left-0 border-md cursor"
                     readOnly
                   />
@@ -98,8 +104,7 @@ const Perfil = (props) => {
               </div>
             </form>
           </div>
-        </div>
-        ))}
+        </div> */}
       </div>
       <Footer />
     </>

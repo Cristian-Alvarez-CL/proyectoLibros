@@ -32,7 +32,7 @@ const injectContext = PassedComponent => {
 			 **/
 			state.actions.getUsuarios("http://localhost:5000/api/crearusuario");
 			state.actions.getPublicaciones("http://localhost:5000/api/crearlibro");
-			state.actions.estaAutenticado();
+			state.actions.isAuthenticated();
 			
 		}, []);
 		
