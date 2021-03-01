@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 
 const ListadoPublicaciones = (props) => {
   const { store, actions } = useContext(Context);
-
+ 
   return (
     <>
       <Navbar />

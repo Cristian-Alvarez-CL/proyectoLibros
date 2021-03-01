@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
@@ -8,15 +8,19 @@ import { Context } from "../store/appContext";
 
 const MisPublicaciones = () => {
   const { store, actions } = useContext(Context);
+  
+  useEffect(() => {
+   actions.getPublicacionesUsuario()
+   actions.getPublicaciones()
+  }, [])
   return (
     <>
       <Navbar />
       <div classNameName="container">
         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-          <h1 className="display-4 mt-5">Listado de Libros</h1>
+          <h1 className="display-4 mt-5">Listado de Mis Publicaciones</h1>
           <p className="lead">
-            Aca encontrara un listado de los libros disponibles para la venta o
-            permuta de los mismos...
+            Aca encontrara un listado de las publicaciones que has realizado...
           </p>
         </div>
       </div>

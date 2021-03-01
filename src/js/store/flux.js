@@ -88,7 +88,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/crearusuario", options);
         const datos = await resp.json();
-        console.log(datos);
         setStore({
           currentUser: datos.usuario,
           cliente_id: datos.usuario.id,
@@ -104,8 +103,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           numDepto: null,
           msg: datos.msg,
         });
-        alert(store.msgUsuario);
-        history.push("/");
+        history.push("/login");
       },
 
       handleRegistroPublicacion: async (e, history) => {
@@ -147,7 +145,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           comentarios: null,
           msgPublicacion: datos.msg,
         });
-        alert(store.msgPublicacion);
         history.push("/");
       },
 
@@ -193,7 +190,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         sessionStorage.setItem("datosPerfil", JSON.stringify(datosPerfil));
         getActions().getPublicacionesUsuario();
         history.push("/");
-        alert(store.currentUser.estado);
       },
 
       getPublicacionesUsuario: async () => {
@@ -210,6 +206,21 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({
           publicacionesId: datosPerfil
         });
+      },
+      cerrarSesion: (history) => {
+				sessionStorage.removeItem("currentUser");
+        sessionStorage.removeItem("isAuth");
+        sessionStorage.removeItem("cliente_id");
+        sessionStorage.removeItem("datosPerfil");
+				setStore({
+					currentUser: null,
+					isAuth: false,
+					cliente_id: null,
+					datosPerfil: null,
+          correo: null,
+          publicacionesId: null,
+				});
+        history.push("/");
       },
     },
   };

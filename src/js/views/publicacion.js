@@ -78,65 +78,74 @@ const Publicacion = ({ match }, props) => {
             <div className="pubboder">
               <h5 className="m-0 p-0">
                 Titulo: 
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].titulo}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Autor:{" "}
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].nombreAutor}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Editorial:{" "}
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].editorial}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Nivel:{" "}
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].nivel}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Asignatura:{" "}
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].asignatura}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Estado:{" "}
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].estadoNuevoUsado}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Condición:{" "}
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].condicionOriginalCopia}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Tipo:{" "}
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].tipoIntercambio}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Precio / Permuta:
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   $ {store.publicaciones[id - 1].precio}
                 </p>
+                <hr className="mt-0"/>
               </h5>
               <h5 className="m-0 p-0">
                 Comentarios:
-                <p className="text-capitalize m-0 p-0">
+                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].comentarios}
                 </p>
+                <hr className="mt-0"/>
               </h5>
-              <hr />
             </div>
           </div>
         </div>
