@@ -18,11 +18,11 @@ const CreateAccount = (props) => {
       <Navbar />
       <div className="container pt-5">
         <div className="row align-items-center">
-          <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
+          <div className="col-md-5 mb-3 mb-md-0 mt-sm-3">
             <img
               src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
               alt="hola"
-              className="img-fluid mb-3 d-none d-md-block"
+              className="img-fluid mb-1"
             />
             <h1>Crea tu cuenta</h1>
             <p className="font-italic text-muted mb-0">
@@ -31,7 +31,15 @@ const CreateAccount = (props) => {
             </p>
           </div>
           <div className="col-md-7 col-lg-6 mt-5 ml-auto">
-            <form onSubmit={e => actions.handleRegistroUsuario(e, props.history, actions.getUsuarios())}>
+            <form
+              onSubmit={(e) =>
+                actions.handleRegistroUsuario(
+                  e,
+                  props.history,
+                  actions.getUsuarios()
+                )
+              }
+            >
               <div className="row">
                 <div className="input-group col-lg-12 mb-4">
                   <div className="input-group-prepend">
@@ -136,9 +144,7 @@ const CreateAccount = (props) => {
                     <option value="Cerro Navia">Cerro Navia</option>
                     <option value="Conchalí">Conchalí</option>
                     <option value="El Bosque">El Bosque</option>
-                    <option value="Estación Central">
-                      Estación Central
-                    </option>
+                    <option value="Estación Central">Estación Central</option>
                     <option value="Huechuraba">Huechuraba</option>
                     <option value="Independencia">Independencia</option>
                     <option value="La Cisterna">La Cisterna</option>
@@ -260,7 +266,7 @@ const CreateAccount = (props) => {
                   <p className="text-muted font-weight-bold">
                     Ya estas registrado?
                     <Link className="text-primary ml-2" to="/login">
-                    Accede
+                      Accede
                     </Link>
                   </p>
                 </div>

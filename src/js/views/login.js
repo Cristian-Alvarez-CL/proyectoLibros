@@ -61,9 +61,11 @@ const Login = (props) => {
                         className="btn btn-pill text-white btn-block btn-primary"
                       />
                     </form>
+                    <div>
                     <p className="mt-2">
                     <Link to="/">Regresa al Inicio</Link>
                     </p>
+                    </div>
                   </div>
                 </div>
               </div>

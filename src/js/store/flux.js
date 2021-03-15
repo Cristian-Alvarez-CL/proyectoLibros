@@ -40,11 +40,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.warn(error));
       },
 
-      getPublicaciones: (url, options = {}) => {
-        fetch(url, options)
-          .then((resp) => resp.json())
-          .then((data) => setStore({ publicaciones: data }))
-          .catch((error) => console.warn(error));
+      getPublicaciones: async () => {
+        const store = getStore();
+        const optionsPerfil = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const respPublicaciones = await fetch(
+          store.apiUrl + "/api/crearlibro",
+          optionsPerfil
+        );
+        const publicacionesAll = await respPublicaciones.json();
+        setStore({
+          publicaciones: publicacionesAll,
+        });
       },
 
       handleChange: (e) => {
@@ -166,15 +177,18 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/login", options);
         const datos = await resp.json();
-      
+
         const optionsPerfil = {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + datos.tokenLogin,
+            Authorization: "Bearer " + datos.tokenLogin,
           },
         };
-        const respPerfil = await fetch(store.apiUrl + "/api/perfil", optionsPerfil);
+        const respPerfil = await fetch(
+          store.apiUrl + "/api/perfil",
+          optionsPerfil
+        );
         const datosPerfil = await respPerfil.json();
         console.log(datos);
         setStore({
@@ -200,26 +214,29 @@ const getState = ({ getStore, getActions, setStore }) => {
             "Content-Type": "application/json",
           },
         };
-        const respPublicacionesId = await fetch(store.apiUrl + "/api/usuario/" + store.cliente_id + "/libro", optionsPerfil);
+        const respPublicacionesId = await fetch(
+          store.apiUrl + "/api/usuario/" + store.cliente_id + "/libro",
+          optionsPerfil
+        );
         const datosPerfil = await respPublicacionesId.json();
         console.log(datosPerfil);
         setStore({
-          publicacionesId: datosPerfil
+          publicacionesId: datosPerfil,
         });
       },
       cerrarSesion: (history) => {
-				sessionStorage.removeItem("currentUser");
+        sessionStorage.removeItem("currentUser");
         sessionStorage.removeItem("isAuth");
         sessionStorage.removeItem("cliente_id");
         sessionStorage.removeItem("datosPerfil");
-				setStore({
-					currentUser: null,
-					isAuth: false,
-					cliente_id: null,
-					datosPerfil: null,
+        setStore({
+          currentUser: null,
+          isAuth: false,
+          cliente_id: null,
+          datosPerfil: null,
           correo: null,
           publicacionesId: null,
-				});
+        });
         history.push("/");
       },
     },

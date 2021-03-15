@@ -19,11 +19,11 @@ const AgregarLibro = (props) => {
       <Navbar />
       <div className="container pt-5">
         <div className="row align-items-center">
-          <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
+          <div className="col-md-5 mb-3 mb-md-0 mt-sm-3">
             <img
               src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
               alt="hola"
-              className="img-fluid mb-3 d-none d-md-block"
+              className="img-fluid mb-1 mt-5"
             />
             <h1>Agregar un libro</h1>
             <h4 className="font-italic text-muted mb-0">
@@ -31,9 +31,17 @@ const AgregarLibro = (props) => {
             </h4>
           </div>
           <div className="col-md-7 col-lg-6 mt-5 ml-auto">
-            <form onSubmit={e => actions.handleRegistroPublicacion(e, props.history, actions.getPublicaciones())}>
+            <form
+              onSubmit={(e) =>
+                actions.handleRegistroPublicacion(
+                  e,
+                  props.history,
+                  actions.getPublicaciones()
+                )
+              }
+            >
               <div className="row ">
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i className="fa fa-book text-muted"></i>
@@ -50,7 +58,7 @@ const AgregarLibro = (props) => {
                     required
                   />
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i className="fa fa-user text-muted"></i>
@@ -67,7 +75,7 @@ const AgregarLibro = (props) => {
                     required
                   />
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i className="fa fa-newspaper text-muted"></i>
@@ -84,7 +92,7 @@ const AgregarLibro = (props) => {
                     required
                   />
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i className="fa fa-school text-muted"></i>
@@ -113,7 +121,7 @@ const AgregarLibro = (props) => {
                     <option value="4° Medio">4° Medio</option>
                   </select>
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i className="fab fa-discourse text-muted"></i>
@@ -145,7 +153,7 @@ const AgregarLibro = (props) => {
                     <option value="Otra">Otra</option>
                   </select>
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i class="fas fa-star-half-alt"></i>
@@ -164,7 +172,7 @@ const AgregarLibro = (props) => {
                     <option value="usado">Usado</option>
                   </select>
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i class="far fa-question-circle"></i>
@@ -183,7 +191,7 @@ const AgregarLibro = (props) => {
                     <option value="copia">Copia</option>
                   </select>
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i class="far fa-keyboard"></i>
@@ -205,7 +213,7 @@ const AgregarLibro = (props) => {
                     <option value="venta y permuta">Venta y Permuta</option>
                   </select>
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i class="fas fa-hand-holding-usd"></i>
@@ -222,7 +230,7 @@ const AgregarLibro = (props) => {
                     required
                   />
                 </div>
-                <div className="input-group col-lg-12 mb-4 ">
+                <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
                       <i class="far fa-comments"></i>
@@ -241,7 +249,13 @@ const AgregarLibro = (props) => {
                 </div>
                 <div className="form-group col-lg-12 mx-auto mb-0">
                   <input
-                    onSubmit={e => actions.handleRegistroPublicacion(e, props.history, actions.getPublicaciones())}
+                    onSubmit={(e) =>
+                      actions.handleRegistroPublicacion(
+                        e,
+                        props.history,
+                        actions.getPublicaciones()
+                      )
+                    }
                     type="submit"
                     className="btn btn-primary btn-block font-weight-bold"
                     value="Publicar Libro"
@@ -255,6 +269,6 @@ const AgregarLibro = (props) => {
       <Footer />
     </>
   );
-}
+};
 
 export default AgregarLibro;

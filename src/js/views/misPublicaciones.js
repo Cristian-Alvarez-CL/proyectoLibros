@@ -39,7 +39,7 @@ const MisPublicaciones = () => {
             {!!store.publicacionesId &&
               store.publicacionesId.map((publicacionesId, id) => {
                 return (
-                  <tbody key={publicacionesId.id}>
+                  <tbody key={id}>
                     <tr>
                       <td className="text-capitalize">
                         <span className="mr-4 font-weight-bold">
