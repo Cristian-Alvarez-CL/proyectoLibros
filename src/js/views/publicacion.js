@@ -144,7 +144,7 @@ const Publicacion = ({ match }, props) => {
               </h5>
               <h5 className="m-0 p-0">
                 Comentarios:
-                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
+                <p className="m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].comentarios}
                 </p>
                 <hr className="mt-0" />
