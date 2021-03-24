@@ -2,7 +2,6 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       apiUrl: "http://localhost:5000",
-      usuarioId: null,
       usuarios: [],
       nombreCompleto: null,
       correo: null,
@@ -15,8 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       tipoVivienda: null,
       numDepto: null,
       currentUser: null,
-      isAuth: null,
-      estaAut: null,
+      isAuth: false,
       publicaciones: [],
       cliente_id: null,
       titulo: null,
@@ -29,10 +27,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       tipoIntercambio: null,
       precio: null,
       comentarios: null,
-      msgUsuario: null,
-      msgPublicacion: null,
       error: null,
+      datosPerfil: null,
       tokenLogin: null,
+      publicacionesId: [],
     },
     actions: {
       getUsuarios: (url, options = {}) => {
@@ -42,11 +40,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.warn(error));
       },
 
-      getPublicaciones: (url, options = {}) => {
-        fetch(url, options)
-          .then((resp) => resp.json())
-          .then((data) => setStore({ publicaciones: data }))
-          .catch((error) => console.warn(error));
+      getPublicaciones: async () => {
+        const store = getStore();
+        const optionsPerfil = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const respPublicaciones = await fetch(
+          store.apiUrl + "/api/crearlibro",
+          optionsPerfil
+        );
+        const publicacionesAll = await respPublicaciones.json();
+        setStore({
+          publicaciones: publicacionesAll,
+        });
       },
 
       handleChange: (e) => {
@@ -54,6 +63,18 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({
           [name]: value,
         });
+      },
+
+      isAuthenticated: () => {
+        console.log("verificando usuario");
+        if (sessionStorage.getItem("isAuth")) {
+          setStore({
+            isAuth: JSON.parse(sessionStorage.getItem("isAuth")),
+            currentUser: JSON.parse(sessionStorage.getItem("currentUser")),
+            cliente_id: JSON.parse(sessionStorage.getItem("cliente_id")),
+            datosPerfil: JSON.parse(sessionStorage.getItem("datosPerfil")),
+          });
+        }
       },
 
       handleRegistroUsuario: async (e, history) => {
@@ -78,7 +99,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/crearusuario", options);
         const datos = await resp.json();
-        console.log(datos);
         setStore({
           currentUser: datos.usuario,
           cliente_id: datos.usuario.id,
@@ -94,8 +114,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           numDepto: null,
           msg: datos.msg,
         });
-        alert(store.msgUsuario);
-        history.push("/");
+        history.push("/login");
       },
 
       handleRegistroPublicacion: async (e, history) => {
@@ -137,7 +156,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           comentarios: null,
           msgPublicacion: datos.msg,
         });
-        alert(store.msgPublicacion);
         history.push("/");
       },
 
@@ -159,26 +177,67 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/login", options);
         const datos = await resp.json();
+
+        const optionsPerfil = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + datos.tokenLogin,
+          },
+        };
+        const respPerfil = await fetch(
+          store.apiUrl + "/api/perfil",
+          optionsPerfil
+        );
+        const datosPerfil = await respPerfil.json();
         console.log(datos);
         setStore({
           currentUser: datos,
           contrasenia: null,
-          error: null,
-          estaAut: true,
+          datosPerfil: datosPerfil,
+          cliente_id: datosPerfil.id,
+          isAuth: true,
         });
-        localStorage.setItem("currentUser", JSON.stringify(datos));
-        localStorage.setItem("estaAut", true);
+        sessionStorage.setItem("currentUser", JSON.stringify(datos));
+        sessionStorage.setItem("isAuth", true);
+        sessionStorage.setItem("cliente_id", datosPerfil.id);
+        sessionStorage.setItem("datosPerfil", JSON.stringify(datosPerfil));
+        getActions().getPublicacionesUsuario();
         history.push("/");
-        alert(store.currentUser.tokenLogin);
       },
 
-      estaAutenticado: () => {
-        if (localStorage.getItem("estaAut")) {
-          setStore({
-            currentUser: JSON.parse(localStorage.getItem("currentUser")),
-            estaAut: JSON.parse(localStorage.getItem("estaAut")),
-          });
-        }
+      getPublicacionesUsuario: async () => {
+        const store = getStore();
+        const optionsPerfil = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const respPublicacionesId = await fetch(
+          store.apiUrl + "/api/usuario/" + store.cliente_id + "/libro",
+          optionsPerfil
+        );
+        const datosPerfil = await respPublicacionesId.json();
+        console.log(datosPerfil);
+        setStore({
+          publicacionesId: datosPerfil,
+        });
+      },
+      cerrarSesion: (history) => {
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.removeItem("isAuth");
+        sessionStorage.removeItem("cliente_id");
+        sessionStorage.removeItem("datosPerfil");
+        setStore({
+          currentUser: null,
+          isAuth: false,
+          cliente_id: null,
+          datosPerfil: null,
+          correo: null,
+          publicacionesId: null,
+        });
+        history.push("/");
       },
     },
   };

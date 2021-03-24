@@ -1,19 +1,18 @@
 import React from "react";
-import Footer from "../components/footer";
-import Navbar from "../components/navbar";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 function formatNumber(number) {
   return new Intl.NumberFormat().format(number);
 }
 
-const Publicacion = ({ match }, props) => {
+const PublicacionId = ({ match }, props) => {
   const { store } = useContext(Context);
 
   const id = match.params.id;
-
   return (
     <>
       <Navbar />
@@ -82,56 +81,56 @@ const Publicacion = ({ match }, props) => {
               <h5 className="m-0 p-0">
                 Titulo:
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].titulo}
+                  {store.publicacionesId[id - 1].titulo}
                 </p>
                 <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Autor:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].nombreAutor}
+                  {store.publicacionesId[id - 1].nombreAutor}
                 </p>
                 <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Editorial:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].editorial}
+                  {store.publicacionesId[id - 1].editorial}
                 </p>
                 <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Nivel:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].nivel}
+                  {store.publicacionesId[id - 1].nivel}
                 </p>
                 <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Asignatura:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].asignatura}
+                  {store.publicacionesId[id - 1].asignatura}
                 </p>
                 <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Estado:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].estadoNuevoUsado}
+                  {store.publicacionesId[id - 1].estadoNuevoUsado}
                 </p>
                 <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Condición:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].condicionOriginalCopia}
+                  {store.publicacionesId[id - 1].condicionOriginalCopia}
                 </p>
                 <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Tipo:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].tipoIntercambio}
+                  {store.publicacionesId[id - 1].tipoIntercambio}
                 </p>
                 <hr className="mt-0" />
               </h5>
@@ -145,7 +144,7 @@ const Publicacion = ({ match }, props) => {
               <h5 className="m-0 p-0">
                 Comentarios:
                 <p className="m-0 p-0 colorPublicacion font-weight-bold">
-                  {store.publicaciones[id - 1].comentarios}
+                  {store.publicacionesId[id - 1].comentarios}
                 </p>
                 <hr className="mt-0" />
               </h5>
@@ -172,4 +171,4 @@ const Publicacion = ({ match }, props) => {
   );
 };
 
-export default Publicacion;
+export default PublicacionId;

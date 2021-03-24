@@ -1,16 +1,23 @@
-import React from "react";
-import NavbarLogin from "../components/navbarLogin";
+import React, { useEffect } from "react";
 import Footer from "../components/footer";
 import "../../styles/login.css";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
+import Navbar from "../components/navbar";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const { store, actions } = useContext(Context);
+  const { history } = props;
+
+  useEffect(() => {
+    if (store.isAuth) history.push("/");
+  }, []);
+
   return (
     <>
-      <NavbarLogin />
-      <div className="content box-sizing mt-5">
+      <Navbar />
+      <div className="content box-sizing mt-5 pb-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 contents">
@@ -25,7 +32,9 @@ const Login = (props) => {
                         Complete todos los datos para ingresar a la plataforma
                       </p>
                     </div>
-                    <form onSubmit={e => actions.handleLogin(e, props.history)} >
+                    <form
+                      onSubmit={(e) => actions.handleLogin(e, props.history)}
+                    >
                       <div className="form-group last mb-4">
                         <input
                           type="email"
@@ -52,6 +61,11 @@ const Login = (props) => {
                         className="btn btn-pill text-white btn-block btn-primary"
                       />
                     </form>
+                    <div>
+                      <p className="mt-2">
+                        <Link to="/">Regresa al Inicio</Link>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

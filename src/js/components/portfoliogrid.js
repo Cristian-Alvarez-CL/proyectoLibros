@@ -19,7 +19,7 @@ const PortfolioGrid = (props) => {
                         !!store.publicaciones &&
                         store.publicaciones.map( (publicacion, id) => {
                             return(
-                                <div className="col-lg-4 col-sm-6 mb-4">
+                                <div className="col-lg-4 col-sm-6 mb-4" key={id}>
                                     <div className="portfolio-item">
                                         <a className="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                                             <div className="portfolio-hover">

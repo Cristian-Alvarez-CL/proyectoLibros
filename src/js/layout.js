@@ -17,6 +17,8 @@ import "../styles/index.css";
 import Perfil from "./views/perfil";
 import ListadoPublicaciones from "./views/listadoPublicaciones";
 import Usuario from "./views/usuario";
+import misPublicaciones from "./views/misPublicaciones";
+import PublicacionId from "./views/publicacionId";
 
 export class Layout extends React.Component {
 	render() {
@@ -38,6 +40,8 @@ export class Layout extends React.Component {
 						<Route exact path="/usuarios/:id" component={Usuario} ></Route>
 						<Route exact path="/passwordrecover" component={passwordRecover} ></Route>
 						<Route exact path="/publicacion/:id" component={publicacion} ></Route>
+						<Route exact path="/publicacionId/:id" component={PublicacionId} ></Route>
+						<Route exact path="/misPublicaciones/" component={misPublicaciones} ></Route>
 						<Route exact path="/homeadmin" component={homeAdmin} ></Route>
 						<Route render={() => <h1>Not found!</h1>} ></Route>
 					</Switch>
