@@ -17,7 +17,7 @@ const Login = (props) => {
   return (
     <>
       <Navbar />
-      <div className="content box-sizing mt-5">
+      <div className="content box-sizing mt-5 pb-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 contents">
@@ -62,9 +62,9 @@ const Login = (props) => {
                       />
                     </form>
                     <div>
-                    <p className="mt-2">
-                    <Link to="/">Regresa al Inicio</Link>
-                    </p>
+                      <p className="mt-2">
+                        <Link to="/">Regresa al Inicio</Link>
+                      </p>
                     </div>
                   </div>
                 </div>

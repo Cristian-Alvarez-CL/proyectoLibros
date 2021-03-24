@@ -5,6 +5,9 @@ import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
+function formatNumber(number) {
+  return new Intl.NumberFormat().format(number);
+}
 
 const Publicacion = ({ match }, props) => {
   const { store } = useContext(Context);
@@ -26,14 +29,14 @@ const Publicacion = ({ match }, props) => {
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                <img
+                  <img
                     src="https://image.freepik.com/free-photo/front-view-composition-with-different-books_23-2148851051.jpg"
                     className="d-block w-100"
                     alt="..."
                   />
                 </div>
                 <div className="carousel-item">
-                <img
+                  <img
                     src="https://image.freepik.com/vector-gratis/concepto-cursos-idiomas-online-estudiar-idiomas-extranjeros-escuela-o-universidad-leccion-ingles-ilustracion-isometrica-vector_277904-1170.jpg"
                     className="d-block w-100"
                     alt="..."
@@ -77,74 +80,74 @@ const Publicacion = ({ match }, props) => {
           <div className="col-md-8 col-lg-8 ml-auto">
             <div className="pubboder">
               <h5 className="m-0 p-0">
-                Titulo: 
+                Titulo:
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].titulo}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Autor:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].nombreAutor}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Editorial:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].editorial}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Nivel:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].nivel}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Asignatura:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].asignatura}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Estado:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].estadoNuevoUsado}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Condición:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].condicionOriginalCopia}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Tipo:{" "}
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].tipoIntercambio}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Precio / Permuta:
-                <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
-                  $ {store.publicaciones[id - 1].precio}
+                <p className="m-0 p-0 colorPublicacion font-weight-bold">
+                  $ {formatNumber(store.publicaciones[id - 1].precio)}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
               <h5 className="m-0 p-0">
                 Comentarios:
                 <p className="text-capitalize m-0 p-0 colorPublicacion font-weight-bold">
                   {store.publicaciones[id - 1].comentarios}
                 </p>
-                <hr className="mt-0"/>
+                <hr className="mt-0" />
               </h5>
             </div>
           </div>
@@ -154,12 +157,12 @@ const Publicacion = ({ match }, props) => {
         <div className="row">
           <div className="col-4"></div>
           <div className="col-4">
-          <Link 
-            to={`/usuarios/${store.publicaciones[id -1].cliente_id}`}
-            className="btn btn-primary btn-block font-weight-bold"
-          >
-            Contactame
-          </Link>
+            <Link
+              to={`/usuarios/${store.publicaciones[id - 1].cliente_id}`}
+              className="btn btn-primary btn-block font-weight-bold"
+            >
+              Contactame
+            </Link>
           </div>
           <div className="col-4"></div>
         </div>

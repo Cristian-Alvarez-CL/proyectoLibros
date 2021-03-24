@@ -6,7 +6,6 @@ const Navbar = () => {
   const { store, actions } = useContext(Context);
   const history = useHistory();
 
-
   const location = useLocation();
 
   return (
@@ -60,7 +59,7 @@ const Navbar = () => {
                   }
                   to="/login"
                 >
-                  Login
+                  Ingresar
                 </Link>
               ) : null}
             </li>
@@ -117,7 +116,7 @@ const Navbar = () => {
                     }
                     to="/login"
                   >
-                    Login
+                    Ingresar
                   </Link>
                 )}
                 {store.isAuth ? (
