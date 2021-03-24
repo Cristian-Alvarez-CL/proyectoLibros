@@ -10490,3 +10490,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .colorPublicacion{
   color: rgb(254, 201, 43) ; 
 }
+
+.text-initial{
+  text-transform: initial;
+}
