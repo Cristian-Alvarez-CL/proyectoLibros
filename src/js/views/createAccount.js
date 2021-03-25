@@ -60,7 +60,7 @@ const CreateAccount = (props) => {
     if (store.nombreCompleto) {
       if (regexNombre.test(store.nombreCompleto)) {
         setValidarNombreCompleto("is-valid");
-        setMensajeNombreCompleto("Luce Bien!");
+        //setMensajeNombreCompleto("Luce Bien!");
         setFeedbackNombreCompleto("valid-feedback");
       } else {
         setValidarNombreCompleto("is-invalid");
@@ -81,7 +81,7 @@ const CreateAccount = (props) => {
         setFeedbackCorreo("invalid-feedback");
       } else {
         setValidarCorreo("is-valid");
-        setMensajeCorreo("Luce bien!");
+        //setMensajeCorreo("Luce bien!");
         setFeedbackCorreo("valid-feedback");
       }
     }
@@ -95,7 +95,7 @@ const CreateAccount = (props) => {
         setFeedbackTelefono("invalid-feedback");
       } else {
         setValidarTelefono("is-valid");
-        setMensajeTelefono("Luce bien!");
+        //setMensajeTelefono("Luce bien!");
         setFeedbackTelefono("valid-feedback");
       }
     }
@@ -109,7 +109,7 @@ const CreateAccount = (props) => {
         setFeedbackContrasenia("invalid-feedback");
       } else {
         setValidarContrasenia("is-valid");
-        setMensajeContrasenia("Luce bien!");
+        //setMensajeContrasenia("Luce bien!");
         setFeedbackContrasenia("valid-feedback");
       }
     }
@@ -118,7 +118,8 @@ const CreateAccount = (props) => {
   function es_confirmContrasenia() {
     if (store.confirmContrasenia === store.contrasenia) {
       setValidarConfirmContrasenia("is-valid");
-      setMensajeConfirmContrasenia("Correcto!");
+      setMensajeConfirmContrasenia("");
+      //setMensajeConfirmContrasenia("Correcto!");
       setFeedbackConfirmContrasenia("valid-feedback");
     } else {
       setValidarConfirmContrasenia("is-invalid");
@@ -131,7 +132,7 @@ const CreateAccount = (props) => {
     if (store.comuna) {
       if (store.comuna.length < 40) {
         setValidarComuna("is-valid");
-        setMensajeComuna("Luce bien!");
+        //setMensajeComuna("Luce bien!");
         setFeedbackComuna("valid-feedback");
       } else {
         setValidarComuna("is-invalid");
@@ -145,7 +146,7 @@ const CreateAccount = (props) => {
     if (store.direccion) {
       if (store.direccion.length > 3) {
         setValidarDireccion("is-valid");
-        setMensajeDireccion("Luce bien!");
+        //setMensajeDireccion("Luce bien!");
         setFeedbackDireccion("valid-feedback");
       } else {
         setValidarDireccion("is-invalid");
@@ -159,7 +160,7 @@ const CreateAccount = (props) => {
     if (store.numero) {
       if (store.numero.length < 7) {
         setValidarNumero("is-valid");
-        setMensajeNumero("Luce bien!");
+        //setMensajeNumero("Luce bien!");
         setFeedbackNumero("valid-feedback");
       } else {
         setValidarNumero("is-invalid");
@@ -173,7 +174,7 @@ const CreateAccount = (props) => {
     if (store.tipoVivienda) {
       if (store.tipoVivienda.length < 16) {
         setValidarTipoVivienda("is-valid");
-        setMensajeTipoVivienda("Luce bien!");
+        //setMensajeTipoVivienda("Luce bien!");
         setFeedbackTipoVivienda("valid-feedback");
       } else {
         setValidarTipoVivienda("is-invalid");
@@ -187,7 +188,7 @@ const CreateAccount = (props) => {
     if (store.numDepto) {
       if (store.numDepto.length > 0 && store.numDepto.length < 7) {
         setValidarNumDepto("is-valid");
-        setMensajeNumDepto("Luce bien!");
+        //setMensajeNumDepto("Luce bien!");
         setFeedbackNumDepto("valid-feedback");
       } else {
         setValidarNumDepto("is-invalid");

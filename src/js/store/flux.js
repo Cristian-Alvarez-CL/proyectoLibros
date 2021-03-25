@@ -99,22 +99,28 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/crearusuario", options);
         const datos = await resp.json();
-        setStore({
-          currentUser: datos.usuario,
-          cliente_id: datos.usuario.id,
-          nombreCompleto: null,
-          correo: null,
-          contrasenia: null,
-          confirmContrasenia: null,
-          telefono: null,
-          direccion: null,
-          numero: null,
-          comuna: null,
-          tipoVivienda: null,
-          numDepto: null,
-          msg: datos.msg,
-        });
-        history.push("/login");
+        //Validacion de Datos
+        if (datos.msg ==='Usuario ya existe') {
+          console.log('Usuario ya existe y se debe arrojar un mensaje para la correccion');
+          history.push("/create");
+        } else {
+          setStore({
+            currentUser: datos.usuario,
+            cliente_id: datos.usuario.id,
+            nombreCompleto: null,
+            correo: null,
+            contrasenia: null,
+            confirmContrasenia: null,
+            telefono: null,
+            direccion: null,
+            numero: null,
+            comuna: null,
+            tipoVivienda: null,
+            numDepto: null,
+            msg: datos.msg,
+          });
+          history.push("/login");
+        }
       },
 
       handleRegistroPublicacion: async (e, history) => {
@@ -177,33 +183,41 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         const resp = await fetch(store.apiUrl + "/api/login", options);
         const datos = await resp.json();
+        //Validacion de Datos
+        if (datos.msg === 'correo/contrasenia es incorrecta') {
+          console.log("Aqui debe ir un mensaje de correo/contrasenia es incorrecta y borrar el contenido de las cajas de texto");
+          
+        } else {
+          const optionsPerfil = {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + datos.tokenLogin,
+            },
+          };
+          const respPerfil = await fetch(
+            store.apiUrl + "/api/perfil",
+            optionsPerfil
+          );
+          const datosPerfil = await respPerfil.json();
+          console.log(datos);
+          setStore({
+            currentUser: datos,
+            contrasenia: null,
+            datosPerfil: datosPerfil,
+            cliente_id: datosPerfil.id,
+            isAuth: true,
+          });
+          sessionStorage.setItem("currentUser", JSON.stringify(datos));
+          sessionStorage.setItem("isAuth", true);
+          sessionStorage.setItem("cliente_id", datosPerfil.id);
+          sessionStorage.setItem("datosPerfil", JSON.stringify(datosPerfil));
+          getActions().getPublicacionesUsuario();
+          history.push("/");
+          
+        }
 
-        const optionsPerfil = {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + datos.tokenLogin,
-          },
-        };
-        const respPerfil = await fetch(
-          store.apiUrl + "/api/perfil",
-          optionsPerfil
-        );
-        const datosPerfil = await respPerfil.json();
-        console.log(datos);
-        setStore({
-          currentUser: datos,
-          contrasenia: null,
-          datosPerfil: datosPerfil,
-          cliente_id: datosPerfil.id,
-          isAuth: true,
-        });
-        sessionStorage.setItem("currentUser", JSON.stringify(datos));
-        sessionStorage.setItem("isAuth", true);
-        sessionStorage.setItem("cliente_id", datosPerfil.id);
-        sessionStorage.setItem("datosPerfil", JSON.stringify(datosPerfil));
-        getActions().getPublicacionesUsuario();
-        history.push("/");
+        
       },
 
       getPublicacionesUsuario: async () => {
@@ -219,10 +233,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           optionsPerfil
         );
         const datosPerfil = await respPublicacionesId.json();
-        console.log(datosPerfil);
-        setStore({
-          publicacionesId: datosPerfil,
-        });
+        //Validacion de datos
+        if (datosPerfil.msg === 'Cliente sin Libros') {
+          console.log('Aqui debe ir un mensaje de error o pop-up ya que el cliente no tiene libros publicados y debe ser redireccionado');
+        } else {
+          console.log(datosPerfil);
+          setStore({
+            publicacionesId: datosPerfil,
+          });  
+        }
+        
       },
       cerrarSesion: (history) => {
         sessionStorage.removeItem("currentUser");
