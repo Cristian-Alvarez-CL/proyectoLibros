@@ -10494,3 +10494,12 @@ section#contact form#contactForm :-ms-input-placeholder {
 .text-initial{
   text-transform: initial;
 }
+
+.margen-final{
+  margin-left: 40px;
+  padding-left: 15px;
+}
+
+.colorPublicacion2{
+  color: rgb(247, 185, 0) ; 
+}

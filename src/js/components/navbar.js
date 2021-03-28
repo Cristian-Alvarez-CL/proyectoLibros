@@ -39,13 +39,6 @@ const Navbar = () => {
               ) : null}
             </li>
             <li className="nav-item">
-              {location.pathname === "/" ? (
-                <a className="nav-link js-scroll-trigger" href="#team">
-                  Equipo
-                </a>
-              ) : null}
-            </li>
-            <li className="nav-item">
               <Link className="nav-link js-scroll-trigger" to="/publicaciones">
                 PUBLICACIONES
               </Link>

@@ -12,9 +12,9 @@ const Publicidad = () => {
       <section className="page-section bg-light pt-0">
         <div class="container p-0">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Publicidad</h2>
-            <h3 className="section-subheading text-muted">
-              Publica con nosotros
+            <h2 className="section-heading text-uppercase">Ayuda a una Pyme</h2>
+            <h3 className="section-subheading text-muted m-0 p-0">
+              Publica con nosotros para que llegues a mas personas
             </h3>
           </div>
           <div class="row no-gutters">
