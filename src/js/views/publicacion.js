@@ -1,9 +1,9 @@
 import React from "react";
-import Footer from "../components/footer";
-import Navbar from "../components/navbar";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 function formatNumber(number) {
   return new Intl.NumberFormat().format(number);
@@ -155,16 +155,38 @@ const Publicacion = ({ match }, props) => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-4"></div>
-          <div className="col-4">
-            <Link
-              to={`/usuarios/${store.publicaciones[id - 1].cliente_id}`}
-              className="btn btn-primary btn-block font-weight-bold"
-            >
-              Contactame
-            </Link>
+          <div className="col-lg-4"></div>
+          <div className="col-lg-8">
+            {!!store.isAuth ? (
+              <Link
+                to={`/usuarios/${store.publicaciones[id - 1].cliente_id}`}
+                className="btn btn-primary btn-block font-weight-bold"
+              >
+                Contactame
+              </Link>
+            ) : (
+              <h5 className="m-0 p-0">
+                Contacto
+                <p className="colorPublicacion font-weight-bold">
+                  Para contactar con el vendedor debes
+                  <Link
+                    className="font-weight-bold colorPublicacion2 mr-1 ml-1 h5"
+                    to="/create"
+                  >
+                    <u>Registrarte</u>
+                  </Link>
+                  o
+                  <Link
+                    className="font-weight-bold colorPublicacion2 mr-1 ml-1 h5"
+                    to="/login"
+                  >
+                    <u>Iniciar sesión</u>
+                  </Link>
+                </p>
+                <hr className="mt-0" />
+              </h5>
+            )}
           </div>
-          <div className="col-4"></div>
         </div>
       </div>
       <Footer />

@@ -26,7 +26,7 @@ const Login = (props) => {
                   <div className="form-block">
                     <div className="mb-4">
                       <h3 className="text-center">
-                        <strong>Ingreso</strong>
+                        <strong>Ingresar</strong>
                       </h3>
                       <p className="mb-4 mt-3">
                         Complete todos los datos para ingresar a la plataforma
@@ -43,6 +43,7 @@ const Login = (props) => {
                           id="correo"
                           name="correo"
                           onChange={actions.handleChange}
+                          required
                         />
                       </div>
                       <div className="form-group last mb-4">
@@ -53,12 +54,13 @@ const Login = (props) => {
                           placeholder="Contraseña"
                           id="contrasenia"
                           onChange={actions.handleChange}
+                          required
                         />
                       </div>
                       <input
                         type="submit"
                         value="Ingresar"
-                        className="btn btn-pill text-white btn-block btn-primary"
+                        className="btn btn-pill text-white btn-block btn-primary font-weight-bold"
                       />
                     </form>
                     <div>

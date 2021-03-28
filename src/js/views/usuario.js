@@ -42,12 +42,44 @@ const Usuario = ({ match }, props) => {
               <hr className="mt-0" />
             </div>
           </div>
-          <Link
-              to={"/"}
-              className="btn btn-primary btn-block font-weight-bold"
+          <Link to={"/"} className="btn btn-primary btn-block font-weight-bold">
+            Inicio
+          </Link>
+        </div>
+      </div>
+      <div className="container mt-5 mb-3">
+        <div className="row">
+          <div className="col-lg-4"></div>
+          <div className="col-lg-4 ml-5">
+            <form
+              action="https://www.paypal.com/donate"
+              method="post"
+              target="_blank"
             >
-              Inicio
-            </Link>
+              <input
+                type="hidden"
+                name="hosted_button_id"
+                value="K6WB9KZB635T8"
+              />
+              <input
+                className="margen-final"
+                type="image"
+                src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                border="0"
+                name="submit"
+                title="PayPal - The safer, easier way to pay online!"
+                alt="Donate with PayPal button"
+              />
+              <img
+                alt=""
+                border="0"
+                src="https://www.paypal.com/en_CL/i/scr/pixel.gif"
+                width="1"
+                height="1"
+              />
+            </form>
+          </div>
+          <div className="col-lg-4"></div>
         </div>
       </div>
       <Footer />
