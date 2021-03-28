@@ -77,7 +77,9 @@ const CreateAccount = (props) => {
     if (store.correo) {
       if (!regexEmail.test(store.correo)) {
         setValidarCorreo("is-invalid");
-        setMensajeCorreo("El email no es válido");
+        setMensajeCorreo(
+          "El email no es válido recuerda usar el siguiente formato example@example.com"
+        );
         setFeedbackCorreo("invalid-feedback");
       } else {
         setValidarCorreo("is-valid");

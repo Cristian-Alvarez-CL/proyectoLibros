@@ -453,30 +453,55 @@ const AgregarLibro = (props) => {
                     {mensajeTipoIntercambio}
                   </div>
                 </div>
-                <div className="input-group col-lg-12 mb-3 ">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text bg-white px-4 border-md border-right-0">
-                      <i class="fas fa-hand-holding-usd"></i>
-                    </span>
+                {store.tipoIntercambio != "permuta" ? (
+                  <div className="input-group col-lg-12 mb-3 ">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fas fa-hand-holding-usd"></i>
+                      </span>
+                    </div>
+                    <input
+                      id="precio"
+                      type="number"
+                      name="precio"
+                      placeholder="Precio: $10.000"
+                      className={
+                        "form-control bg-white border-left-0 border-md " +
+                        validarPrecio
+                      }
+                      onChange={actions.handleChange}
+                      value={store.precio}
+                      onBlur={(e) => es_precio()}
+                      required
+                    />
+                    <div className={feedbackPrecio + " font-weight-bold"}>
+                      {mensajePrecio}
+                    </div>
                   </div>
-                  <input
-                    id="precio"
-                    type="number"
-                    name="precio"
-                    placeholder="Precio: $10.000 / 0 si es Permuta"
-                    className={
-                      "form-control bg-white border-left-0 border-md " +
-                      validarPrecio
-                    }
-                    onChange={actions.handleChange}
-                    value={store.precio}
-                    onBlur={(e) => es_precio()}
-                    required
-                  />
-                  <div className={feedbackPrecio + " font-weight-bold"}>
-                    {mensajePrecio}
+                ) : (
+                  <div className="d-none input-group col-lg-12 mb-3 ">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fas fa-hand-holding-usd"></i>
+                      </span>
+                    </div>
+                    <input
+                      id="precio"
+                      type="number"
+                      name="precio"
+                      placeholder="Precio: $10.000"
+                      className={
+                        "form-control bg-white border-left-0 border-md " +
+                        validarPrecio
+                      }
+                      onChange={actions.handleChange}
+                      value={(store.precio = "0")}
+                    />
+                    <div className={feedbackPrecio + " font-weight-bold"}>
+                      {mensajePrecio}
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="input-group col-lg-12 mb-3 ">
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white px-4 border-md border-right-0">
