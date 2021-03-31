@@ -67,7 +67,7 @@ const Usuario = ({ match }, props) => {
                 src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
                 border="0"
                 name="submit"
-                title="PayPal - The safer, easier way to pay online!"
+                title="Realiza una Donación si quieres ayudar a mantener el sitio web"
                 alt="Donate with PayPal button"
               />
               <img

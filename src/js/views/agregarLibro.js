@@ -53,7 +53,7 @@ const AgregarLibro = (props) => {
     if (store.titulo) {
       if (store.titulo.length > 0) {
         setValidarTitulo("is-valid");
-        setMensajeTitulo("Luce bien!");
+        setMensajeTitulo(" ");
         setFeedbackTitulo("valid-feedback");
       } else {
         setValidarTitulo("is-invalid");
@@ -68,7 +68,7 @@ const AgregarLibro = (props) => {
     if (store.nombreAutor) {
       if (regexAutor.test(store.nombreAutor)) {
         setValidarAutor("is-valid");
-        setMensajeAutor("Luce Bien!");
+        setMensajeAutor(" ");
         setFeedbackAutor("valid-feedback");
       } else {
         setValidarAutor("is-invalid");
@@ -88,7 +88,7 @@ const AgregarLibro = (props) => {
         setFeedbackEditorial("invalid-feedback");
       } else {
         setValidarEditorial("is-valid");
-        setMensajeEditorial("Luce bien!");
+        setMensajeEditorial(" ");
         setFeedbackEditorial("valid-feedback");
       }
     }
@@ -102,7 +102,7 @@ const AgregarLibro = (props) => {
         setFeedbackNivel("invalid-feedback");
       } else {
         setValidarNivel("is-valid");
-        setMensajeNivel("Luce bien!");
+        setMensajeNivel(" ");
         setFeedbackNivel("valid-feedback");
       }
     }
@@ -112,7 +112,7 @@ const AgregarLibro = (props) => {
     if (store.asignatura) {
       if (store.asignatura.length > 1) {
         setValidarAsignatura("is-valid");
-        setMensajeAsignatura("Luce bien!");
+        setMensajeAsignatura(" ");
         setFeedbackAsignatura("valid-feedback");
       } else {
         setValidarAsignatura("is-invalid");
@@ -126,7 +126,7 @@ const AgregarLibro = (props) => {
     if (store.estadoNuevoUsado) {
       if (store.estadoNuevoUsado.length > 1) {
         setValidarEstadoLibro("is-valid");
-        setMensajeEstadoLibro("Luce bien!");
+        setMensajeEstadoLibro(" ");
         setFeedbackEstadoLibro("valid-feedback");
       } else {
         setValidarEstadoLibro("is-invalid");
@@ -140,7 +140,7 @@ const AgregarLibro = (props) => {
     if (store.condicionOriginalCopia) {
       if (store.condicionOriginalCopia.length > 1) {
         setValidarCondicionLibro("is-valid");
-        setMensajeCondicionLibro("Luce bien!");
+        setMensajeCondicionLibro(" ");
         setFeedbackCondicionLibro("valid-feedback");
       } else {
         setValidarCondicionLibro("is-invalid");
@@ -154,7 +154,7 @@ const AgregarLibro = (props) => {
     if (store.tipoIntercambio) {
       if (store.tipoIntercambio.length > 1) {
         setValidarTipoIntercambio("is-valid");
-        setMensajeTipoIntercambio("Luce bien!");
+        setMensajeTipoIntercambio(" ");
         setFeedbackTipoIntercambio("valid-feedback");
       } else {
         setValidarTipoIntercambio("is-invalid");
@@ -168,7 +168,7 @@ const AgregarLibro = (props) => {
     if (store.precio) {
       if (store.precio.length > 0) {
         setValidarPrecio("is-valid");
-        setMensajePrecio("Luce bien!");
+        setMensajePrecio(" ");
         setFeedbackPrecio("valid-feedback");
       } else {
         setValidarPrecio("is-invalid");
@@ -182,7 +182,7 @@ const AgregarLibro = (props) => {
     if (store.comentarios) {
       if (store.comentarios.length > 1) {
         setValidarComentarios("is-valid");
-        setMensajeComentarios("Luce bien!");
+        setMensajeComentarios(" ");
         setFeedbackComentarios("valid-feedback");
       } else {
         setValidarComentarios("is-invalid");
